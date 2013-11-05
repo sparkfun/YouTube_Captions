@@ -1,0 +1,29 @@
+0:00:01.00, 0:00:16.00
+Hi Everybody. I'm Chris from SparkFun Electronics and I'm here to talk about magnetometers. Magnetometers are most commonly used as digital compasses meaning they can detect their position relative to earth.Or North.
+ 
+0:00:16.00,0:00:32.00
+So here I have a simple two axis magnetometer hooked up to an Arduino. The Arduino is communicating to the servo so when I rotate the digital compass, it changes direction of the arrow on the servo based on where I am pointing the digital compass.
+ 
+0:00:32.00, 0:01:04.00
+Basically, the HMC6352 is detecting north on the two axis and putting it together so when it is queried by the Arduino it sends a heading from zero to 360 meaning it has one degree accuracy and does this at 20Hz.So, it's sending its strongest magnetic field over this 360 degree range. So right now this is just detecting a heading. It's detected north or the strongest magnetic field it sees in the area.
+ 
+0:01:04.00,0:01:29.00
+But, if I tilt this it will no longer work properly. It's receiving junk data because it's not tilt compensating. We sell the HMC6343 which is tilt compensating meaning that it can tilt to a certain degree and still take a north heading meaning the robot doesn't have to be perfectly flat all the time.
+ 
+0:01:29.00,0:01:44.00
+Also when this magnetometer comes within the range of the magnet it starts to lose its bearings because it is now looking for north from the magnet or detecting north from this magnet.
+ 
+0:01:44.00, 0:01:52.00
+So I move it around and it knows this is the strongest magnetic field in the area and it's detecting the magnet instead of north.
+ 
+0:01:52.00, 0:02:00.00
+ Once I take it away it has to be calibrated because the hall effect sensors have felt too strong a magnetic field.
+ 
+0:02:00.00, 0:02:16.00
+ Sparkfun sells five other magnetometers, all with different communication protocols. Some three axis, some two axis. They range from simple to complicated and some even put accelerometers on board so they can be used for more advanced applications.
+ 
+0:02:16.00, 0:02:24.00
+So, if you need a robot or project to know what it's direction then this is what you want.
+
+0:02:24.00
+And thanks for watching.
