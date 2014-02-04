@@ -539,129 +539,44 @@ So, I might put, like, the SOC2305 there, and then uh... this will run over here
 to the input. There'll be pin 1 2 3 on that the output gonna
 
 0:12:55.50, 0:13:00.50
-be over here so i'm probably gonna have you know another cap uh down
+be over here so I'm probably gonna have, you know, another cap uh down
 
-there to ground um and then i'm out.
 
 
+there to ground um and then I'm out. Ok? now the point of this is to find a like uh... a good place out of the way that the powersupply can be and then feed all the other sections ok? um and like I say you wanna... you wanna do this according to what the schematc shows you want components that are close electrically in the schematic to be close physically on the board. how do you feed these things? uh generally when i do it, um i wll do sort of a modified star configuration and a star configuration is just that each section gets its own dedicated line back to the regulator, right? now in schematic thres going to be a zillion different places potentially that VCC is going to need to go to. um but you cannot realiztically run a line from here to every last compbonet thats got to be covered by VCC. now if your running a 4 layered board much easier youve got a layer of copper underneath that you can just punch down to. that my VCC its easy i can get it any where 2 layored board you have to plan a little bit. uh now your sections right? your... your going have like a micorcontroller section your gonna have lets... lets say we've got sensors right? if i had an RF link i would probably keep an RF module over here uh i might put my micro contrller sorta here maybe orient it so the crystal was near by there couple of caps to decouple uh and then i might put like um sensors here uh maybe a multiplexer im... im making this up as i go right? but your sections right? this is your gonna be your RF section. this is gonna be your microcontroller section this is gonna be the sensor section and the way you want to fed these thing is by section on the schematic. right? so for example if i had an op amp um and i've got an op amp for example here um there... theres a few different places i want lets say i've got an op amp section here and ive got a couple other components and those thing are strung out. what i'm gonna do is im going to run a single trunk line to this point and then its going to diverge to the different parts in the circuit where VCC has to be, right? the reason for doing this obviously i dont want to run string 3 lines back here but if i can tie all 3 of these points to a common point then each of them equally gets a feed from VCC. now to back up and remind you why we do this? because, if you're daisy chaining components like i've got vcc here and its going down to something here and then its going down to something here and its going down to something here. well if this guys draws a lot of current, um these two guys are goinna feel a voltage drop ok? not a huge one but its going to intuduce noize so every time what ever this component is draws a bunch of current these guys are gonna feel it. so what you do is you tie them back up to here or at least so that they are um you known equadistant in a way. and by doing this you tie them all to a center point there there is your star and it's fed by a single one. now earlerier i said 10 mill traces... we try to keep to 10 mill traces but this big trunk might be feeding more than 20 mA so i have to keep that in mind. if it is i might up it to 12 mill 15 mill 20 mill depends so i'm gonna keep an eye on that. and each section will go back this way ok um... and so there'll be one to the micro section as well and uh a lot of times i'll run this directily under here and then feed the different power pins so its all very equal.
 
 
 
 
-the reason that you dont do that 
 
-thats an antenna
 
-and infact while I am on 
 
 
-another mistake that i have sean many many times thankfully not by our guys
 
 
-a micro controller right
 
-and then you will see a bank of caps 
 
 
-and it will 
 
 
-all tied to VCC and they are all tied to ground right?
 
-ok alot of times 
 
 
-refering to the um uh micro controller 
 
 
 
-i put all my caps here. NOOOO you dont do that.
 
-a micro controller 
 
-they want you to put a cap right there.
 
-that is to minimize the lenght of those traces and to decouple noize form the pow
 
 
-it is important to keep components that are related to a certain circuint section 
 
 
-you wnat to keep these traces 
 
-<11:00?
 
-the power supply. 
 
 
-the regulator the switch 
 
-fuse decoupleing caps, so like a 0.1 ceraminc
-
-
-
-those are ehhhh general parts you
-
-
-when I started this out i identified this one as USB 
-
-
-and i positioned these 
-
-
-this is a switch 
-
-so the barrel jack will be near to the switch and youll run power to the switch
-
-
-like that ummm the switch is 
-
-close to the power jack unless you are dongh somehting 
-
-this is a hard stop
-
-your circuit may vary
-
-
-just like the schematic is goiung to show probably its going to have a
-cap on the input then probably 
-
-regulator liek a small current regulator and then a cap on the output
-
-
-so what i will normally do is i will pack 
-
-
-there will be one cap then the regulator might be here or actually right
-
-this is an iterative process
-
-
-and then uh this will run obver here to the input 
-
-
-pin 1 2 3
-
-
-so i am probably going to have another cap down ther to gound and then i am out
-
-
-the point of this is to find a good place out of the way 
-
-
-feed all the other sections ok? and like i say 
-
-schematc shows you want 
-
-
-close physically on the board. how do you feed these things?
-
-generilly 
-
-
-i will do sort of a modified star configuraion
-
-each section gets its own dedicated line back to the regulator
 
 
 there is going to be a zillion different places where VCC is going to go to
