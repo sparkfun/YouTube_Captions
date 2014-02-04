@@ -287,52 +287,112 @@ Um, a... a trace with like a lot of right angles in it is going to ultamately ro
 And of corse logical devices read edges so you need that edge to be reletively in tact
 
 0:07:04.50, 0:07:07.50
-and understand this is... this is a probablistic sort of thing.
+and understand this is... this is a probablistic sort of thing. Right?
 
 0:07:07.50, 0:07:13.50
 I can't tell you that if you run a trace from here to here and you put a right angle.
 
 0:07:13.50, 0:07:13.50
+Oh my gosh that's not going to work. Alright it's just gonna round it a
+
+0:07:13.50, 0:07:20.50
+little bit it will probably be just fine but it's the sort of thing it's a rule of thumb,
+
+0:07:20.50, 0:07:23.50
+right? You watch these sort of things and you try to avoid that
+
+0:07:23.50, 0:07:25.50
+because you don't want to run into issues. You want to keep the probably
+
+0:07:25.50, 0:07:27.50
+of issues down so you don't do that.
+
+0:07:27.50, 0:07:32.50
+Parts. individual... you got a schematac you got a pile of parts to put in... in your board right
+
+0:07:32.50, 0:07:39.50
+um the sections of the circuit are um... they're going to be arranged,
+
+0:07:39.50, 0:07:42.50
+you know, on the board like you've got a power section,
+
+0:07:42.50, 0:07:45.50
+you've got an amplifyer section, you've got a microcontroler section,
+
+0:07:45.50, 0:07:50.00
+you've got sensors or RF, right? And, these sections are going to be placed
+
+0:07:50.00, 0:07:54.00
+on the board acording to their position in the signal chain, OK?
+
+0:07:54.00, 0:07:58.50
+And they all got signal chains of some kind, right? So, for example:
+
+0:07:58.50, 0:08:02.50
+I started out here with uh some headers here and some headers here.
+
+0:08:02.50, 0:08:06.50
+And, I said rather blithly: "This is going to be your inputs,
+
+0:08:06.50, 0:08:09.00
+and this is going to be your outputs" well somehtingh like that. Honestly,
+
+0:08:09.00, 0:08:12.50
+I'm sitting here looking at this going: "I would not do it this way. I would re-arrange it"
+
+0:08:12.50, 0:08:16.50
+But, you might have, you know, a system with uh an accelerometer
+
+0:08:16.50, 0:08:22.50
+and um a micro controller and a usb right ok so theres your signal chain
+
+0:08:22.50, 0:08:26.50
+from input which is the mechanical to the output which is the usb.
+
+0:08:26.50, 0:08:30.50
+Or it might be uh, you know, a sensor to a micro to, uh, a bluetooth
+
+0:08:30.50, 0:08:35.50
+or wifi or an xbee something like that... there's your signal chain from front you know to back
+
+0:08:35.50, 0:08:39.50
+and thats going to dictate, um you know, where these sections go
+
+0:08:39.50, 0:08:45.50
+because you... you want the circuit to go... to flow well
+
+0:08:45.50, 0:08:50.50
+and um quite honestly you build the circuit... the circuit stages
+
+0:08:50.50, 0:08:52.50
+according to the schematic. I mean you literally look at "OK
+
+0:08:52.50, 0:08:55.50
+I've got, ya know, an op amp in the schematc here and I'm
+
+0:08:55.50, 0:08:58.50
+going to put these components here 'cause there close by and that's critical"
+
+0:08:58.50, 0:09:02.50
+um and thats... and thats how you sort of put stuff together. Right?
+
+0:09:02.50, 0:09:05.50
+And, that sounds obvious I know it sounds obvious but you'd be amaized
+
+0:09:05.50, 0:09:10.50
+at how many times I see somebody who hasn't done alot of layout before
 
 
 
-Oh my gosh that's not going to work.
 
 
 
 
 
-it will probably be jsut fine 
 
-you watch these sorts fo
-
-
-you want to keep the probably of issues down
-
-
-you got a schematic and you 
-
-
-um the sections of the circuit are um going to be arranged like youve got a power
-section 
-
-
-sensors or rf right?
-
-these sections are goin
-
-
-ok? and they all got signal chains of some kind 
-
-
-for example i statred out here
-
-
-inputs and this is going to be your outputs
-
-you might have a system 
-
-and a micro controller and a usb
+ 
+and they'll put like a micro controller over here 
+ 
 
 
 or it might be a you know 
