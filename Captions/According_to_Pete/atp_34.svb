@@ -415,8 +415,98 @@ is that on any schematic you will see a micro controller, right?
 0:09:53.50, 0:09:57.50
 of caps, and this is the schematic right? And it'll just... They'll all be like
 
-0:09:57.50, 0:09:57.50
-0.1 micro farad and there'll be all off them they'll all be tied to VCC and there all tied to ground right? ok now alot of time in a schematic youll see "near pin such and such" refereing to um the.. the  micro controller and what some people will do is they will just say "well PSH i can just put all of those together in a section right? so you got your micro controller over here... oh well i had some rome over here so you know i put all my caps here" no  you dont do that alright um a micro controller if you look at the pins every time you see the power pin on this thing theres going to be a ground pin really really colse to that power pin and the reason is because they want you to put a cap right there. right? that is to minimize the length of those traces and to decouple noise on the power supply to ground so it's important to keep components that are related to a certian circuit section close to each other you want to keep those traces short and elegant and nice. the first section that i generally start with is the power supply which is to say a regulator a swithc maybe a fuse uh decoupling caps so like a 0.1 ceramic 10 or 100 tantalum those are ehh general parts that you might find in a regulator circuit. when i started this out i identified this one as USB i identified this one as like a barallel jacek so this is where the power is coming in and i positioned these uh the... this is a switch if you if we can call [unintellagable] with a thing hanging off. um so the barallel jack will be near to the swithc and youll run power you know to the switch and then you know like that. um the switch is almost certanly going to be close to the power jack uh unless you are doing something thats like touch sensetive or youve got like a soft stop on it um this is a hard stop "i want to cut off all power from the circuit board" your circuit may varey this is how were' going to do the example so now what? well generally just like the schematis is going to show probably is its going to have a cap on the input then probably you know uh to220 or a SOC2305 package regulator like a small current regulator and then a cap on the output and maybe another cap on the output ceramic and tantalum and so what i will normally do is i will pack that circuit section off right? so i'm probably goning to run this to you know there'll be one cap and the regulator might be here uh or actually right this is... this is an iterative proscess and i'm iterating right now so I might put the SOC2305 thre and then uh this will run over here to the input there'll be pin 1 2 3 on that the output gonna be over here so i'm probably gonna have you know another cap uh down there to ground um and then i'm out.
+0:09:57.50, 0:10:03.50
+you know, 0.1 micro farad and there'll be all off them they'll all be tied to VCC
+
+0:10:03.50, 0:10:10.00
+and there all tied to ground, right? OK, now alot of time in a schematic you'll
+
+0:10:10.00, 0:10:16.20
+see, it says, "near pin such and such" refereing to um the.. the  microcontroller
+
+0:10:16.20, 0:10:19.00
+and what some people will do is they will just say,
+
+0:10:19.00, 0:10:22.50
+"Well, PSH I can just put all of those together in a section, right?
+
+0:10:22.50, 0:10:25.50
+So, you got your microcontroller over here... Oh well, I had some room over here so
+
+0:10:25.50, 0:10:29.50
+you know I put all my caps here" No, you don't do that!
+
+0:10:29.50, 0:10:32.50
+Alright, um... A micro controller if you look at the pins
+
+0:10:32.50, 0:10:36.50
+every time you see the power pin on this thing, there's going to be a ground pin
+
+0:10:36.50, 0:10:39.50
+really, really, close to that power pin, and the reason is because
+
+0:10:39.50, 0:10:43.50
+they want you to put a cap right there. Right?
+
+0:10:43.50, 0:10:48.00
+That is to minimize the length of those traces and to decouple noise on the
+
+0:10:48.00, 0:10:53.50
+power supply to ground. So, it's important to keep components
+
+0:10:53.50, 0:10:58.50
+that are related to a certian circuit section close to each other.
+
+0:10:58.50, 0:11:04.50
+You want to keep those traces short and elegant and nice.
+
+0:11:04.50, 0:11:08.50
+The first section that I generally start with is the power supply.
+
+0:11:08.50, 0:11:12.50
+Which is to say, a regulator, a switch, maybe uh... a fuse
+
+0:11:12.50, 0:11:19.50
+uh decoupling caps, so like a 0.1 ceramic, and probably a 10 or 100 tantalum
+
+0:11:19.50, 0:11:24.50
+something like that. Um, those are ehh general parts that you might find in a regulator circuit.
+
+0:11:24.50, 0:11:29.50
+When I started this out, I... I identified this one as USB,
+
+0:11:29.50, 0:11:33.00
+I identified this one as, like a barallel jack, so this is where the power is
+
+0:11:33.00, 0:11:38.50
+coming in and I positioned these uh the... this is a switch if you if we can call
+
+0:11:38.50, 0:11:42.00
+[unintellagable] sure it's a switch, with a thing hanging off.
+
+0:11:42.00, 0:11:47.50
+Um, so the barallel jack will be near to the switch and you'll run power
+
+0:11:47.50, 0:11:50.50
+you know to the switch, and then, you know, like that.
+
+0:11:50.50, 0:11:55.50
+Um, the switch is almost certanly going to be close to the power jack,
+
+0:11:55.50, 0:11:58.50
+uh unless you are doing something that's, like, touch sensetive
+
+0:11:58.50, 0:12:02.00
+or you've got like a soft stop on it. Um, this is a hard stop,
+
+0:12:02.00, 0:12:04.50
+"I want to cut off all the power from this circuit board."
+
+0:12:04.50, 0:12:08.50
+Your circuit may vary. This is how we're going to do the example. So now what?
+
+0:12:08.50, 0:12:08.50
+Well, generally just like the schematis is going to show probably is its going to have a cap on the input then probably you know uh to220 or a SOC2305 package regulator like a small current regulator and then a cap on the output and maybe another cap on the output ceramic and tantalum and so what i will normally do is i will pack that circuit section off right? so i'm probably goning to run this to you know there'll be one cap and the regulator might be here uh or actually right this is... this is an iterative proscess and i'm iterating right now so I might put the SOC2305 thre and then uh this will run over here to the input there'll be pin 1 2 3 on that the output gonna be over here so i'm probably gonna have you know another cap uh down there to ground um and then i'm out.
 
 
 
