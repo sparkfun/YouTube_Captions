@@ -505,8 +505,43 @@ or you've got like a soft stop on it. Um, this is a hard stop,
 0:12:04.50, 0:12:08.50
 Your circuit may vary. This is how we're going to do the example. So now what?
 
-0:12:08.50, 0:12:08.50
-Well, generally just like the schematis is going to show probably is its going to have a cap on the input then probably you know uh to220 or a SOC2305 package regulator like a small current regulator and then a cap on the output and maybe another cap on the output ceramic and tantalum and so what i will normally do is i will pack that circuit section off right? so i'm probably goning to run this to you know there'll be one cap and the regulator might be here uh or actually right this is... this is an iterative proscess and i'm iterating right now so I might put the SOC2305 thre and then uh this will run over here to the input there'll be pin 1 2 3 on that the output gonna be over here so i'm probably gonna have you know another cap uh down there to ground um and then i'm out.
+0:12:08.50, 0:12:12.50
+Well, generally uh just like the schematic is going to show, probably,
+
+0:12:12.50, 0:12:16.50
+is it's gonna have, you know, uh... a cap on the input
+
+0:12:16.50, 0:12:21.50
+then probably, you know, uh to220, or a SOC2305 package
+
+0:12:21.50, 0:12:26.50
+uh regulator like a small current regulator, and then a cap on the output
+
+0:12:26.50, 0:12:29.50
+and maybe another cap on the output ceramic and tantalum.
+
+0:12:29.50, 0:12:35.00
+And, so what I will normally do, is I will normally pack that circuit section off, right?
+
+0:12:35.00, 0:12:39.00
+So, I'm probably going to run this to, you know, there'll be one cap
+
+0:12:39.00, 0:12:43.00
+and then the regulator might be here, uh or actually, right?
+
+0:12:43.00, 0:12:47.00
+This is... This is an iterative proscess, and I'm iterating right now.
+
+0:12:47.00, 0:12:52.00
+So, I might put, like, the SOC2305 there, and then uh... this will run over here
+
+0:12:52.00, 0:12:55.50
+to the input. There'll be pin 1 2 3 on that the output gonna
+
+0:12:55.50, 0:13:00.50
+be over here so i'm probably gonna have you know another cap uh down
+
+there to ground um and then i'm out.
 
 
 
