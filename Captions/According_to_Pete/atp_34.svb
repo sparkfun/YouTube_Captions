@@ -380,44 +380,47 @@ um and thats... and thats how you sort of put stuff together. Right?
 And, that sounds obvious I know it sounds obvious but you'd be amaized
 
 0:09:05.50, 0:09:10.50
-at how many times I see somebody who hasn't done alot of layout before
+at how many times I see somebody who hasn't done a lot of layout before
+
+0:09:10.50, 0:09:15.50
+and they'll put like a micro controller over here [unintellagable] save space.
+
+0:09:15.50, 0:09:20.00
+And then they'll put the crystal... What are you...? Are you phoning home with that?
+
+0:09:20.00, 0:09:24.20
+I mean look at this... no... no... no... you don't do that.
+
+0:09:24.20, 0:09:26.50
+The reason you don't do that is because this thing is an oscilator
+
+0:09:26.50, 0:09:32.50
+and that's an antenna and it's gonna scream out to everybody across the galaxy
+
+0:09:32.50, 0:09:35.50
+that you don't know how to layout a board. And, in fact, while I am on the subject
+
+0:09:35.50, 0:09:40.50
+of microcontrollers, another mistake that I have seen
+
+0:09:40.50, 0:09:43.50
+many, many, times, thankfully not by our guys any more,
+
+0:09:43.50, 0:09:48.50
+is that on any schematic you will see a micro controller, right?
+
+0:09:48.50, 0:09:53.50
+[unintellagable] some peice. And then you will see uh like a bank
+
+0:09:53.50, 0:09:57.50
+of caps, and this is the schematic right? And it'll just... They'll all be like
+
+0:09:57.50, 0:09:57.50
+0.1 micro farad and there'll be all off them they'll all be tied to VCC and there all tied to ground right? ok now alot of time in a schematic youll see "near pin such and such" refereing to um the.. the  micro controller and what some people will do is they will just say "well PSH i can just put all of those together in a section right? so you got your micro controller over here... oh well i had some rome over here so you know i put all my caps here" no  you dont do that alright um a micro controller if you look at the pins every time you see the power pin on this thing theres going to be a ground pin really really colse to that power pin and the reason is because they want you to put a cap right there. right? that is to minimize the length of those traces and to decouple noise on the power supply to ground so it's important to keep components that are related to a certian circuit section close to each other you want to keep those traces short and elegant and nice. the first section that i generally start with is the power supply which is to say a regulator a swithc maybe a fuse uh decoupling caps so like a 0.1 ceramic 10 or 100 tantalum those are ehh general parts that you might find in a regulator circuit. when i started this out i identified this one as USB i identified this one as like a barallel jacek so this is where the power is coming in and i positioned these uh the... this is a switch if you if we can call [unintellagable] with a thing hanging off. um so the barallel jack will be near to the swithc and youll run power you know to the switch and then you know like that. um the switch is almost certanly going to be close to the power jack uh unless you are doing something thats like touch sensetive or youve got like a soft stop on it um this is a hard stop "i want to cut off all power from the circuit board" your circuit may varey this is how were' going to do the example so now what? well generally just like the schematis is going to show probably is its going to have a cap on the input then probably you know uh to220 or a SOC2305 package regulator like a small current regulator and then a cap on the output and maybe another cap on the output ceramic and tantalum and so what i will normally do is i will pack that circuit section off right? so i'm probably goning to run this to you know there'll be one cap and the regulator might be here uh or actually right this is... this is an iterative proscess and i'm iterating right now so I might put the SOC2305 thre and then uh this will run over here to the input there'll be pin 1 2 3 on that the output gonna be over here so i'm probably gonna have you know another cap uh down there to ground um and then i'm out.
 
 
 
 
-
-
-
-
-
- 
-and they'll put like a micro controller over here 
- 
-
-
-or it might be a you know 
-
-bluetoothe or wifi or xbee somehting like that..
-
-
-and that is ging to dictate where these sections go
-
-
-you want the circuit to go to flow well. and umm quite honestly
-
-you build the cirucits the circuit stages according to the schematic
-
-
-opamp in this
-
-
-um and thats how you put stuff together
-
-
-youd be amazed at how many thims 
-
-
-like a micro controller over here save
 
 
 the reason that you dont do that 
