@@ -784,8 +784,44 @@ Uh, right there so I can get to pin 2 electrically, right?
 0:19:22.50, 0:19:25.50
 And, I will just run like a small trace uh... to these points.
 
-0:19:25.50, 0:19:25.50
-aha pin 3 what have i got on pin 3 whell ive got 2 components. ive got R2 which sets the reference voltage with R1 and ive got c1 that filters these both [...] both go to ground so i can put those two components right across pins 3 and 4 so [click] [click] right there... and right there now on the SOIC package you've got vcc and one corner and ground on the other corner so it's a little diffuclt if you're putting components on the opposite side of the board this is an easier thing to do um most of our boards are single sided that way um so eh its a little trickier so what we have done in the past is we'll put the cap the filter cap up here and run that to there and then you know if all the traces for this op amp are coming off over here you can run a trace down over to here and that's about as minized as you're going to get now there's this guy R1 that's... that goes from VCC to pin 3 now as you see iv'e got VCC all the way over here um so i need 
+0:19:25.50, 0:19:29.50
+Aha, pin 3. What have I got on pin 3? Well I've got 2 components. I've got R2,
+
+0:19:29.50, 0:19:33.50
+which sets the reference voltage with R1, and I've got C1 that filters.
+
+0:19:33.50, 0:19:39.50
+These both... both go to ground so I can put those two components right across pins 3 and 4.
+
+0:19:39.50, 0:19:42.50
+So [click] [click] right there... and right there. Now, on the SOIC package,
+
+0:19:42.50, 0:19:47.50
+you've got um... VCC and one corner and ground on the other corner.
+
+0:19:47.50, 0:19:51.50
+So, it's a little diffuclt. If you're putting components on the opposite side of the board,
+
+0:19:51.50, 0:19:55.50
+this is an easier thing to do. Um... Most of our boards are single sided,
+
+0:19:55.50, 0:20:01.50
+that way... um... so eh... It's a little trickier. So what we have done in the past,
+
+0:20:01.50, 0:20:04.50
+is we'll put the cap, the filter cap, up here and run that to there
+
+0:20:04.50, 0:20:08.50
+and then you know, if all the traces for this op amp are coming off over here,
+
+0:20:08.50, 0:20:13.50
+you can run a trace down over to here and that's about as minized as you're going to get.
+
+0:20:13.50, 0:20:18.50
+Now there's this guy R1 that's... that goes from VCC to pin 3.
+
+0:20:18.50, 0:20:18.50
+Now, as you see I've got VCC all the way over here um so I need 
 
 
 
