@@ -677,11 +677,13 @@ Depends... So, I'm gonna keep an eye on that. And, each section will go
 back this way ok um... And, so there'll be one to the micro section as well
 
 0:16:46.00, 0:16:50.00
-and uh... A lot of times I'll run this directily under here
+and uh... A lot of times, I'll run this directily under here
 
 0:16:50.00, 0:16:54.00
-and then feed the different power pins so it's all very equal. OK?
+and then feed the different power pins. So, it's all very equal. OK?
 
+0:16:54.00, 0:16:54.00
+You want to build the uh circuit stages the circuit sections um really you just want to follow the schematic so uh and like i said the parts that are close to each other electrically you want them to be close to each other physically on the board. ok? so as an example i drew up a quick op amp circict with this i drew a soic 8 surface mount op amp LM358 two op amps on it im using one heres our schematic uh we have R1, R2 which set the reference R3 and R4 which set the gain we have uh C1 which filters our reference and we have C2 which decouples the power supply on the op amp ok now how many places do we have to feed stuff to? we have two places where vcc has to go it has to go to top the voltage devider that set the reference and it has to go to power the chip ok so i've got two places where vcc has to go. how many places do i have ground to go? i got 1 igot 2 igot 3 igot 4 places ok so when i put this cirucit together im going to try to minimize the common points so that i only have one feed point instead of 4 feed points i got one place where signal has to go in and one place where signal has to go out. ok? so i can picture that in my head geographically im gonna want signal going in on one side of it physically and signal comming out on the other side physically because its gonna have to go to the next stage right i dont want it circuling back around and have the input and output next to each other. ill start with the critical ones uh the... the... anything that attaches to uh one of the high impediance lines here. those paths have to be pretty tight. you try for tightness you try to keep them very close right start with my feedback right uh pin one is the output for uh one of the two opamps on that chip and i've got R4 that goes straight over to R2 so what iv'e doe over here is ive placed this guy and this represents R4. R4... so i would put this guy right on those two pins um the next its like [unintellagable] and ive got my signal in also going off of R2 so ive placed R2... [mumbles]  it's sideways... what are you gonna do?  uh right there so i can get to pin two electrically right and i will just run like a small trace uh to these points. aha pin 3 what have i got on pin 3 whell ive got 2 components. ive got R2 which sets the reference voltage with R1 and ive got c1 that filters these both [...] both go to ground so i can put those two components right across pins 3 and 4 so [click] [click] right there... and right there now on the SOIC package you've got vcc and one corner and ground on the other corner so it's a little diffuclt if you're putting components on the opposite side of the board this is an easier thing to do um most of our boards are single sided that way um so eh its a little trickier so what we have done in the past is we'll put the cap the filter cap up here and run that to there and then you know if all the traces for this op amp are coming off over here you can run a trace down over to here and that's about as minized as you're going to get now there's this guy R1 that's... that goes from VCC to pin 3 now as you see iv'e got VCC all the way over here um so i need 
 
 
 
@@ -709,84 +711,6 @@ and then feed the different power pins so it's all very equal. OK?
 
 
 
-
-
-
-
-
-
-
-there is going to be a zillion different places where VCC is going to go to
-
-
-you cannot realizitcally 
-
-that has got to be covered by VCC 
-
-
-
-two layer board you have to plan alittle bit
-
-you are going to have a micro controller section
-
-if I had an RF link 
-
-
-
-<14:30>
-
-coupble of caps that decouppee and then i might put sensors here uh maybe a 
-multi plexor i am making this up as i go
-
-this is going to be your 
-
-
-sensor section and the way you want to feed theses things is by section on the 
-schematic
-
-for example if I had an op amp and i had it up at for example here 
-
-there are a few differe
-
-op amp section here and i got a couple other components
-
-
-what i am going to do 
-
-a single trunk line to this point and its going to diverge to the different parts of the circuit whre VCC 
-
-
-
-each of them is going
-
-
-why we do this? because if your daizy ching components
-
-
-going down to something here 
-
-
-well if this guy draws alot of current, umm these two guys are going to feel a voltage drop but it is going
-to introduce nose
-
-
-these guys are going to feel it so what you do is tie them back up to here. or atleast so they are 
-
-center point there there is your star that is fed by a single one.
-
-earler i said we try to keep 
-
-
-this big trunk is feeding
-
-12mill 15mill 20mill
-
-
-keep an eye on that
-
-and each section will go back this way
-
-ok?
 
 um.. so there will be one to the micro section 
 
