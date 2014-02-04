@@ -682,8 +682,86 @@ and uh... A lot of times, I'll run this directily under here
 0:16:50.00, 0:16:54.00
 and then feed the different power pins. So, it's all very equal. OK?
 
-0:16:54.00, 0:16:54.00
-You want to build the uh circuit stages the circuit sections um really you just want to follow the schematic so uh and like i said the parts that are close to each other electrically you want them to be close to each other physically on the board. ok? so as an example i drew up a quick op amp circict with this i drew a soic 8 surface mount op amp LM358 two op amps on it im using one heres our schematic uh we have R1, R2 which set the reference R3 and R4 which set the gain we have uh C1 which filters our reference and we have C2 which decouples the power supply on the op amp ok now how many places do we have to feed stuff to? we have two places where vcc has to go it has to go to top the voltage devider that set the reference and it has to go to power the chip ok so i've got two places where vcc has to go. how many places do i have ground to go? i got 1 igot 2 igot 3 igot 4 places ok so when i put this cirucit together im going to try to minimize the common points so that i only have one feed point instead of 4 feed points i got one place where signal has to go in and one place where signal has to go out. ok? so i can picture that in my head geographically im gonna want signal going in on one side of it physically and signal comming out on the other side physically because its gonna have to go to the next stage right i dont want it circuling back around and have the input and output next to each other. ill start with the critical ones uh the... the... anything that attaches to uh one of the high impediance lines here. those paths have to be pretty tight. you try for tightness you try to keep them very close right start with my feedback right uh pin one is the output for uh one of the two opamps on that chip and i've got R4 that goes straight over to R2 so what iv'e doe over here is ive placed this guy and this represents R4. R4... so i would put this guy right on those two pins um the next its like [unintellagable] and ive got my signal in also going off of R2 so ive placed R2... [mumbles]  it's sideways... what are you gonna do?  uh right there so i can get to pin two electrically right and i will just run like a small trace uh to these points. aha pin 3 what have i got on pin 3 whell ive got 2 components. ive got R2 which sets the reference voltage with R1 and ive got c1 that filters these both [...] both go to ground so i can put those two components right across pins 3 and 4 so [click] [click] right there... and right there now on the SOIC package you've got vcc and one corner and ground on the other corner so it's a little diffuclt if you're putting components on the opposite side of the board this is an easier thing to do um most of our boards are single sided that way um so eh its a little trickier so what we have done in the past is we'll put the cap the filter cap up here and run that to there and then you know if all the traces for this op amp are coming off over here you can run a trace down over to here and that's about as minized as you're going to get now there's this guy R1 that's... that goes from VCC to pin 3 now as you see iv'e got VCC all the way over here um so i need 
+0:16:54.00, 0:16:58.00
+You want to build the uh... circuit stages, the circuit sections.
+
+0:16:58.00, 0:17:02.50
+Um, really you just want to follow the schematic, right?
+
+0:17:02.50, 0:17:07.50
+So, uh... and like I said, the parts that are close to each other electrically,
+
+0:17:07.50, 0:17:11.50
+you want them to be close to each other, physically, on the board. OK?
+
+0:17:11.50, 0:17:14.50
+So, as an example, I drew up a quick op amp circuit.
+
+0:17:14.50, 0:17:19.50
+With this I drew uh... a SOIC8 uh... surface mount op amp part LM358,
+
+0:17:19.50, 0:17:23.50
+two op amps on it. I'm using one. Here's our schematic:
+
+0:17:23.50, 0:17:28.50
+Uh... We have R1, R2 which set the reference.
+
+0:17:28.50, 0:17:31.50
+R3 and R4 which set the gain.
+
+0:17:31.50, 0:17:36.50
+We have uh... C1 which filters our reference,
+
+0:17:36.50, 0:17:42.50
+and we have C2 which decouples the power supply on the op amp. OK?
+
+0:17:42.50, 0:17:46.50
+Now, how many places do we have to feed stuff to?
+
+0:17:46.50, 0:17:51.50
+We have two places where VCC has to go. It has to go to top the voltage divider
+
+0:17:51.50, 0:17:53.50
+that sets the reference, and it has to go to power the chip.
+
+0:17:53.50, 0:17:58.50
+OK? So, I've got two places where VCC has gotta to go. How many places do I have ground to go?
+
+0:17:58.50, 0:18:07.50
+Uh, I got 1. I got 2. I got 3. I got 4 places. OK, so when I put this cirucit together,
+
+0:18:07.50, 0:18:13.50
+I'm going to try to minimize the common points, so that I only have one feed point
+
+0:18:13.50, 0:18:17.50
+instead of 4 feed points. I got one place where signal has to go in,
+
+0:18:17.50, 0:18:22.00
+and one place where signal has to go out. OK? So I can picture that in my head
+
+0:18:22.00, 0:18:25.00
+geographically. I'm gonna want signal going in on one side of it, physically,
+
+0:18:25.00, 0:18:27.00
+and signal comming out on the other side, physically,
+
+0:18:27.00, 0:18:31.00
+because it's gonna have to go to the next stage, right? I don't want it circuling back around,
+
+0:18:31.00, 0:18:33.50
+and have the input and output next to each other.
+
+0:18:33.50, 0:18:37.50
+I'll start with the critical ones. Uh... The... Anything that attaches
+
+0:18:37.50, 0:18:41.50
+to uh... one of the high impediance lines here. Those paths have to be pretty tight.
+
+0:18:41.50, 0:18:45.50
+You try for tightness. You try to keep them very close, right?
+
+0:18:45.50, 
+Start with my feedback right uh pin one is the output for uh one of the two opamps on that chip and i've got R4 that goes straight over to R2 so what iv'e doe over here is ive placed this guy and this represents R4. R4... so i would put this guy right on those two pins um the next its like [unintellagable] and ive got my signal in also going off of R2 so ive placed R2... [mumbles]  it's sideways... what are you gonna do?  uh right there so i can get to pin two electrically right and i will just run like a small trace uh to these points. aha pin 3 what have i got on pin 3 whell ive got 2 components. ive got R2 which sets the reference voltage with R1 and ive got c1 that filters these both [...] both go to ground so i can put those two components right across pins 3 and 4 so [click] [click] right there... and right there now on the SOIC package you've got vcc and one corner and ground on the other corner so it's a little diffuclt if you're putting components on the opposite side of the board this is an easier thing to do um most of our boards are single sided that way um so eh its a little trickier so what we have done in the past is we'll put the cap the filter cap up here and run that to there and then you know if all the traces for this op amp are coming off over here you can run a trace down over to here and that's about as minized as you're going to get now there's this guy R1 that's... that goes from VCC to pin 3 now as you see iv'e got VCC all the way over here um so i need 
 
 
 
