@@ -217,31 +217,40 @@ Uh you also get the additional capacatance between the two layers
 0:05:19.50, 0:05:23.50
 so it will act as a little bit of a filter, right? So you're decoupleing everywhere.
 
+0:05:23.50, 0:05:27.50
+Trace width. A lot of times for.. for... low current uh traces
 
-trace width 
+0:05:27.50, 0:05:30.50
+and a trace is just a thing that compleates a circuit.
+
+0:05:30.50, 0:05:33.00
+I don't know why you would go to that... doesn't matter.
+
+0:05:33.00, 0:05:38.00
+How thick is that? Generally if it's a low current path,
+
+0:05:38.00, 0:05:42.50
+which is to say we don't expect it to be running any more then about 20mA,
+
+0:05:42.50, 0:05:47.50
+uh we try to stick with uh 10 mill traces, ten thousandths of an inch, OK?
+
+0:05:47.50, 0:05:51.50
+Uh, if it's over 20 mills [sic] you gotta start increasing it a little bit.
+
+0:05:51.50, 0:05:56.50
+Circuitcalculator.com, you can.. you can put in like uh a current
+
+0:05:56.50, 0:06:00.50
+that you are gonna run and how heavy your copper is and it will tell you
+
+0:06:00.50, 0:06:05.50
+how big your trace has to be. Um and generally a 10 mill trace is good
+
+0:06:05.50, 0:06:09.50
+to about 30 mA before it starts to become resistant and a problem.
 
 
-low current trace 
-
-
-trace is a thing that compleates a circuit
-
-how thick is that. generally 
-
-low current path
-
-any more then 20mA
-
-we try to stick with 10 mill traces
-
-
-over 20 mills 
-
-
-circuitcalculatr.com
-
-
-<6:00>
 
 
 10mill trace is good to about 20mA
