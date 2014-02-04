@@ -248,46 +248,34 @@ that you are gonna run and how heavy your copper is and it will tell you
 how big your trace has to be. Um and generally a 10 mill trace is good
 
 0:06:05.50, 0:06:09.50
-to about 30 mA before it starts to become resistant and a problem.
+to about 30 mA before it starts to become resistive and a problem.
+
+0:06:09.50, 0:06:13.50
+Uh other thing don't use an auto router I mean if you can help it, right?
+
+0:06:13.50, 0:06:18.50
+Because, auto routers do things like: Hey you want a trace over there?
+
+0:06:18.50, 0:06:21.50
+Mmm... OK, there ya go.
+
+0:06:21.50, 0:06:26.50
+[Annoyed gasps]. OK that looks aweful and it's a... thats an antenna.
+
+0:06:26.50, 0:06:30.50
+OK? So you don't want that. You want to keep your traces nice and elegant
+
+0:06:30.50, 0:06:33.50
+and auto router is generally not going to do that for you. So you probably want to stay clear of that.
+
+0:06:33.50, 0:06:38.50
+another thing we do is we tend to avoid right angles in our traces.
+
+0:06:38.50, 0:06:38.50
+And the reason is because a right angle in a trace... what it is... what it will actually do is round your endges. like that. now, so if you are running logic, which everybody is these days, right? um a trace with like a lot of right angles in it is going to ultamately round an edge. and of corse logical devices read edges so you need that edge to be reletively in tact and understand this is a probablistic sort of thing. I can't tell you that if you run a trace from here to here oh my gosh thats not going to work.
 
 
 
-
-10mill trace is good to about 20mA
-
-
-
-dont use an auto router
-
-trace over there? ok there you go
-
-
-ok that looks awefol thats an antenna
-
-you dont want that 
-
-auto router is generilly not going to do that for you
-
-
-another thing we do is we tend to avoid right angles in our traces
-
-
-what it is what it will actually do is round your endges
-
-
-so if you are running logic 
-
-
-a trace with a lot of right angles is going to round an edge
-
-
-so you need that edge to be reletively in tact
-
-this is a probablistic sort of ting
-
-
-
-here to ehere and you are ging to 
 
 
 it will probably be jsut fine 
