@@ -269,10 +269,34 @@ OK? So you don't want that. You want to keep your traces nice and elegant
 and auto router is generally not going to do that for you. So you probably want to stay clear of that.
 
 0:06:33.50, 0:06:38.50
-another thing we do is we tend to avoid right angles in our traces.
+Another thing we do is we tend to avoid right angles in our traces.
 
-0:06:38.50, 0:06:38.50
-And the reason is because a right angle in a trace... what it is... what it will actually do is round your endges. like that. now, so if you are running logic, which everybody is these days, right? um a trace with like a lot of right angles in it is going to ultamately round an edge. and of corse logical devices read edges so you need that edge to be reletively in tact and understand this is a probablistic sort of thing. I can't tell you that if you run a trace from here to here oh my gosh thats not going to work.
+0:06:38.50, 0:06:41.50
+And the reason is because a... a right angle in a trace...
+
+0:06:41.50, 0:06:46.50
+what it is... what it will actually do is round your endges.
+
+0:06:46.50, 0:06:52.50
+Like that. Now... Um, so if you are running logic, which everybody is these days, right?
+
+0:06:52.50, 0:06:58.50
+Um, a... a trace with like a lot of right angles in it is going to ultamately round an edge.
+
+0:06:58.50, 0:07:04.50
+And of corse logical devices read edges so you need that edge to be reletively in tact
+
+0:07:04.50, 0:07:07.50
+and understand this is... this is a probablistic sort of thing.
+
+0:07:07.50, 0:07:13.50
+I can't tell you that if you run a trace from here to here and you put a right angle.
+
+0:07:13.50, 0:07:13.50
+
+
+
+Oh my gosh that's not going to work.
 
 
 
