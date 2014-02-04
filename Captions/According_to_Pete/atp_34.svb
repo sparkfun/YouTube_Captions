@@ -541,9 +541,68 @@ to the input. There'll be pin 1 2 3 on that the output gonna
 0:12:55.50, 0:13:00.50
 be over here so I'm probably gonna have, you know, another cap uh down
 
+0:13:00.50, 0:13:04.50
+there to ground um and then I'm out.
 
+0:13:04.50, 0:13:09.00
+Ok? Now the point of this is to find a, like, uh... a good place out of the way
 
-there to ground um and then I'm out. Ok? now the point of this is to find a like uh... a good place out of the way that the powersupply can be and then feed all the other sections ok? um and like I say you wanna... you wanna do this according to what the schematc shows you want components that are close electrically in the schematic to be close physically on the board. how do you feed these things? uh generally when i do it, um i wll do sort of a modified star configuration and a star configuration is just that each section gets its own dedicated line back to the regulator, right? now in schematic thres going to be a zillion different places potentially that VCC is going to need to go to. um but you cannot realiztically run a line from here to every last compbonet thats got to be covered by VCC. now if your running a 4 layered board much easier youve got a layer of copper underneath that you can just punch down to. that my VCC its easy i can get it any where 2 layored board you have to plan a little bit. uh now your sections right? your... your going have like a micorcontroller section your gonna have lets... lets say we've got sensors right? if i had an RF link i would probably keep an RF module over here uh i might put my micro contrller sorta here maybe orient it so the crystal was near by there couple of caps to decouple uh and then i might put like um sensors here uh maybe a multiplexer im... im making this up as i go right? but your sections right? this is your gonna be your RF section. this is gonna be your microcontroller section this is gonna be the sensor section and the way you want to fed these thing is by section on the schematic. right? so for example if i had an op amp um and i've got an op amp for example here um there... theres a few different places i want lets say i've got an op amp section here and ive got a couple other components and those thing are strung out. what i'm gonna do is im going to run a single trunk line to this point and then its going to diverge to the different parts in the circuit where VCC has to be, right? the reason for doing this obviously i dont want to run string 3 lines back here but if i can tie all 3 of these points to a common point then each of them equally gets a feed from VCC. now to back up and remind you why we do this? because, if you're daisy chaining components like i've got vcc here and its going down to something here and then its going down to something here and its going down to something here. well if this guys draws a lot of current, um these two guys are goinna feel a voltage drop ok? not a huge one but its going to intuduce noize so every time what ever this component is draws a bunch of current these guys are gonna feel it. so what you do is you tie them back up to here or at least so that they are um you known equadistant in a way. and by doing this you tie them all to a center point there there is your star and it's fed by a single one. now earlerier i said 10 mill traces... we try to keep to 10 mill traces but this big trunk might be feeding more than 20 mA so i have to keep that in mind. if it is i might up it to 12 mill 15 mill 20 mill depends so i'm gonna keep an eye on that. and each section will go back this way ok um... and so there'll be one to the micro section as well and uh a lot of times i'll run this directily under here and then feed the different power pins so its all very equal.
+0:13:09.00, 0:13:13.50
+that the power supply can be and then feed all the other sections.
+
+0:13:13.50, 0:13:18.50
+OK? Um, and like I say you wanna... you wanna do this according to what the schematc
+
+0:13:18.50, 0:13:23.50
+shows you want components that are close electrically in the schematic
+
+0:13:23.50, 0:13:27.50
+to be close physically on the board. How do you feed these things?
+
+0:13:27.50, 0:13:35.50
+Uh, generally when I do it, um I will do sort of a modified star configuration.
+
+0:13:35.50, 0:13:40.50
+And a star configuration is just that each section gets its own dedicated line
+
+0:13:40.50, 0:13:44.50
+back to the regulator, right? Now, in schematic there's going to be
+
+0:13:44.50, 0:13:49.50
+a zillion different places, potentially, that VCC is going to need to go to.
+
+0:13:49.50, 0:13:56.50
+Um, but you cannot realistically run a line from here to every last component
+
+0:13:56.50, 0:14:01.50
+that's got to be covered by VCC. Now if your running a 4 layer board,
+
+0:14:01.50, 0:14:05.00
+much easier because you've got a layer of copper underneath that you can just punch down to.
+
+0:14:05.00, 0:14:10.00
+That my VCC. It's easy. I can get it anywhere. Two layor board you have to plan a little bit.
+
+0:14:10.00, 0:14:14.00
+Uh, now your sections, right? You... Your going have like a micorcontroller section,
+
+0:14:14.00, 0:14:16.00
+your gonna have let's... let's say we've got sensors, right?
+
+0:14:16.00, 0:14:21.50
+If I had an RF link I would probably keep an RF module over here.
+
+0:14:21.50, 0:14:28.00
+Uh, I might put my microcontrller sorta here and maybe orient it so the crystal
+
+0:14:28.00, 0:14:34.50
+was near by there couple of caps to decouple. Uh... And then I might put,
+
+0:14:34.50, 0:14:40.50
+like, um sensors here, uh maybe a multiplexer.
+
+0:14:40.50, 0:14:40.50
+I'm, you know... I'm making this up as I go, right? But, your sections, right? This is your gonna be your RF section. this is gonna be your microcontroller section this is gonna be the sensor section and the way you want to fed these thing is by section on the schematic. right? so for example if i had an op amp um and i've got an op amp for example here um there... theres a few different places i want lets say i've got an op amp section here and ive got a couple other components and those thing are strung out. what i'm gonna do is im going to run a single trunk line to this point and then its going to diverge to the different parts in the circuit where VCC has to be, right? the reason for doing this obviously i dont want to run string 3 lines back here but if i can tie all 3 of these points to a common point then each of them equally gets a feed from VCC. now to back up and remind you why we do this? because, if you're daisy chaining components like i've got vcc here and its going down to something here and then its going down to something here and its going down to something here. well if this guys draws a lot of current, um these two guys are goinna feel a voltage drop ok? not a huge one but its going to intuduce noize so every time what ever this component is draws a bunch of current these guys are gonna feel it. so what you do is you tie them back up to here or at least so that they are um you known equadistant in a way. and by doing this you tie them all to a center point there there is your star and it's fed by a single one. now earlerier i said 10 mill traces... we try to keep to 10 mill traces but this big trunk might be feeding more than 20 mA so i have to keep that in mind. if it is i might up it to 12 mill 15 mill 20 mill depends so i'm gonna keep an eye on that. and each section will go back this way ok um... and so there'll be one to the micro section as well and uh a lot of times i'll run this directily under here and then feed the different power pins so its all very equal.
 
 
 
