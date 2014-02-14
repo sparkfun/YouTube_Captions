@@ -1009,8 +1009,104 @@ If it's a... If it's a low current return, I'm probably not gonna worry too much
 0:24:52.50, 0:24:52.50
 Um... And of course it will use the path of least resistance. Plan on that. 
 
-0:24:52.50, 0:24:52.50
-Um... But if I've got a whole slew of other traces here you know and and im powering something out here whats this return path gonna look like well its gonna follow the copper kinda neaaaaaaaaaa and you wanna watch for stuff like that for low current stuff its not too bad you can make thtat compromize but you know if im drawing 30, 40, 50 milli amps to something out there i don't want a return path that looks like that i want it to be a little beafer and i want it to be straighter some of you might be going "what no vcc plain?" well no right uh remember 2 layer board "but you can have vcc on the... was that three c's v c cccc  uh on the top of your board just fine" well you can um but it ends up im ean your gonna have a lot of traces on the top we have alot of traces when i lavy out a cuircuit board i have alot of traces on the top um and its harder to maintain a full plain of VCC that way uh not only that once upon a time i got bit by a situation where we had a vcc plain on the top and the solder mask came back alittle wonky from the fab house and uh there were shorts to vcc everywhere in the circuit and we couldn't reace it so uh ever since then im real shy about putting a top layer vcc plain again don't assume that after youve run your drc if you've got no error wires that does not mean everything's cool watch your ground returns ok? now after that we talk about uh esthetic things like silk right between the time you submit this board for prototype and the time you get it back your gonna forget everything about this board so put some silk on it right make it meaning ful so you've got headers up here label your pins right i mean ground vcc or... not ground... but like USB your gonna know obviously power in your gonna know but any place where you've got like a bunch of different signals label it cause your gonna need it um a lot of times uh the... the CAD program like eagle will by defult put um component labels like if i got a resistor here it's gonna say "thats r3" and its gonna put it in the silk automatically at sparkfun we don't really do that cause we want the boards to look really nice but if this is a board that i am activly working on and i need to get in there with uh probes or an iron to rework or what have you im gonna want those so think about that think about what your silk is gonna be think about how it's gonna help. um so you run a prototype you get it back and you build and then you test it whe you test limit your current on your power supply down to pppp 100 mAmps like uh you when you build it your gonna have a rough idea of how much current its gonning to draw right off the bat if youve got no input and no output its like... uh 30, 40 and it's running quiessently 
+0:24:52.50, 0:25:05.50
+Um... But if I've got a whole slew of other traces here,
+
+0:25:05.50, 0:25:07.50
+you know, and... and I'm powering something out here. What's this return path gonna look like?
+
+0:25:07.50, 0:25:11.50
+Well, it's gonna follow the copper kinda neaaaaaaaaaa
+
+0:25:11.50, 0:25:15.50
+and you wanna watch for stuff like that. For low current stuff it's not too bad.
+
+0:25:15.50, 0:25:19.50
+You can make that compromise, but, you know, if I'm drawing,
+
+0:25:19.50, 0:25:22.50
+you know, 30, 40, 50 milli amps to something out there,
+
+0:25:22.50, 0:25:26.50
+I don't want a return path that looks like that. I want it to be a little beafier
+
+0:25:26.50, 0:25:31.50
+and I want it to be straighter. Some of you might be going, "What, no VCC plain?"
+
+0:25:31.50, 0:25:36.50
+Well, no right? Uh... Remember 2 layer board, "But, you can have VCC on the..."
+
+0:25:36.50, 0:25:41.50
+was that three c's v c c c....  uh... "on the top of your board just fine."
+
+0:25:41.50, 0:25:49.50
+Well, you can um... but it ends up... I mean you're gonna have a lot of traces on the top...
+
+0:25:49.50, 0:25:53.50
+We have a lot of traces... When I layout a circuit board I have a lot of traces on the top.
+
+0:25:53.50, 0:26:01.50
+um... and it's harder to maintain a full plain of VCC that way.
+
+0:26:01.50, 0:26:06.50
+Uh... Not only that, uh... once upon a time I got bit by a situation where we
+
+0:26:06.50, 0:26:14.50
+uh... had a VCC plane on the top, and the solder mask came back a little wonky, from the fab house
+
+0:26:14.50, 0:26:20.50
+and uh... there were shorts to VCC everywhere in the circuit, and we couldn't trace it.
+
+0:26:20.50, 0:26:25.50
+So, uh... ever since then I'm real shy about putting a top layer VCC plane.
+
+0:26:25.50, 0:26:30.50
+Again, don't assume that after you've run your DRC, if you've got no error wires,
+
+0:26:30.50, 0:26:34.50
+that does not mean everything's cool. Watch your ground returns. OK?
+
+0:26:34.50, 0:26:39.50
+Now, after that, we talk about uh... esthetic things, like silk. Right?
+
+0:26:39.50, 0:26:43.50
+Between the time you submit this board for prototype, and the time you get it back,
+
+0:26:43.50, 0:26:47.50
+your gonna forget everything about this board. So, put some silk on it. Right?
+
+0:26:47.50, 0:26:53.50
+Make it meaningful. So, you've got headers up here... label your pins.
+
+0:26:53.50, 0:26:57.50
+Right? I mean ground VCC or... I mean, not ground... but like
+
+0:26:57.50, 0:27:00.50
+USB your gonna know obviously. Power in your gonna know.
+
+0:27:00.50, 0:27:04.50
+But, any place where you've got like a bunch of different signals,
+
+0:27:04.50, 0:27:08.50
+label it, 'cause your gonna need it. Um... A lot of times
+
+0:27:08.50, 0:27:16.50
+uh the... the CAD program, like Eagle, will by defult put um... component labels
+
+0:27:16.50, 0:27:18.50
+like if I got a resistor here, it's gonna say "thats r3"
+
+0:27:18.50, 0:27:23.50
+and it's gonna put it in the silk automatically. At Sparkfun, we don't really do that 'cause
+
+0:27:23.50, 0:27:28.50
+we want the boards to look really nice, but if this is a board that I am activly working on,
+
+0:27:28.50, 0:27:34.50
+and I need to get in there with uh... probes or an iron to rework or what have you,
+
+0:27:34.50, 0:27:34.50
+im gonna want those so think about that think about what your silk is gonna be think about how it's gonna help. um so you run a prototype you get it back and you build and then you test it whe you test limit your current on your power supply down to pppp 100 mAmps like uh you when you build it your gonna have a rough idea of how much current its gonning to draw right off the bat if youve got no input and no output its like... uh 30, 40 and it's running quiessently 
 
 
 
