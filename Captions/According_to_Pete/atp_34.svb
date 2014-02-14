@@ -940,8 +940,76 @@ you're... you're running into here, and out, and in, and out, and in,
 0:23:09.50, 0:23:13.50
 and then you know port here and that's kinda how you do it.
 
-0:23:13.50, 0:23:13.50
-So, let's talk about um ground and how we get current back uh so the whole bottom of the board will be copper or... or there abouts uh typically what i would do is i would lay down um all of my uh signal uh traces first um and some of them enevitably will go on the bottom from component to component you know it's... that's just the way it happens you're gonna have like you try to keep it all on top so you can keep the bottom all coppper its never gonna go that way your allways going to have a few traces on the bottom um and then the easiest thing to which is not necessarily the correct thing to do but it is the easest thing to do is to lay a huge layer of copper all on the bottom and every place that you have a in your circuit that has to go to go to ground you just punch through with a VIA and your at ground you should be running your DRC all through this DRC is Design Rule Check ok its gonna tell you if you have any dimensional problems its gonna tell you if youve got any error wires um it not gonna tell you something about "hay dude your return path is stuped and you should fix it" what do i mean by tha? the return path is wher your current is comming back to the power supply back to the regulatro for example which in our example is down here ok so on all of my circuit stages im gonna be looking at um how much current this stage is drawing and what the current path looks like if its a... if its a low current return im probably not gonna worry too much about it 'cause there will be enough copper here that it will find multiple paths um and of corse it will use the path of least resistance plan on that
+0:23:13.50, 0:23:17.50
+So, let's talk about um... ground and how we get current back.
+
+0:23:17.50, 0:23:21.50
+Uh... So, the whole bottom of the board will be copper. Or... Or there abouts.
+
+0:23:21.50, 0:23:27.50
+Uh... Typically what I would do is I would lay down, um... all of my
+
+0:23:27.50, 0:23:36.50
+uh... signal uh... traces first. Um... And some of them enevitably will go
+
+0:23:36.50, 0:23:41.50
+on the bottom from component to component, you know. It's... That's just the way it happens.
+
+0:23:41.50, 0:23:45.50
+You're gonna have... Like, you try to keep it all on top so you can keep the bottom all coppper.
+
+0:23:45.50, 0:23:49.50
+It's never gonna go that way. You're always going to have a few traces on the bottom.
+
+0:23:49.50, 0:23:54.50
+Um... And then, the easiest thing to, which is not necessarily the correct thing to do, but it
+
+0:23:54.50, 0:23:59.50
+is the easest thing to do, is to lay a huge layer of copper all on the bottom
+
+0:23:59.50, 0:24:03.50
+and every place that you have uh... in your circuit that has to go to ground
+
+0:24:03.50, 0:24:07.50
+you just punch through with a VIA, and you're at ground.
+
+0:24:07.50, 0:24:11.50
+You should be running your DRC all through this. DRC is Design Rule Check. OK?
+
+0:24:11.50, 0:24:14.50
+It's gonna tell you if you've got any dimensional problems.
+
+0:24:14.50, 0:24:17.50
+It's gonna tell you if youve got any error wires.
+
+0:24:17.50, 0:24:21.50
+Um... It's not gonna tell you something about,
+
+0:24:21.50, 0:24:26.50
+"Hey, dude your return path is stuped and you should fix it."
+
+0:24:26.50, 0:24:30.50
+What do I mean by that? The return path is where your current is coming back to the power supply,
+
+0:24:30.50, 0:24:35.50
+back to the regulator, for example. Which, in our example, is down here. OK?
+
+0:24:35.50, 0:24:39.50
+So, on all of my circuit stages I'm gonna be looking at,
+
+0:24:39.50, 0:24:44.50
+um... how much current this stage is drawing and what the current path looks like.
+
+0:24:44.50, 0:24:49.50
+If it's a... If it's a low current return, I'm probably not gonna worry too much about it,
+
+0:24:49.50, 0:24:52.50
+'cause there will be enough copper here that it will find multiple paths.
+
+0:24:52.50, 0:24:52.50
+Um... And of course it will use the path of least resistance. Plan on that. 
+
+
 
 
 
