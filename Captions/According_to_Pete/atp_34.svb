@@ -2,7 +2,7 @@
 [Intro Music]
 
 0:00:10.00, 0:00:14.75
-uh. Hi [laugh] and welcome to uh According to Pete. I've got to remember what the shows called.
+uh. Hi [laugh] and welcome to uh... According to Pete. I've got to remember what the shows called.
 
 0:00:14.75, 0:00:20.00
 Today we are going to talk about some uh pcb layout practices
@@ -1094,7 +1094,7 @@ label it, 'cause your gonna need it. Um... A lot of times
 uh the... the CAD program, like Eagle, will by defult put um... component labels
 
 0:27:16.50, 0:27:18.50
-like if I got a resistor here, it's gonna say "thats r3"
+like if I got a resistor here, it's gonna say "thats R3"
 
 0:27:18.50, 0:27:23.50
 and it's gonna put it in the silk automatically. At Sparkfun, we don't really do that 'cause
@@ -1105,388 +1105,79 @@ we want the boards to look really nice, but if this is a board that I am activly
 0:27:28.50, 0:27:34.50
 and I need to get in there with uh... probes or an iron to rework or what have you,
 
-0:27:34.50, 0:27:34.50
-im gonna want those so think about that think about what your silk is gonna be think about how it's gonna help. um so you run a prototype you get it back and you build and then you test it whe you test limit your current on your power supply down to pppp 100 mAmps like uh you when you build it your gonna have a rough idea of how much current its gonning to draw right off the bat if youve got no input and no output its like... uh 30, 40 and it's running quiessently 
+0:27:34.50, 0:27:38.50
+I'm gonna want those. So, think about that. Think about what your silk is gonna be.
 
+0:27:38.50, 0:27:42.50
+Think about how it's gonna help. Um... So, you run a prototype you get it back,
 
+0:27:42.50, 0:27:49.50
+and you build and then you test it. When you test, limit your current on your power supply
 
+0:27:49.50, 0:27:56.50
+down to... 100 mAmps. Like, uh... you... When you build it your gonna have a rough idea
 
+0:27:56.50, 0:27:59.50
+of how much current it's gonning to draw right off the bat.
 
+0:27:59.50, 0:28:05.50
+If you've got no input and no output. It's like... uh 30, 40 mAmps
 
+0:28:05.50, 0:28:09.50
+when it's running quiescently, and I've gont nothing going in or coming out of it.
 
+0:28:09.50, 0:28:14.50
+So, what I would do is, I would probably set the limit on my power supply
 
+0:28:14.50, 0:28:19.50
+to 100 mAmps... 75 mAmps. Something a little bit above, but not so much that
 
+0:28:19.50, 0:28:24.50
+anything is going to burn. Right? And then, if... Then I know that when I hook up power
 
+0:28:24.50, 0:28:29.50
+if... uh... if the power supply goes into a rail situation or a limiting situation
 
+0:28:29.50, 0:28:33.50
+uh... I know I've got a short, and nothing has been distroyed. OK?
 
+0:28:33.50, 0:28:37.50
+Now, another way to do this is with a meter. You just take a meter and put it from ground to VCC
 
+0:28:37.50, 0:28:42.50
+and you check to make sure it doesn't say 0 ohms. Or, various other places in the circuit.
 
+0:28:42.50, 0:28:45.50
+If it doesn't do what you want it to do, you gotta go back and find out why
 
+0:28:45.50, 0:28:49.50
+and you might have to redesign and relayout. Get in there, give'em hell!
 
+0:28:49.50, 0:28:54.50
+Uh... So, there it is. Uh... Hopefully I didn't add confusion to an already confusing topic
 
+0:28:54.50, 0:29:00.50
+like I sometimes feel like I do. Don't forget to checkout uh... @sfeengineering on Twitter.
 
+0:29:00.50, 0:29:03.50
+Go check out some of our code, and our layouts, and see if you can help us out and
 
+0:29:03.50, 0:29:07.50
+maybe you can get your own coffee mug. Comments go in the comments section below.
 
+0:29:07.50, 0:29:10.50
+You can load it up with what ever you like. Uh... Quesitions can go there.
 
+0:29:10.50, 0:29:14.50
+Comments can go there. Or you can send them all to feedback@sparkfun.com
 
+0:29:14.50, 0:29:19.50
+with "According to Pete" in the subject line. So, until next month, take it easy.
 
-um.. so there will be one to the micro section 
+0:29:19.50, 0:29:27.50
+[tone] I've consumed almost 34 oz of coffee this morning. [laugh] I love this mug.
 
-ill run this directly under here and feed the different power pins
-
-you want to build the different stages
-
-
-really you just wnat to follow the schematic
-
-
-the parts that are close to each other electrically you want to have close to each 
-
-
-i drew up a quick op a
-
-
-SOIC8 ... LM358
-
-R1, R2 which set the reference
-
-
-we have C1 which filters our reference
-
-we have C2 whch decouples the power supply on the op amp
-
-now how many places do whe have to 
-
-we have 2 places where VCC has to go 
-
-
-power the chip. ok? 
-
-
-how many places 
-
-i got 1, i got 2, i got 3, i got 4 places. so when i put this
-
-
-try to minimize the common points
-
-so i only 
-
-
-one place where a signal has to go out
-
-signal going in on one side of it
-
-
-physically 
-
-
-next stage right
-
-
-
-the anything 
-
-those paths have to be pretty tight 
-
-you try to keep them pretty close
-
-start with the feed back pin 1 is the output of one of the two op amps
-
-ive got R4 that goes straing over to R2
-
-
-
-this represents R4
-
-so I would put this guy right on those two pins
-
-
-and Ive got 
-
-so I've placed R2 
-
-right there so I can get to pin 2 electrically 
-
-
-uh to these points
-
-pin 3 
-
-<19:30>
-
-these both go to ground so I can put these two 
-
-
-now on the SOIC package youv'e got VCC on one corner and youv'e 
-
-most of our boards are single sided that way so its a little trickier
-
-
-
-well put the cap the filter cap up here and run that to there
-
-
-over here you can run a trace down over to here and thats about as minimized 
-
-
-now theres this guy R1 that goes from VCC to pin three 
-
-umm so i need 
-
-
-but i can try to minimize
-
-<20:40>
-
-this is R2 uh this is going to be C1 where would i put R1 well the best place 
-
-
-
-probvably close by in her e so tht you minimize that current path
-
-
-then of course I've got to get vcc there and there so I need 2 feed points so what i whoul probably do 
-
-on a pcb
-
-
-string my trunk abra
-
-off to a single place
-
-
-up to here and a trace over to here
-
-
-ok ? so that these lengths are equal
-
-
-neight one of these things if it starts to draw current
-
-this being an op amp 2 op amp package
-
-you dont want to leave these pins float.
-
-this thing will osclate like a thing that osclates alot so what youre going to want to to do is 
-
-
-ties thoes lines 
-
-um but the inputs of these thigs  tie to 
-
-
-if you put in unused opamp into google 
-
-
-of how 
-
-
-this is just one example but every circuit section is the same by rule 
-
-you want to keep components close electrically close physically
-
-
-pins that they have to act upon
-
-in the case of sensors, same hting you know
-
-decoupleing capse are probably the 
-
-any resistors that have to 
-
-you want to keep those local you want to keep 
-
-any traces that are not the input and output 
-
-
-so you got your baord you got in my case you got my po
-
-you will just run your sections according to how you got your
-
-siglan chain ho
-
-into here out and in an
-
-port here and thats kinda how 
-
-
-lets talk about ground and how we get current back 
-
-the whole bottom of the board 
-
-typically whoat i would do is i would lay down all of my signal uh traces first um and 
-some of them 
-
-its jsut the way it happens 
-
-you try to keep it all on top so you can keep the 
-
-few traces on the bottom
-
-um 
-
-and then the easiest thing 
-
-
-easiest thing is to lay a huge layer of copper 
-
-
-that has to go to ground 
-
-you should be running your DRC
-
-
-its going to tell you if you 
-
-
-error wires, its not going to tell you someghin about
-
-
-your return path is stuped and you should fix it
-
-
-your return path is whre your current is going back to your powersupply
-
-
-ok so on all of 
-
-im going to be looking at how much current 
-
-if it is a low current return im probably not going to worry 
-
-
-and of course it will use the path of least resistance
-
-but if ive got a whole slew 
-
-<25:00>
-
-and im powering sometin out here whats thius return path going to 
-
-
-follow the copper 
-
-for low current stuff its not too bad
-
-
-if i am drawing 30, 40 50 milli amps 
-
-i dont want a return path that
-
-
-some of you might be going 
-
-
-2 layer board 
-
-
-
-on the top of your board just fine... welll you can
-
-it ents up your going to have alot of traces on the top
-
-when i lay out a circuit board i have a lot of traces on the top
-
-its harder to maintian a full plain of VCC that way
-
-not only that once upon a time i got bit by a situation where 
-
-had a VCC plane on the top and the 
-
-
-and uh there were shorts to VCC everywhere on the circuit and 
-
-im real shy about putting a top layer VCC plane on t
-
-
-that does not mean everything is cool
-
-
-now after that we talk about 
-
-
-silk right? between the time you submit the board for prototype 
-
-
-make it meaningful youve got headers here
-
-
-label your pins
-
-ground VCC 
-
-usb your going to know
-
-power in your going to know
-
-
-label it because your going to need it
-
-
-alot of times uh the uh cad program will by default put um copmonts labels 
-
-sparkfun we dont do that 
-
-this is a board i am activaly working on and i need to get in there with probes or an iron to rework
-
-or what have you im going to wat those
-
-
-think about how its going to help
-
-you get it back
-
-when you test limit the current on your power supply down to 100 mA
-
-
-when you build it you are going to have 
-
-
-if you got no input or output
-
-
-30 40 mA
-
-got nothing going in or coming out of it.
-
-
-what i would probably 
-
-
-
-then I know if I hook up power 
-
-Iv'e got a short and nothing is got a short
-
-
-check to see if it 
-
-
-0 ohms
-
-you got to go back and find out why.
-
-get in there and give 'em hell
-
-
-topic like i sometimes 
-
-
-dont forget 
-
-
-and maybe 
-
-
-questions can go there 
-
-feedback@sparkfun.com
-
-with acording to pete in the subject line.
-
-[tone]
-
-Ive consumed amlost 34 oz of coffed this morning.
+0:29:27.50, 0:29:38.50
+[outro music]
 
 
