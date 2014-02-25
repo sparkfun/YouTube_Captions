@@ -5,7 +5,7 @@
 uh. Hi [laugh] and welcome to uh... According to Pete. I've got to remember what the shows called.
 
 0:00:14.75, 0:00:20.00
-Today we are going to talk about some uh pcb layout practices
+Today we are going to talk about some uh PCB layout practices
 
 0:00:20.00, 0:00:22.00
 and ... and just give you some guidelines and things.
@@ -17,13 +17,13 @@ But before I do, there's a couple of things I want to mention.
 uh The engineering department has its own uh twitter account now: sfe underscore engineering
 
 0:00:32.00, 0:00:38.00
-so definately check that out. Uh, we will be uh general spouting of nonsense,
+so definitely check that out. Uh, we will be uh general spouting of nonsense,
 
 0:00:38.00, 0:00:42.00
-things that we are working on, upcoming products, probably some give aways
+things that we are working on, upcoming products, probably some give always
 
 0:00:42.00, 0:00:45.00
-in fact I was just at a conference called small satalite in Logan Utah
+in fact I was just at a conference called small satellite in Logan Utah
 
 0:00:45.00, 0:00:48.00
 where I gave away 100 arduinos, and I tweeted out,
@@ -32,13 +32,13 @@ where I gave away 100 arduinos, and I tweeted out,
 albeit on my own personal account, that we're giving away Arduinos
 
 0:00:51.00, 0:00:54.00
-and alot of people showed up so it was really cool.
+and a lot of people showed up so it was really cool.
 
 0:00:54.00, 0:00:59.00
 Second thing I want to tell you about is this BIZOWWW
 
 0:00:59.00, 0:01:06.00
-We have our very own sparkfun engineering mug. It is for coffee.
+We have our very own Sparkfun engineering mug. It is for coffee.
 
 0:01:06.00, 0:01:10.00
 uh you can see its got a funky graphic on that. Made by our own Pamala Cortez. Thank you Pamala.
@@ -47,22 +47,22 @@ uh you can see its got a funky graphic on that. Made by our own Pamala Cortez. T
 And uh the only way you can get this is by helping us with product revisions,
 
 0:01:16.00, 0:01:20.00
-and making things better, right? so if your on github and you're checking out our code
+and making things better, right? so if your on GitHub and you're checking out our code
 
 0:01:20.00, 0:01:23.00
 and you're improving it for us and you get some of your code pulled back into ours
 
 0:01:23.00, 0:01:27.00
-or you are doing layout work and we uh incorperate some of your changes
+or you are doing layout work and we uh incorporate some of your changes
 
 0:01:27.00, 0:01:31.00
-you're going to get one of these, ok. thats the only way to get it.
+you're going to get one of these, OK. That's the only way to get it.
 
 0:01:31.00, 0:01:37.00
 Now lets talk about PCB layout. The original question that got me running in this direction
 
 0:01:37.00, 0:01:42.00
-uh was somebody asking uh: Hey can you do like a compairsion of all the different
+uh was somebody asking uh: Hey can you do like a comparison of all the different
 
 0:01:42.00, 0:01:47.00
 PCB layout programs? Well, no I don't know them. In order to do that effectively I'd
@@ -74,7 +74,7 @@ have to know several fluently, and I don't.
 [laugh] I don't. So um I'm going to assume that any program that you use you've got at least
 
 0:01:57.00, 0:02:00.00
-a little bit of uh, you know, experiace you got you know how to lay out a trace.
+a little bit of uh, you know, experience you got you know how to lay out a trace.
 
 0:02:00.00, 0:02:04.00
 You know how to do a schematic da da da da. Um we're going to talk about the PCB
@@ -92,10 +92,10 @@ mechanical prerequisites. So for example um do you have is there a shape
 that the board has to be in, right? I mean if you got it fitting into a specific
 
 0:02:22.00, 0:02:27.00
-enclosure uh you know that... that shape is going to be a constraing factor.
+enclosure uh you know that... that shape is going to be a constraining factor.
 
 0:02:27.00, 0:02:32.00
-The uh mechanical components like a potentiamoter, or a switch,
+The uh mechanical components like a potentiometer, or a switch,
 
 0:02:32.00, 0:02:36.00
 or uh a jack of some kind, right? Where do those have to be?
@@ -107,7 +107,7 @@ Um so for example, and I'm just going to assume I'm putting it into a square box
 Hey it looks like this.
 
 0:02:44.00, 0:02:46.00
-Uh thats not a square Pete. [tone]
+Uh That's not a square Pete. [tone]
 
 0:02:46.00, 0:02:49.00
 So, for example uh you start to think about like,
@@ -122,7 +122,7 @@ Um how is the signal going to flow? Where are my inputs? Where are my outputs?
 How's the power going to get in? So you might do uh something like 
 
 0:03:01.00, 0:03:06.00
-uh, you know, you got a jack here somekind, maybe this is a barrel jack,
+uh, you know, you got a jack here some kind, maybe this is a barrel jack,
 
 0:03:06.00, 0:03:12.00
 you might put a USB here, uh you might put a slide switch here
@@ -140,7 +140,7 @@ So you might bring inputs over here and you might put outputs over here.
 Um you might have a... an RF jack for example like an RP-SMA for 2.4 GHz.
 
 0:03:36.00, 0:03:42.00
-So thats going to have to hang off the side... [mumble] Sorta like yay.
+So that's going to have to hang off the side... [mumble] Sorta like yay.
 
 0:03:42.00, 0:03:46.00
 So, OK these are going to be the beginning constraints of what you're going to build.
@@ -158,19 +158,19 @@ a fairly decent idea of where your circuit sections have to go.
 Copper weight, right, when you get a PCB made you can get what they call
 
 0:04:04.00, 0:04:08.00
-1 oz copper or 2 oz copper on it and maybe theres more but I haven't seen them.
+1 oz copper or 2 oz copper on it and maybe there's more but I haven't seen them.
 
 0:04:08.00, 0:04:12.00
-And what that means, and I didnt know this until, heh, yesterday
+And what that means, and I didn't know this until, heh, yesterday
 
 0:04:12.00, 0:04:16.00
-is that if you were to take an ounce of copper and pound the bajeasus
+is that if you were to take an ounce of copper and pound the bajesus
 
 0:04:16.00, 0:04:20.00
-out of it until it is absolutly flat and covering 1 square foot
+out of it until it is absolutely flat and covering 1 square foot
 
 0:04:20.00, 0:04:23.00
-thats the thickness that this would be. What that comes out to be
+that's the thickness that this would be. What that comes out to be
 
 0:04:23.00, 0:04:29.00
 is about 1.37 mills uh which is thousandths of an inch. So it's real small.
@@ -212,16 +212,16 @@ And that's a cool thing 'cause you never have to worry about
 stringing weird traces places to get things done like you do with a 2 layer board.
 
 0:05:14.50, 0:05:19.50
-Uh you also get the additional capacatance between the two layers
+Uh you also get the additional capacitance between the two layers
 
 0:05:19.50, 0:05:23.50
-so it will act as a little bit of a filter, right? So you're decoupleing everywhere.
+so it will act as a little bit of a filter, right? So you're decoupling everywhere.
 
 0:05:23.50, 0:05:27.50
 Trace width. A lot of times for.. for... low current uh traces
 
 0:05:27.50, 0:05:30.50
-and a trace is just a thing that compleates a circuit.
+and a trace is just a thing that completes a circuit.
 
 0:05:30.50, 0:05:33.00
 I don't know why you would go to that... doesn't matter.
@@ -230,7 +230,7 @@ I don't know why you would go to that... doesn't matter.
 How thick is that? Generally if it's a low current path,
 
 0:05:38.00, 0:05:42.50
-which is to say we don't expect it to be running any more then about 20mA,
+which is to say we don't expect it to be running any more then about 20mAmps,
 
 0:05:42.50, 0:05:47.50
 uh we try to stick with uh 10 mill traces, ten thousandths of an inch, OK?
@@ -248,7 +248,7 @@ that you are gonna run and how heavy your copper is and it will tell you
 how big your trace has to be. Um and generally a 10 mill trace is good
 
 0:06:05.50, 0:06:09.50
-to about 30 mA before it starts to become resistive and a problem.
+to about 30 mAmps before it starts to become resistive and a problem.
 
 0:06:09.50, 0:06:13.50
 Uh other thing don't use an auto router I mean if you can help it, right?
@@ -260,7 +260,7 @@ Because, auto routers do things like: Hey you want a trace over there?
 Mmm... OK, there ya go.
 
 0:06:21.50, 0:06:26.50
-[Annoyed gasps]. OK that looks aweful and it's a... thats an antenna.
+[Annoyed gasps]. OK that looks awful and it's a... That's an antenna.
 
 0:06:26.50, 0:06:30.50
 OK? So you don't want that. You want to keep your traces nice and elegant
@@ -275,19 +275,19 @@ Another thing we do is we tend to avoid right angles in our traces.
 And the reason is because a... a right angle in a trace...
 
 0:06:41.50, 0:06:46.50
-what it is... what it will actually do is round your endges.
+what it is... what it will actually do is round your edges.
 
 0:06:46.50, 0:06:52.50
 Like that. Now... Um, so if you are running logic, which everybody is these days, right?
 
 0:06:52.50, 0:06:58.50
-Um, a... a trace with like a lot of right angles in it is going to ultamately round an edge.
+Um, a... a trace with like a lot of right angles in it is going to ultimately round an edge.
 
 0:06:58.50, 0:07:04.50
-And of corse logical devices read edges so you need that edge to be reletively in tact
+And of course logical devices read edges so you need that edge to be relatively in tact
 
 0:07:04.50, 0:07:07.50
-and understand this is... this is a probablistic sort of thing. Right?
+and understand this is... this is a probabilistic sort of thing. Right?
 
 0:07:07.50, 0:07:13.50
 I can't tell you that if you run a trace from here to here and you put a right angle.
@@ -308,7 +308,7 @@ because you don't want to run into issues. You want to keep the probably
 of issues down so you don't do that.
 
 0:07:27.50, 0:07:32.50
-Parts. individual... you got a schematac you got a pile of parts to put in... in your board right
+Parts. individual... you got a schematic you got a pile of parts to put in... in your board right
 
 0:07:32.50, 0:07:39.50
 um the sections of the circuit are um... they're going to be arranged,
@@ -317,13 +317,13 @@ um the sections of the circuit are um... they're going to be arranged,
 you know, on the board like you've got a power section,
 
 0:07:42.50, 0:07:45.50
-you've got an amplifyer section, you've got a microcontroler section,
+you've got an amplifier section, you've got a microcontroller section,
 
 0:07:45.50, 0:07:50.00
 you've got sensors or RF, right? And, these sections are going to be placed
 
 0:07:50.00, 0:07:54.00
-on the board acording to their position in the signal chain, OK?
+on the board according to their position in the signal chain, OK?
 
 0:07:54.00, 0:07:58.50
 And they all got signal chains of some kind, right? So, for example:
@@ -332,10 +332,10 @@ And they all got signal chains of some kind, right? So, for example:
 I started out here with uh some headers here and some headers here.
 
 0:08:02.50, 0:08:06.50
-And, I said rather blithly: "This is going to be your inputs,
+And, I said rather blithely: "This is going to be your inputs,
 
 0:08:06.50, 0:08:09.00
-and this is going to be your outputs" well somehtingh like that. Honestly,
+and this is going to be your outputs" well something like that. Honestly,
 
 0:08:09.00, 0:08:12.50
 I'm sitting here looking at this going: "I would not do it this way. I would re-arrange it"
@@ -344,19 +344,19 @@ I'm sitting here looking at this going: "I would not do it this way. I would re-
 But, you might have, you know, a system with uh an accelerometer
 
 0:08:16.50, 0:08:22.50
-and um a micro controller and a usb right ok so theres your signal chain
+and um a micro controller and a USB right OK so there's your signal chain
 
 0:08:22.50, 0:08:26.50
-from input which is the mechanical to the output which is the usb.
+from input which is the mechanical to the output which is the USB.
 
 0:08:26.50, 0:08:30.50
-Or it might be uh, you know, a sensor to a micro to, uh, a bluetooth
+Or it might be uh, you know, a sensor to a micro to, uh, a Bluetooth
 
 0:08:30.50, 0:08:35.50
-or wifi or an xbee something like that... there's your signal chain from front you know to back
+or Wi-Fi or an XBee something like that... there's your signal chain from front you know to back
 
 0:08:35.50, 0:08:39.50
-and thats going to dictate, um you know, where these sections go
+and that's going to dictate, um you know, where these sections go
 
 0:08:39.50, 0:08:45.50
 because you... you want the circuit to go... to flow well
@@ -368,22 +368,22 @@ and um quite honestly you build the circuit... the circuit stages
 according to the schematic. I mean you literally look at "OK
 
 0:08:52.50, 0:08:55.50
-I've got, ya know, an op amp in the schematc here and I'm
+I've got, ya know, an op amp in the schematic here and I'm
 
 0:08:55.50, 0:08:58.50
 going to put these components here 'cause there close by and that's critical"
 
 0:08:58.50, 0:09:02.50
-um and thats... and thats how you sort of put stuff together. Right?
+um and that's... and that's how you sort of put stuff together. Right?
 
 0:09:02.50, 0:09:05.50
-And, that sounds obvious I know it sounds obvious but you'd be amaized
+And, that sounds obvious I know it sounds obvious but you'd be amazed
 
 0:09:05.50, 0:09:10.50
 at how many times I see somebody who hasn't done a lot of layout before
 
 0:09:10.50, 0:09:15.50
-and they'll put like a micro controller over here [unintellagable] save space.
+and they'll put like a micro controller over here [unintelligible] save space.
 
 0:09:15.50, 0:09:20.00
 And then they'll put the crystal... What are you...? Are you phoning home with that?
@@ -392,7 +392,7 @@ And then they'll put the crystal... What are you...? Are you phoning home with t
 I mean look at this... no... no... no... you don't do that.
 
 0:09:24.20, 0:09:26.50
-The reason you don't do that is because this thing is an oscilator
+The reason you don't do that is because this thing is an oscillator
 
 0:09:26.50, 0:09:32.50
 and that's an antenna and it's gonna scream out to everybody across the galaxy
@@ -410,7 +410,7 @@ many, many, times, thankfully not by our guys any more,
 is that on any schematic you will see a micro controller, right?
 
 0:09:48.50, 0:09:53.50
-[unintellagable] some peice. And then you will see uh like a bank
+[unintelligible] some piece. And then you will see uh like a bank
 
 0:09:53.50, 0:09:57.50
 of caps, and this is the schematic right? And it'll just... They'll all be like
@@ -419,10 +419,10 @@ of caps, and this is the schematic right? And it'll just... They'll all be like
 you know, 0.1 micro farad and there'll be all off them they'll all be tied to VCC
 
 0:10:03.50, 0:10:10.00
-and there all tied to ground, right? OK, now alot of time in a schematic you'll
+and there all tied to ground, right? OK, now a lot of time in a schematic you'll
 
 0:10:10.00, 0:10:16.20
-see, it says, "near pin such and such" refereing to um the.. the  microcontroller
+see, it says, "near pin such and such" referring to um the.. the  microcontroller
 
 0:10:16.20, 0:10:19.00
 and what some people will do is they will just say,
@@ -455,7 +455,7 @@ That is to minimize the length of those traces and to decouple noise on the
 power supply to ground. So, it's important to keep components
 
 0:10:53.50, 0:10:58.50
-that are related to a certian circuit section close to each other.
+that are related to a certain circuit section close to each other.
 
 0:10:58.50, 0:11:04.50
 You want to keep those traces short and elegant and nice.
@@ -476,25 +476,25 @@ something like that. Um, those are ehh general parts that you might find in a re
 When I started this out, I... I identified this one as USB,
 
 0:11:29.50, 0:11:33.00
-I identified this one as, like a barallel jack, so this is where the power is
+I identified this one as, like a barrel jack, so this is where the power is
 
 0:11:33.00, 0:11:38.50
 coming in and I positioned these uh the... this is a switch if you if we can call
 
 0:11:38.50, 0:11:42.00
-[unintellagable] sure it's a switch, with a thing hanging off.
+[unintelligible] sure it's a switch, with a thing hanging off.
 
 0:11:42.00, 0:11:47.50
-Um, so the barallel jack will be near to the switch and you'll run power
+Um, so the barrel jack will be near to the switch and you'll run power
 
 0:11:47.50, 0:11:50.50
 you know to the switch, and then, you know, like that.
 
 0:11:50.50, 0:11:55.50
-Um, the switch is almost certanly going to be close to the power jack,
+Um, the switch is almost certainly going to be close to the power jack,
 
 0:11:55.50, 0:11:58.50
-uh unless you are doing something that's, like, touch sensetive
+uh unless you are doing something that's, like, touch sensitive
 
 0:11:58.50, 0:12:02.00
 or you've got like a soft stop on it. Um, this is a hard stop,
@@ -530,7 +530,7 @@ So, I'm probably going to run this to, you know, there'll be one cap
 and then the regulator might be here, uh or actually, right?
 
 0:12:43.00, 0:12:47.00
-This is... This is an iterative proscess, and I'm iterating right now.
+This is... This is an iterative process, and I'm iterating right now.
 
 0:12:47.00, 0:12:52.00
 So, I might put, like, the SOC2305 there, and then uh... this will run over here
@@ -545,13 +545,13 @@ be over here so I'm probably gonna have, you know, another cap uh down
 there to ground um and then I'm out.
 
 0:13:04.50, 0:13:09.00
-Ok? Now the point of this is to find a, like, uh... a good place out of the way
+OK? Now the point of this is to find a, like, uh... a good place out of the way
 
 0:13:09.00, 0:13:13.50
 that the power supply can be and then feed all the other sections.
 
 0:13:13.50, 0:13:18.50
-OK? Um, and like I say you wanna... you wanna do this according to what the schematc
+OK? Um, and like I say you wanna... you wanna do this according to what the schematic
 
 0:13:18.50, 0:13:23.50
 shows you want components that are close electrically in the schematic
@@ -581,10 +581,10 @@ that's got to be covered by VCC. Now if your running a 4 layer board,
 much easier because you've got a layer of copper underneath that you can just punch down to.
 
 0:14:05.00, 0:14:10.00
-That my VCC. It's easy. I can get it anywhere. Two layor board you have to plan a little bit.
+That my VCC. It's easy. I can get it anywhere. Two layer board you have to plan a little bit.
 
 0:14:10.00, 0:14:14.00
-Uh, now your sections, right? You... Your going have like a micorcontroller section,
+Uh, now your sections, right? You... Your going have like a microcontroller section,
 
 0:14:14.00, 0:14:16.00
 your gonna have let's... let's say we've got sensors, right?
@@ -593,7 +593,7 @@ your gonna have let's... let's say we've got sensors, right?
 If I had an RF link I would probably keep an RF module over here.
 
 0:14:21.50, 0:14:28.00
-Uh, I might put my microcontrller sorta here and maybe orient it so the crystal
+Uh, I might put my microcontroller sorta here and maybe orient it so the crystal
 
 0:14:28.00, 0:14:34.50
 was near by there couple of caps to decouple. Uh... And then I might put,
@@ -650,7 +650,7 @@ and it's going down to something here. Well, if this guys draws a lot of current
 um, these two guys are gonna feel a voltage drop, OK?
 
 0:15:58.00, 0:16:02.00
-Not a huge one, but it's going to intuduce noise so every time what ever this component is
+Not a huge one, but it's going to introduce noise so every time what ever this component is
 
 0:16:02.00, 0:16:05.00
 draws a bunch of current these guys are gonna feel it. 
@@ -659,13 +659,13 @@ draws a bunch of current these guys are gonna feel it.
 So, what you do, is you tie them back up to here, or at least so that they are um,
 
 0:16:12.00, 0:16:16.00
-you know, equadistant in a way. And by doing this, you tie them all to a center point there.
+you know, equidistant in a way. And by doing this, you tie them all to a center point there.
 
 0:16:16.00, 0:16:22.00
-There is your star and it's fed by a single one. Now, earlerier I said: "10 mill traces."
+There is your star and it's fed by a single one. Now, earlier I said: "10 mill traces."
 
 0:16:22.00, 0:16:28.00
-We try to keep to 10 mill traces, but this big trunk might be feeding more than 20 mA.
+We try to keep to 10 mill traces, but this big trunk might be feeding more than 20 mAmps.
 
 0:16:28.00, 0:16:34.00
 So, I have to keep that in mind. If it is, I might up it to 12 mill, 15 mill, 20 mill...
@@ -674,10 +674,10 @@ So, I have to keep that in mind. If it is, I might up it to 12 mill, 15 mill, 20
 Depends... So, I'm gonna keep an eye on that. And, each section will go
 
 0:16:39.00, 0:16:46.00
-back this way ok um... And, so there'll be one to the micro section as well
+back this way OK um... And, so there'll be one to the micro section as well
 
 0:16:46.00, 0:16:50.00
-and uh... A lot of times, I'll run this directily under here
+and uh... A lot of times, I'll run this directly under here
 
 0:16:50.00, 0:16:54.00
 and then feed the different power pins. So, it's all very equal. OK?
@@ -728,7 +728,7 @@ that sets the reference, and it has to go to power the chip.
 OK? So, I've got two places where VCC has gotta to go. How many places do I have ground to go?
 
 0:17:58.50, 0:18:07.50
-Uh, I got 1. I got 2. I got 3. I got 4 places. OK, so when I put this cirucit together,
+Uh, I got 1. I got 2. I got 3. I got 4 places. OK, so when I put this circuit together,
 
 0:18:07.50, 0:18:13.50
 I'm going to try to minimize the common points, so that I only have one feed point
@@ -743,10 +743,10 @@ and one place where signal has to go out. OK? So I can picture that in my head
 geographically. I'm gonna want signal going in on one side of it, physically,
 
 0:18:25.00, 0:18:27.00
-and signal comming out on the other side, physically,
+and signal coming out on the other side, physically,
 
 0:18:27.00, 0:18:31.00
-because it's gonna have to go to the next stage, right? I don't want it circuling back around,
+because it's gonna have to go to the next stage, right? I don't want it circling back around,
 
 0:18:31.00, 0:18:33.50
 and have the input and output next to each other.
@@ -755,7 +755,7 @@ and have the input and output next to each other.
 I'll start with the critical ones. Uh... The... Anything that attaches
 
 0:18:37.50, 0:18:41.50
-to uh... one of the high impediance lines here. Those paths have to be pretty tight.
+to uh... one of the high impedance lines here. Those paths have to be pretty tight.
 
 0:18:41.50, 0:18:45.50
 You try for tightness. You try to keep them very close, right?
@@ -773,7 +773,7 @@ So, what I've done over here is I've placed this guy and this represents R4.
 [writing] R4... So, I would put this guy right on those two pins.
 
 0:19:06.50, 0:19:13.50
-Um... The next it's like [unintellagable]... And, I've got my signal in also going off of R2.
+Um... The next it's like [unintelligible]... And, I've got my signal in also going off of R2.
 
 0:19:13.50, 0:19:18.50
 So, I've placed R2... [mumbles]  it's sideways... What are you gonna do?
@@ -800,7 +800,7 @@ So [click] [click] right there... and right there. Now, on the SOIC package,
 you've got um... VCC and one corner and ground on the other corner.
 
 0:19:47.50, 0:19:51.50
-So, it's a little diffuclt. If you're putting components on the opposite side of the board,
+So, it's a little difficult. If you're putting components on the opposite side of the board,
 
 0:19:51.50, 0:19:55.50
 this is an easier thing to do. Um... Most of our boards are single sided,
@@ -815,7 +815,7 @@ is we'll put the cap, the filter cap, up here and run that to there
 and then you know, if all the traces for this op amp are coming off over here,
 
 0:20:08.50, 0:20:13.50
-you can run a trace down over to here and that's about as minized as you're going to get.
+you can run a trace down over to here and that's about as minimized as you're going to get.
 
 0:20:13.50, 0:20:18.50
 Now there's this guy R1 that's... that goes from VCC to pin 3.
@@ -836,7 +836,7 @@ Alright? Now I know it's got to go to the top of R2...
 I've done something wrong... wait a minute [tone]
 
 0:20:36.50, 0:20:41.00
-Sorry, there's my mistake thats R3 not R2.
+Sorry, there's my mistake that's R3 not R2.
 
 0:20:41.00, 0:20:45.50
 This is R2. Uh... This is going to be C1.
@@ -860,19 +860,19 @@ So, what I would probably do on a PCB is I would string my trunk,
 arbitrary trunk, off to a single place and then run... run a trace up to here,
 
 0:21:21.50, 0:21:26.50
-and a trace over to here. OK? So, that these lenghts are equal,
+and a trace over to here. OK? So, that these lengths are equal,
 
 0:21:26.50, 0:21:31.50
 and then that way, neither one of these things, if it starts to draw current,
 
 0:21:31.50, 0:21:35.50
-will cause noise for the other. This being an opamp, a two opamp package,
+will cause noise for the other. This being an op amp, a two op amp package,
 
 0:21:35.50, 0:21:42.50
-you don't want to leave these pins float. OK? This thing will osclate like...
+you don't want to leave these pins float. OK? This thing will osculate like...
 
 0:21:42.50, 0:21:47.50
-uh... a thing that osclates a lot. Uh... So, what you're gonna want to do
+uh... a thing that osculates a lot. Uh... So, what you're gonna want to do
 
 0:21:47.50, 0:21:52.50
 is tie those lines you know there's... uh... let's see, 5 6 7,
@@ -887,19 +887,19 @@ I'd have to look at the data sheet to remember it. Um...
 But, the input to this thing you're gonna want to tie either to ground
 
 0:22:00.50, 0:22:04.50
-or to VCC or one to the other. If you put in, "unused opamp,"
+or to VCC or one to the other. If you put in, "unused op amp,"
 
 0:22:04.50, 0:22:09.50
 into uh Google you will come up with a zillion different pictures
 
 0:22:09.50, 0:22:14.50
-of how people manage to lock these things down so they dont ocelate.
+of how people manage to lock these things down so they don't oscillate.
 
 0:22:14.50, 0:22:18.50
 This is just one example, but every circuit section is basically the same,
 
 0:22:18.50, 0:22:23.50
-uh by... by rule. You want to keep the components that are close electrially,
+uh by... by rule. You want to keep the components that are close electrically,
 
 0:22:23.50, 0:22:28.00
 close physically. Uh... So, for example like I was showing you on the microcontroller,
@@ -911,7 +911,7 @@ you want to keep those decoupling caps, very close to the pins that they have to
 Uh... In the case of sensors, same thing, you know?
 
 0:22:37.00, 0:22:40.00
-Uh... Decouping caps are the biggest ones I am probably gonna talk about.
+Uh... Decoupling caps are the biggest ones I am probably gonna talk about.
 
 0:22:40.00, 0:22:43.50
 Uh... But, any resistors that have to do with a particular component,
@@ -950,13 +950,13 @@ Uh... So, the whole bottom of the board will be copper. Or... Or there abouts.
 Uh... Typically what I would do is I would lay down, um... all of my
 
 0:23:27.50, 0:23:36.50
-uh... signal uh... traces first. Um... And some of them enevitably will go
+uh... signal uh... traces first. Um... And some of them inevitably will go
 
 0:23:36.50, 0:23:41.50
 on the bottom from component to component, you know. It's... That's just the way it happens.
 
 0:23:41.50, 0:23:45.50
-You're gonna have... Like, you try to keep it all on top so you can keep the bottom all coppper.
+You're gonna have... Like, you try to keep it all on top so you can keep the bottom all copper.
 
 0:23:45.50, 0:23:49.50
 It's never gonna go that way. You're always going to have a few traces on the bottom.
@@ -965,7 +965,7 @@ It's never gonna go that way. You're always going to have a few traces on the bo
 Um... And then, the easiest thing to, which is not necessarily the correct thing to do, but it
 
 0:23:54.50, 0:23:59.50
-is the easest thing to do, is to lay a huge layer of copper all on the bottom
+is the easiest thing to do, is to lay a huge layer of copper all on the bottom
 
 0:23:59.50, 0:24:03.50
 and every place that you have uh... in your circuit that has to go to ground
@@ -980,13 +980,13 @@ You should be running your DRC all through this. DRC is Design Rule Check. OK?
 It's gonna tell you if you've got any dimensional problems.
 
 0:24:14.50, 0:24:17.50
-It's gonna tell you if youve got any error wires.
+It's gonna tell you if you've got any error wires.
 
 0:24:17.50, 0:24:21.50
 Um... It's not gonna tell you something about,
 
 0:24:21.50, 0:24:26.50
-"Hey, dude your return path is stuped and you should fix it."
+"Hey, dude your return path is stupid and you should fix it."
 
 0:24:26.50, 0:24:30.50
 What do I mean by that? The return path is where your current is coming back to the power supply,
@@ -1016,7 +1016,7 @@ Um... But if I've got a whole slew of other traces here,
 you know, and... and I'm powering something out here. What's this return path gonna look like?
 
 0:25:07.50, 0:25:11.50
-Well, it's gonna follow the copper kinda neaaaaaaaaaa
+Well, it's gonna follow the copper kinda [random noise]
 
 0:25:11.50, 0:25:15.50
 and you wanna watch for stuff like that. For low current stuff it's not too bad.
@@ -1025,10 +1025,10 @@ and you wanna watch for stuff like that. For low current stuff it's not too bad.
 You can make that compromise, but, you know, if I'm drawing,
 
 0:25:19.50, 0:25:22.50
-you know, 30, 40, 50 milli amps to something out there,
+you know, 30, 40, 50 mAmps to something out there,
 
 0:25:22.50, 0:25:26.50
-I don't want a return path that looks like that. I want it to be a little beafier
+I don't want a return path that looks like that. I want it to be a little beefier
 
 0:25:26.50, 0:25:31.50
 and I want it to be straighter. Some of you might be going, "What, no VCC plain?"
@@ -1067,7 +1067,7 @@ Again, don't assume that after you've run your DRC, if you've got no error wires
 that does not mean everything's cool. Watch your ground returns. OK?
 
 0:26:34.50, 0:26:39.50
-Now, after that, we talk about uh... esthetic things, like silk. Right?
+Now, after that, we talk about uh... aesthetic things, like silk. Right?
 
 0:26:39.50, 0:26:43.50
 Between the time you submit this board for prototype, and the time you get it back,
@@ -1091,16 +1091,16 @@ But, any place where you've got like a bunch of different signals,
 label it, 'cause your gonna need it. Um... A lot of times
 
 0:27:08.50, 0:27:16.50
-uh the... the CAD program, like Eagle, will by defult put um... component labels
+uh the... the CAD program, like Eagle, will by default put um... component labels
 
 0:27:16.50, 0:27:18.50
-like if I got a resistor here, it's gonna say "thats R3"
+like if I got a resistor here, it's gonna say "that's R3"
 
 0:27:18.50, 0:27:23.50
 and it's gonna put it in the silk automatically. At Sparkfun, we don't really do that 'cause
 
 0:27:23.50, 0:27:28.50
-we want the boards to look really nice, but if this is a board that I am activly working on,
+we want the boards to look really nice, but if this is a board that I am actively working on,
 
 0:27:28.50, 0:27:34.50
 and I need to get in there with uh... probes or an iron to rework or what have you,
@@ -1118,13 +1118,13 @@ and you build and then you test it. When you test, limit your current on your po
 down to... 100 mAmps. Like, uh... you... When you build it your gonna have a rough idea
 
 0:27:56.50, 0:27:59.50
-of how much current it's gonning to draw right off the bat.
+of how much current it's going to draw right off the bat.
 
 0:27:59.50, 0:28:05.50
 If you've got no input and no output. It's like... uh 30, 40 mAmps
 
 0:28:05.50, 0:28:09.50
-when it's running quiescently, and I've gont nothing going in or coming out of it.
+when it's running quiescently, and I've got nothing going in or coming out of it.
 
 0:28:09.50, 0:28:14.50
 So, what I would do is, I would probably set the limit on my power supply
@@ -1139,7 +1139,7 @@ anything is going to burn. Right? And then, if... Then I know that when I hook u
 if... uh... if the power supply goes into a rail situation or a limiting situation
 
 0:28:29.50, 0:28:33.50
-uh... I know I've got a short, and nothing has been distroyed. OK?
+uh... I know I've got a short, and nothing has been destroyed. OK?
 
 0:28:33.50, 0:28:37.50
 Now, another way to do this is with a meter. You just take a meter and put it from ground to VCC
@@ -1151,13 +1151,13 @@ and you check to make sure it doesn't say 0 ohms. Or, various other places in th
 If it doesn't do what you want it to do, you gotta go back and find out why
 
 0:28:45.50, 0:28:49.50
-and you might have to redesign and relayout. Get in there, give'em hell!
+and you might have to redesign and re-layout. Get in there, give'em hell!
 
 0:28:49.50, 0:28:54.50
 Uh... So, there it is. Uh... Hopefully I didn't add confusion to an already confusing topic
 
 0:28:54.50, 0:29:00.50
-like I sometimes feel like I do. Don't forget to checkout uh... @sfeengineering on Twitter.
+like I sometimes feel like I do. Don't forget to checkout uh... @sfe_engineering on Twitter.
 
 0:29:00.50, 0:29:03.50
 Go check out some of our code, and our layouts, and see if you can help us out and
@@ -1166,7 +1166,7 @@ Go check out some of our code, and our layouts, and see if you can help us out a
 maybe you can get your own coffee mug. Comments go in the comments section below.
 
 0:29:07.50, 0:29:10.50
-You can load it up with what ever you like. Uh... Quesitions can go there.
+You can load it up with what ever you like. Uh... Questions can go there.
 
 0:29:10.50, 0:29:14.50
 Comments can go there. Or you can send them all to feedback@sparkfun.com
