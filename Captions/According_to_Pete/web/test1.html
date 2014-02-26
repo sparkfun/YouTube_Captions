@@ -1,0 +1,727 @@
+Hi, and welcome to the February edition of According to Pete.
+We are going to talk about voltage regulators, and why you want them.
+I'm going to show you some circuits that don't work particularily well.
+Then I'm going to bring in voltage regulators and talk about the different kinds,
+and then we're ultimately going to lead to the ubiquitous LM317.
+At the very end I'm going to show you a circuit that I've been dealing with
+for a project of mine to illustrate some of the setup of this thing, some stuff
+you gotta watch for and design stuff.
+It's going to be a long one so let's hit it.
+Start with let's consider a logic circuit. You've got a micro-controller,
+you're trying to power it with some voltage. The micro-controller is going
+to want
+They'll operate within a certain range. You know, 2.3, 3.3 volts give or take.
+If you screw with that voltage supply too much, you've got logic levels in there.
+That are ideally pretty stationary. Well if your supply voltage is doing wiggy stuff.
+That's going to propagate through your logic and so you're going to get
+an unreliable output.
+Then there is stuff like ratiometric parts.
+So for example an accelerometer that has an analog output.
+A voltage that you shake it and get a certain voltage deflection from the norm.
+Well, if your supply voltage changes that output voltage will change because
+it's a ratio of the supply voltage. So you gotta have something steady for that.
+Then there's analog circuits.
+For analog, anything
+Any variation that happens on the supply
+line is going to propagate to the output.
+So there's a lot of need to have a very
+stable supply voltage okay.
+Now, how do you get that?
+Let's say for example
+And everybodies going "oh pfff" typical example.
+Voltage divider
+Sure enough, if this 'R' and this 'R' are the same,
+you get 5 volts out given 10 volts in.
+Let's say you want to take some current out of that.
+[jokingly] That's my supply right there man!
+And then you attach another load to that.
+So now, you know about parallel resistance,
+We talked about that.
+Parallel resistance is product over sum.
+So let's call this R1 and this R2.
+So the resistance of this now
+Is R1 times R2
+Over R1 plus R2
+And you know what? It's less, it's less than it used to be.
+So what's going to happen there? This is going to start
+Drawing more current
+And the more current going through here, the more voltage
+drop is accross the resistor.
+So your 5 volts is going to go down.
+That sucks
+Voltage dividers are no good.
+But, here's another way.
+That is a zener diode.
+Just as a refesher, for those of you who don't know.
+This thing is effectively a diode
+That operates in reverse bias
+To the point where the junction actually breaks down.
+It's characteristic are such that it breaks down at
+a known voltage
+And you could get zener diodes in all different kinds
+of voltage ratings.
+Well for this case I've got one
+This is a 5 volt zener
+We are going to call that out.
+Five volt, and a squiggily that no one can identify.
+This is better right?
+You can start drawing some current off this
+and this zener is going to try to maintain that (voltage).
+It's an improvement over the voltage divider.
+Here's what's actually happening.
+Let's say for example
+I put a load on that guy.
+So now I've got current [pause]
+Before that was there, I just had current going 'naah'.
+Now I've got some current going this way
+and some current going that way.
+Because this is a steady state voltage,
+The voltage accross this is going to be steady state as well.
+So, there always going to be the same ammount 
+of current going through that
+That's Ohm's law.
+So what's actually happening is that
+As this becomes a smaller resistance,
+which is to say a greater load
+it's drawing more current,
+what it's going to do
+is divert current that is already
+going through the diode
+to go through the load.
+In that way the total circuit current
+stays constant
+and the voltage accross this resistor
+stays constant.
+A problems happens when this load becomes so great
+That as it draws so much current
+That there is none left to keep
+this thing running.
+At that point what happens is
+The current through the entire circuit will
+start to increase
+and the voltage drop accross this resistor
+will start to increase.
+and this voltage will start to decrease.
+That's one way to look at it.
+The other way to look at it is
+This one is sucking so much current out of this that
+there isn't enough current to 
+reverse bias or keep that thing in it's regulated state.
+It effectively becomes the same thing.
+That is called load regulation.
+For a change in load, and there are a bunch of ways
+regulators are...[pause]
+There given specs, load regulation is one of them.
+Which is to say, for a changing load
+how well is this thing able to maintain.
+In the case of the resistor divider,
+there was no load regulation.
+You couldn't change that
+that amount of current at all
+without having the voltage on the load change.
+Then there's line regulation!
+For the case of the voltage divider,
+and I've already erased it but I'll do it again.
+So let's say that this voltage goes up.
+'V' increase
+Well the voltage at this point
+is going to increase.
+Because, you know, the output is a
+direct ratio of the input.
+That's line regulation.
+This doesn't have it.
+Now line regulation for this guy
+is a little bit better.
+Umm, but let's say for example
+that this voltage goes up.
+Your supply voltage goes up,
+This voltage wants to remain constant.
+so what happens?
+Well you've got more voltage accross this resistor here.
+So that means there's more current going through here.
+Assuming that load doesn't change,
+all the extra current has to go through the diode.
+Where a problems comes up
+is that this thing
+this is a 5 volts diode okay?
+It's always got 5 volts on it.
+And whatever current is not going through the load,
+is going through the diode.
+If you want this thing (diode) to be versatile at all,
+you've got to have a lot of current going
+through it in the first place.
+That equals power. Voltage times current is power.
+So if you're drawing an amp, or you want to be able to source an amp
+this thing has got to be better than 5 watts.
+In fact, as a rule of thumb you always double your expected power rating2
+when you're buying parts.
+This has some difficulties
+which leads us to voltage regulators.
+What does a voltage regulator do?
+Let's say you've got, you know
+some black box here.
+Which is your regulator. And it's got an output of some voltage
+Plus 'V' we'll say
+No matter what's going on here,
+what it generally does is it's got a resistor divider
+that goes back to a feedback pin.
+What it's doing is it's constantly monitoring what it's putting out.
+and what the circuit demand is, right? So..
+If whatever out here starts drawing more current
+umm, I hope this works
+this is effectively a variable resistance.
+In the case of our voltage divider
+Uh, example when I showed you "This doesn't work!"
+The reason it doesn't work is because that one never changes.
+Okay? But with this thing,
+or with any voltage divider,
+this effectively changes, particularily for a linear.
+This thing is constantly monitoring the output voltage.
+and reporting back in order to adjust that guy.
+So let's say for example the load starts drawing
+more current.
+What happens when you draw more current?
+Well the voltage accross that guy goes up.
+Ohms law man!
+You start drawing more current, the voltage
+accross this guy is going to go up.
+So this voltage is going to go down.
+And consequently this voltage is going to go down.
+And it goes "Hey man! no no no no no, turn on turn on!"
+And so this resistance actually becomes smaller,
+lets through more current and keeps the voltage
+at a regulated place.
+There are a couple of different types
+of regulators that we use around sparkfun.
+Umm
+This would be considered a linear design.
+Which is what we're working towards; the LM317.
+There's a lot of different kinds of linear
+regulators.
+The other kind we typically use is the switching
+regulator.
+For a switching regulator, it does not
+use
+a resistor, it uses an inductor.
+to keep a continuous current flow out.
+If you remember an inductor stores energy
+by means of a magnetic field.
+When you put current through the inductor
+the field expands and that's energy.
+When current stops the field contracts and
+it pushes the juice back out.
+So in that way it doesn't loose power.
+It's a very efficient design.
+This thing, not so good.
+That's a resistor okay?
+So, you've got a voltage in
+and a voltage out.
+So how much power is this thing going to dissapate?
+Well, it's gonna uh, 'V' in minus 'V' out,
+times current.
+Often times that is not negligable.
+That's when we go to a switching regulator.
+But a lot of times, most times, you can
+get away with a linear
+They're quiet, they're cheap, they're simple to use.
+So we use a lot of them.
+Now I've drawn an LM317 circuit up here.
+Bare with me for a second.
+There are probably a zillion different kinds of
+linear voltage regulators.
+But there are two that you are likely to run into
+without trying to hard.
+One is an adjustable, and one is a fixed.
+So the LM7805 is a fixed regulator.
+Now, what does that mean?
+Instead of having to do this nonsense
+on the outside.
+This nonesense is on the inside.
+You just give it a 'V' in and a ground
+and an out and it makes 5 volts.
+Out of such and such.
+Here's an LM317 in its natural habitat.
+How do you set this guy up?
+The equation for the 'V' out is given as:
+I'll go over it.
+one point two five volt, times
+one plus 'R2' over 'R1'
+That being 'R2', that being 'R1'
+Plus 'I' adjust,
+which is the current coming out of the adjust pin
+Times 'R2'. And 'V' ref is one point two five volts.
+What it's going to try and do is maintain
+1.25V between the output pin and the adjust pin.
+'A' 'D' 'J'
+I know you can't read it but I said it,
+so you have to remember it now.
+So what this thing is going to do is set
+up a bias current
+That goes.. [immitating drawing]
+Like yay.
+But also, there's this 'I' adjust
+and this is just all coming from the equation
+but this is also general function.
+So I want you to visualize how this happens.
+There's also an 'I' adjust coming out
+of the adjust pin.
+That is given in the datasheet to be
+around 50 micro-amps.
+There's generally 50 micro-amps going
+through here.
+Often times we just ignore that current because..
+When you're setting up something that is
+a couple orders of magnitutde higher
+There's not going to be a lot
+of difference.
+In some applications you really need
+this thing to be precise
+and you need to calculate it just like that.
+How much does this current need to be?
+Minimum load. This is also given in the
+datasheet.
+This is also called quiescent current.
+For this device to be stable and regulating
+properly
+you have to be drawing anywhere
+from three point five to ten milliamps.
+and it will depend on the exact part,
+what that minimum is.
+So generally you will want to be drawing
+enough current to garuntee that this thing
+is always going to be stable
+In the data sheet, they'll even go as
+far as to specify "two hundred and forty Ohms here"
+and whatever else here to get your
+output voltage.
+I never, 'cause I'm a bad engineer [laughing]
+I never bother with this equation.
+I always go "So the reference is 1.25V
+and if I know my 'V' out.
+and I know that this voltage is 1.25V
+less than that.
+I know how much current is running through there."
+and I know that this voltage is this minus 1.25,
+times that current that I already know.
+So I can immediately calculate 'R2'.
+"BALLAM"
+That's probably the long way around
+but that's the way I see the circuit in my
+head.
+Something else you need to know.
+'V' drop.
+What that is is dropout voltage.
+In order for this thing to run right,
+There has to be at least..
+some amount of voltage..
+accross the device.
+And it's specified in the datasheet.
+And it's one point seven five volts.
+Absolute minimum right?
+So if I want five volts out,
+this guy has to be running at
+six point seven five volts at the least.
+If it drops anymore than that,
+I'm expecting wiggyness on the output.
+But for voltages higher, it's pretty good!
+Good line regulation, and because
+it's a feedback network it's got pretty
+good load regulation.
+A couple of design considerations that are
+off the top of my head while I'm looking at
+this circuit.
+They very much like when you decouple the
+adjust pin.
+And depending on the datasheet and the
+manufacturer you're looking at,
+it will say you can decouple up to like
+ten microfarads and more than that is stupid.
+Often times you'll see a point one (.1uF)
+and that's sufficient.
+That's just to improve ripple rejection
+so you don't get more junk on the output.
+They (mfr) also like to see protection diodes.
+When this thing turns off, and let's say
+you've got a cap out here,
+Your filter cap on the output,
+and this is the one on the input here.
+When 'V' in goes zero [break] you 
+turn this thing off right?
+This cap and this cap have to discharge in a way
+that will not destroy [laughing]
+I laugh just saying it, "Really? Destroy?"
+Ya it's gonna wreck it.
+They really do not want the current spike
+that comes out of that cap to go back that way.
+That's bad, that'll break it.
+But for values less than..
+And I can't remember off the top of my head
+what's in the datasheet
+but for smaller values of caps you don't really
+have to worry about it.
+For smaller output voltages you have to worry less
+about it.
+But often times you will see a diode..
+like yay.
+So under normal conditions this thing 
+is reverse biased
+and when power shuts off, it's shunt the current
+up here.
+And often times you'll see one like yay.
+It's gotta go that way.. doing the same thing.
+So basically this one discharges back here.
+This one discharges through there.
+'dada dada da'
+and you save your regulator.
+Is that true? Yes it's true.
+I destroyed one doing that.
+Another thing you want to think about
+when you're doing this is power dissipation.
+Often times this part..
+is like a 'T' 'O' two, twenty package. 
+Which if you're not familiar with is
+maybe about the size of my finger give or take.
+with three pins sticking out of it.
+I don't know about you guys but I'm
+comfortable, without any heatsinking,
+dropping about half a watt.
+If it's more than that, I'm probably going to
+put a heat sink on it.
+I tend to be paranoid where heat is concerned.
+How easy is it to get to half a watt?
+Well if you've got, uhh..
+You've got at least one and three quarter
+volts so as soon as you're drawing an amp
+uh, less than that, with half an amp
+or a little more, you're going to be 
+dropping a watt on this thing.
+So you need to think about power
+dissipation when you set one of these
+up.
+Here is an LM317 circuit that I've had to deal with
+recently for a project.
+It's a high voltage regulator.
+I've got four hundred fifteen volts in.
+And this is 'DC'.
+And I've got three hundred fifty volts out.
+So I need to set this up.
+How we do it? The same way we did it
+before. The same equation applies.
+You know you've got 1.25V accross this guy.
+and the datasheet will say.. they specify 
+'Use 240 ohms' cause it'll give you enough
+bias current to keep this thing stable.
+So you pretty much..
+You don't have to..
+But I don't have a reason not to at the moment.
+So you put that there.
+And you know what the current is through
+there.
+And you know what the voltage is here, that's 350
+and that's 348 point 75 (348.75)
+I had to calculate it twice,
+believe it or not.
+So 348.75 divided by,
+5.21 which is going through this guy,
+plus 50 microamps.
+I calculated it both ways just to see what
+the difference is.
+Doing it the whole way, with the 'I' adjust.
+You get sixty-six, three 'O' two (66,302) Ohms.
+Now I'm probably not going to find a resistor
+that is 66 point 302 'K'.
+But that's the number I came up with,
+and I might have to tweak it.
+A little note.
+Don't use a pot,
+in a circuit like this and the reason
+is because after a while..
+sooner or later after a number of years,
+however long it takes,
+the contacts in the pot will oxidize,
+and that is effectively going to open up.
+And when that opens up, this voltage will go up to this voltage.
+So what's going to happen to your stuff out there?
+Right, so watch that.
+Don't use a pot here for a high voltage circuit.
+Just in case you want to do that.
+You also need to think about the power.
+I've got 348 volts accross this guy,
+at a not very trivial current. So you calculate it out,
+and it's one point eight three (1.83) watts.
+So you could get a two watt, but that wouldn't
+be smart.
+I tend to be really paranoid about power and heat.
+I don't want the circuit to tank anytime soon.
+I want it to go forever.
+So I"m going to double that number. I'm probably
+going to go for a four watt.. You may not find
+a four watt, but you'll find a five watt.
+Then you might have to make something [sigh]
+Like I said you can't use a pot so I might have
+to gang up a whole bunch of resistors.
+and calculate power.. blah blah blah.
+So let's talk about what's going on here.
+At max current, this thing is going to be
+driving 220 milliamps.
+And if I didn't have all this other
+schtik going on here.
+That's sixty five volts
+times 220 milliamps.
+So that's 20-ish watts?
+Give or take..
+It's a lot of power.
+I think this thing will not allow that much.. voltage.
+It'll have a max voltage... rating
+you can not excede between input and ouput.
+I believe 65 volts is over the top.
+And certainly the 20 watts is not good either.
+So you have to heat sink this thing.
+Effectively, what this is saying is,
+you need to have some place else to drop that power.
+That's where this guy comes in.
+This is a big ol' NPN transistor.
+It's rated for a lot of power.
+You see a 15 volt zener diode.
+So between the outputs, and the base of this transistor,
+is going to be 15 volts.. All the time.
+Okay?
+What does that mean for the rest of the circuit
+here?
+If this is, effectively 365 volts
+This point is, point seven (0.7) volts less.
+You need to bias this thing, so that it stays on
+and it's stable.
+You know what the voltage is here, you know what the voltage
+is here and and you know you want..
+about 5 milliamps, and it may differ between datasheets.
+I just kinda picked 5 milliamps because I know that's
+going to keep that thing on.. Whatever part I end up
+using.
+So I know I've got 5 milliamps going this way.
+and you've got effectively fifty volts accross this.
+Well you calculate that out, and that value comes out
+to be ten 'K'.
+This branch is always going to be drawing 5
+milliamps as long as that's 350 volts and
+that's 415..
+This is going to be drawing 5 milliamps all the time.
+Now you also have to think about how much power
+this thing is going to dissipate.
+You calculate it out, and it comes out to be
+a quarter watt.
+Of course you want to double that because it's going
+to be a quarter watt dissipation all the time.
+So you at least want double that.
+If I want 220 milliamps going out yaar,
+and I've got 5 going here.
+I know I've gotta have at least..
+And I haven't accounted for the bias current. This
+is 5 milliamps about too..
+So this is probably going to be 225 total coming in here.
+But for the sake of argument, 'cause that's what I
+calculated,
+We're going to say that 250 milliamps is going that way.
+The way this thing works..
+You're going to have so much voltage accross LM317
+That's the adjustable resistance.
+And this guy, what this guy is in here for
+is to shut it all down
+just in case the load starts drawing too much current.
+So what happens?
+If that starts drawing too much current, or a lot of
+current,
+the resistance in the LM317 is going to go down,
+to allow more current
+But the voltage drop accross this resistor is going to go up.
+When this voltage starts to increase, it starts to turn
+off that junction which turns off the transistor.
+So this is a protection thing. So you want to 
+calculate the value of this resistor. 
+I know I've got... 364.3 volts.. at this point.
+Now this is where dropout voltage for the regulator
+comes.
+The minimum dropout for this thing is 1.75 volts.
+For it to be working
+So you can take this voltage,
+and subtract this voltage.. or actually this voltage right?
+because this is going to be 1.75 higher than that.
+So this is 364.3
+minus 351.75.. I got it written down as
+12.55 volts.
+That when this thing is full on and 250 milliamps
+is screaming through here and remember,
+I forgot to account for the bias current.
+So some of these numbers are a bit wiggy.
+But the process is sound. It comes out to be
+58 Ohms.
+Now what that means is that when all the current
+goes through, this is going to drop 12.55 volts.
+If any more current goes through, the voltage goes up,
+starts to shut off.
+So I'm limiting right around 215 going through this branch.
+You need to consider power here as well because
+that much current.. etc.
+It works out to be, and I have a couple calculations,
+if you go 12.55 volts time 215 milliamps you get
+2.7 watts.
+Again, double that for safety.
+Let's talk about power dissipation of this guy.
+This has got 415 and 364.7 so you calculate it out:
+415 minus 364.3 times 215 milliamps is 10.9 watts.
+In it's normal state, I told you before it's going
+to drawn about 190-ish milliamps.
+So it won't be dissipating 10.9 all the time,
+it'll be dissipating a little bit less.
+however, when designing a heat sink, this isn't the
+number I'm going to design with.
+Under normal circumstances, it's going to draw 10, 11
+watts. So this is definately going to require a heat sink.
+A couple of other things to add in here.
+Decoupling caps at the inputs. This can usually be
+something like a point 1 (0.1uF).
+I know we're used to putting ginormous caps on.
+By the way manufacturers love tantalum caps.
+But this can be a 0.1...
+0.1 is all you about really need.
+Same thing for here
+Protection diode.. Because 348.75.. There's a lot
+of juice in that thing. So you do not want it
+going back that way.
+That will pop your regulator, so you gotta have
+this guy.
+I confess, yes there's another diode here that will
+forward bias but I'm not totally clear here on the return
+path here.
+When this shuts off you ideally want it to go
+right back to the output.
+I don't really see that here, so this may be
+a bad design.
+Lastly in this circuit is this filter.
+We have a cap and the datasheet will always say:
+"You don't really need any more than about 10 micro farads"
+Depending on if it's tantalum, they'll tell you
+you can get away with 1uF.
+If it's electrolytic then you gotta jack it up to
+25.
+In the designs that I've seen that I've worked with,
+they had this sort of action.
+And it took me a while of digging to figure out what
+that was about.
+Anybody who's more knowledgable about it than I am,
+then certainly chime in.
+My understanding is that the regulator (LM317),
+becomes inductive at higher frequencies.
+The result is that if you have a big cap sitting
+out here, with a low 'ESR',
+the output will start ringing at a certain frequency.
+Resonance between capacitance and inductance.
+I'm not sure that we've covered that.
+You don't want it (ringing).
+So this resistor is in there to increase
+the 'ESR' and suppress the ringing at ceratain
+higher frequencies.
+It probably also serves as some amount of protection.
+Since there's no obvious return path..
+For the protection diode, this might help to
+squash that a little bit.
+I can also tell you that when this thing shuts off,
+the high voltage turns off but there's still a load
+out there.
+So it'll probably discharge through the load.
+What happens when something bad happens?
+What if I'm hovering over my project and I
+drop a screwdriver.
+This happens, believe me it happens.
+And this shorts to ground. "BLAM"
+Well no, not necessarily.
+If you assume a wire doubt there, so this
+thing. This is going to go to zero volts.
+This is still going to be 15 volts.
+This spot is going to be at 15 volts and you're
+going to end up dropping 400 volts accross that resistor.
+haha, okay.
+So check this out. When I calculate the power
+for this thing, I don't use it's quiescent state.
+I don't use the natural state, I use worst case scenario.
+What's going to happen if I drop.. my forceps
+in the middle of this circuit and "zap"
+So I'm going to calculate that power accordingly and this
+thing is going to dissipate 16 watts.
+I'm probably not going to get a 32 watt resistor
+but I will get something over 16 watts
+If I drop something in the circuit I'm going to
+notice it right away.
+And I'm going to yank the power. Do not ever
+stick your hand in a high voltage circuit.
+But I'm going to design so that this thing will
+not destroy itself if the worst happens.
+Same thing for this guy. Because you've got zero out there.
+And you've got 15 here. You're effectively going to have the
+same voltage.
+Or at least the same difference of voltage from here
+to this point.
+So these things are going to be okay provided that
+the catastrophe didn't happen with the LM317 to
+begin with.
+Worst case scenario, this thing is going to
+be dropping, uh..
+Ya 400 volts at 215 milliamps.
+So this things going to dissipate 86 watts.
+Not trivial
+So this needs a heat sink.
+Normally it's going to be this, and it's just fine.
+Ideally it'll never dissipate 86 watts for more than
+a couple of seconds.
+So it's probably going to be okay.
+But you can bet I'm going to beef up the heat sink
+just a bit to feel better.
+Other parts of consideration, this guy, this current
+is going to go up to 40 milliamps.
+So this is going to drop 600 milliwatts.
+A one watt zener is a fairly simple thing
+to achieve so that's not a big deal, but you 
+want to plan for that.
+Then there's this guy. The current is still
+roughly 215 milliamps.
+Because this thing is still going to try to
+shut that off.
+So it's still going to limit the current.
+So the powering on that guy should be a big deal.
+And of course since this voltage is zero,
+all that stuff sort of drops out of the equation.
+But those are the things I think about when I
+deal with a circuit like this.
+Now the other thing I will tell you is when I'm
+probing a circuit like this.
+High voltage, I do not ever put my hands,
+I'm never holding a probe and touching a circuit
+that's live.
+What I will do is I will set up a meter,
+and I will take the probs and I will attach
+them to the places with the circuit down.
+Then I will slowly bring the circuit up and I
+will watch what happens without touching anything.
+And that's basically it. Now I hope this didn't
+go too far over the line.
+Or too specific, too esoteric for the audience.
+But it kind of illustrates. This is a really versatile part.
+You can do a lot of things with it
+This illustrates one thing.
+The setup is still the same, but there's all this other
+extraneous stuff that you can throw in there to make it
+fit your application.
+Hopefully I gave you a few notes about good design practice,
+or maybe bad design practice [laughing]
+That's a linear voltage regulator, specifically
+the LM317 adjustable voltage regulator. Pretty
+good parts.
+Check out the datasheets because you will find like
+a brazzilion different cicuits. Different ways to set
+these things up for a lot of applications.
+Thanks for watching! Keep the questions and comments
+comming. Post them either in the comments section below
+I do this because it's like I'm shooting the ground.
+Or send feedback at sparkfun.com with according to pete
+Until next month, thanks again and I'll see ya. Bye!
+I've been told I'm not right in the head.

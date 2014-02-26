@@ -1,0 +1,1698 @@
+00:00:10,00:00:12
+Hi, and welcome to the February edition of According to Pete.
+
+00:00:13,00:00:17
+We are going to talk about voltage regulators, and why you want them.
+
+00:00:18,00:00:29
+I'm going to show you some circuits that don't work particularily well.
+Then I'm going to bring in voltage regulators and talk about the different kinds,
+and then we're ultimately going to lead to the ubiquitous LM317.
+
+00:00:30,00:00:40
+At the very end I'm going to show you a circuit that I've been dealing with
+for a project of mine to illustrate some of the setup of this thing, some stuff
+you gotta watch for and design stuff.
+
+00:00:42,00:00:46
+It's going to be a long one so let's hit it.
+
+00:00:47,00:00:55
+Start with let's consider a logic circuit. You've got a micro-controller,
+you're trying to power it with some voltage. The micro-controller is going
+to want
+
+00:00:56,00:01:00
+They'll operate within a certain range. You know, 2.3, 3.3 volts give or take.
+
+
+00:01:00,00:01:07
+If you screw with that voltage supply too much, you've got logic levels in there.
+
+00:01:07,00:01:11
+That are ideally pretty stationary. Well if your supply voltage is doing wiggy stuff.
+
+00:01:11,00:01:17
+That's going to propagate through your logic and so you're going to get
+an unreliable output.
+
+00:01:19,00:01:21
+Then there is stuff like ratiometric parts.
+
+00:01:22,00:01:27
+So for example an accelerometer that has an analog output.
+
+00:01:29,00:01:33
+A voltage that you shake it and get a certain voltage deflection from the norm.
+
+00:01:33,00:01:40
+Well, if your supply voltage changes that output voltage will change because
+it's a ratio of the supply voltage. So you gotta have something steady for that.
+
+00:01:42,00:01:44
+Then there's analog circuits.
+
+00:01:44,00:01:45
+For analog, anything
+
+00:01:45,00:01:50
+Any variation that happens on the supply
+line is going to propagate to the output.
+
+00:01:50,00:01:56
+So there's a lot of need to have a very
+stable supply voltage okay.
+
+00:01:56,00:01:58
+Now, how do you get that?
+
+00:01:58,00:02:00
+Let's say for example
+
+00:02:00,00:02:02
+And everybodies going "oh pfff" typical example.
+
+00:02:02,00:02:03
+Voltage divider
+
+00:02:03,00:02:11
+Sure enough, if this 'R' and this 'R' are the same,
+you get 5 volts out given 10 volts in.
+
+00:02:12,00:02:15
+Let's say you want to take some current out of that.
+
+00:02:15,00:02:17
+[jokingly] That's my supply right there man!
+
+00:02:17,00:02:19
+And then you attach another load to that.
+
+00:02:19,00:02:23
+So now, you know about parallel resistance,
+We talked about that.
+
+00:02:23,00:02:26
+Parallel resistance is product over sum.
+
+00:02:26,00:02:29
+So let's call this R1 and this R2.
+
+00:02:30,00:02:34
+So the resistance of this now
+
+00:02:34,00:02:37
+Is R1 times R2
+
+00:02:37,00:02:40
+Over R1 plus R2
+
+00:02:40,00:02:43
+And you know what? It's less, it's less than it used to be.
+
+00:02:43,00:02:46
+So what's going to happen there? This is going to start
+
+00:02:46,00:02:48
+Drawing more current
+
+00:02:48,00:02:51
+And the more current going through here, the more voltage
+drop is accross the resistor.
+
+00:02:51,00:02:53
+So your 5 volts is going to go down.
+
+00:02:53,00:02:54
+That sucks
+
+00:02:54,00:02:56
+Voltage dividers are no good.
+
+00:02:56,00:02:57
+But, here's another way.
+
+00:02:57,00:02:59
+That is a zener diode.
+
+00:02:59,00:03:02
+Just as a refesher, for those of you who don't know.
+
+00:03:02,00:03:04
+This thing is effectively a diode
+
+00:03:04,00:03:07
+That operates in reverse bias
+
+00:03:07,00:03:10
+To the point where the junction actually breaks down.
+
+00:03:10,00:03:15
+It's characteristic are such that it breaks down at
+a known voltage
+
+00:03:15,00:03:18
+And you could get zener diodes in all different kinds
+of voltage ratings.
+
+00:03:18,00:03:20
+Well for this case I've got one
+
+00:03:20,00:03:22
+This is a 5 volt zener
+
+00:03:22,00:03:24
+We are going to call that out.
+
+00:03:24,00:03:27
+Five volt, and a squiggily that no one can identify.
+
+00:03:27,00:03:29
+This is better right?
+
+00:03:29,00:03:34
+You can start drawing some current off this
+and this zener is going to try to maintain that (voltage).
+
+00:03:34,00:03:37
+It's an improvement over the voltage divider.
+
+00:03:37,00:03:38
+Here's what's actually happening.
+
+00:03:38,00:03:40
+Let's say for example
+
+00:03:40,00:03:42
+I put a load on that guy.
+
+00:03:42,00:03:44
+So now I've got current [pause]
+
+00:03:44,00:03:49
+Before that was there, I just had current going 'naah'.
+
+00:03:49,00:03:51
+Now I've got some current going this way
+
+00:03:51,00:03:53
+and some current going that way.
+
+00:03:54,00:03:56
+Because this is a steady state voltage,
+
+00:03:56,00:03:59
+The voltage accross this is going to be steady state as well.
+
+00:03:59,00:04:02
+So, there always going to be the same ammount 
+of current going through that
+
+00:04:02,00:04:03
+That's Ohm's law.
+
+00:04:03,00:04:06
+So what's actually happening is that
+
+00:04:06,00:04:10
+As this becomes a smaller resistance,
+which is to say a greater load
+
+00:04:10,00:04:12
+it's drawing more current,
+
+00:04:12,00:04:14
+what it's going to do
+
+00:04:14,00:04:18
+is divert current that is already
+going through the diode
+
+00:04:18,00:04:19
+to go through the load.
+
+00:04:19,00:04:23
+In that way the total circuit current
+stays constant
+
+00:04:23,00:04:26
+and the voltage accross this resistor
+stays constant.
+
+00:04:26,00:04:30
+A problems happens when this load becomes so great
+
+00:04:30,00:04:32
+That as it draws so much current
+
+00:04:32,00:04:36
+That there is none left to keep
+this thing running.
+
+00:04:37,00:04:39
+At that point what happens is
+
+00:04:39,00:04:42
+The current through the entire circuit will
+start to increase
+
+00:04:42,00:04:45
+and the voltage drop accross this resistor
+will start to increase.
+
+00:04:46,00:04:48
+and this voltage will start to decrease.
+
+00:04:48,00:04:50
+That's one way to look at it.
+The other way to look at it is
+
+00:04:51,00:04:54
+This one is sucking so much current out of this that
+there isn't enough current to 
+
+00:04:54,00:04:58
+reverse bias or keep that thing in it's regulated state.
+
+00:04:59,00:05:00
+It effectively becomes the same thing.
+
+00:05:01,00:05:05
+That is called load regulation.
+
+00:05:06,00:05:10
+For a change in load, and there are a bunch of ways
+regulators are...[pause]
+
+00:05:10,00:05:13
+There given specs, load regulation is one of them.
+
+00:05:13,00:05:16
+Which is to say, for a changing load
+
+00:05:16,00:05:19
+how well is this thing able to maintain.
+
+00:05:20,00:05:22
+In the case of the resistor divider,
+
+00:05:22,00:05:25
+there was no load regulation.
+You couldn't change that
+
+00:05:25,00:05:27
+that amount of current at all
+
+00:05:27,00:05:31
+without having the voltage on the load change.
+
+00:05:31,00:05:33
+Then there's line regulation!
+
+00:05:33,00:05:37
+For the case of the voltage divider,
+and I've already erased it but I'll do it again.
+
+00:05:37,00:05:40
+So let's say that this voltage goes up.
+
+00:05:40,00:05:42
+'V' increase
+
+00:05:42,00:05:45
+Well the voltage at this point
+is going to increase.
+
+00:05:45,00:05:50
+Because, you know, the output is a
+direct ratio of the input.
+
+00:05:50,00:05:52
+That's line regulation.
+
+00:05:52,00:05:53
+This doesn't have it.
+
+00:05:53,00:05:55
+Now line regulation for this guy
+
+00:05:55,00:05:57
+is a little bit better.
+
+00:05:57,00:06:02
+Umm, but let's say for example
+that this voltage goes up.
+
+00:06:03,00:06:04
+Your supply voltage goes up,
+
+00:06:04,00:06:07
+This voltage wants to remain constant.
+so what happens?
+
+00:06:07,00:06:10
+Well you've got more voltage accross this resistor here.
+
+00:06:10,00:06:13
+So that means there's more current going through here.
+
+00:06:13,00:06:17
+Assuming that load doesn't change,
+all the extra current has to go through the diode.
+
+00:06:18,00:06:21
+Where a problems comes up
+
+00:06:21,00:06:23
+is that this thing
+
+00:06:23,00:06:27
+this is a 5 volts diode okay?
+It's always got 5 volts on it.
+
+00:06:27,00:06:30
+And whatever current is not going through the load,
+
+00:06:30,00:06:32
+is going through the diode.
+
+00:06:32,00:06:34
+If you want this thing (diode) to be versatile at all,
+
+00:06:34,00:06:37
+you've got to have a lot of current going
+through it in the first place.
+
+00:06:37,00:06:40
+That equals power. Voltage times current is power.
+
+00:06:40,00:06:44
+So if you're drawing an amp, or you want to be able to source an amp
+
+00:06:44,00:06:46
+this thing has got to be better than 5 watts.
+
+00:06:47,00:06:52
+In fact, as a rule of thumb you always double your expected power rating2
+when you're buying parts.
+
+00:06:52,00:06:54
+This has some difficulties
+
+00:06:54,00:06:56
+which leads us to voltage regulators.
+
+00:06:56,00:06:58
+What does a voltage regulator do?
+
+00:06:59,00:07:00
+Let's say you've got, you know
+
+00:07:01,00:07:03
+some black box here.
+
+00:07:03,00:07:07
+Which is your regulator. And it's got an output of some voltage
+
+00:07:07,00:07:09
+Plus 'V' we'll say
+
+00:07:09,00:07:11
+No matter what's going on here,
+
+00:07:11,00:07:15
+what it generally does is it's got a resistor divider
+
+00:07:15,00:07:18
+that goes back to a feedback pin.
+
+00:07:18,00:07:23
+What it's doing is it's constantly monitoring what it's putting out.
+
+00:07:23,00:07:26
+and what the circuit demand is, right? So..
+
+00:07:26,00:07:29
+If whatever out here starts drawing more current
+
+00:07:29,00:07:32.
+umm, I hope this works
+
+00:07:32,00:07:36
+this is effectively a variable resistance.
+
+00:07:36,00:07:38
+In the case of our voltage divider
+
+00:07:38,00:07:41
+Uh, example when I showed you "This doesn't work!"
+
+00:07:41,00:07:45
+The reason it doesn't work is because that one never changes.
+
+00:07:45,00:07:47
+Okay? But with this thing,
+
+00:07:47,00:07:49
+or with any voltage divider,
+
+00:07:49,00:07:51
+this effectively changes, particularily for a linear.
+
+00:07:51,00:07:54
+This thing is constantly monitoring the output voltage.
+
+00:07:54,00:07:58
+and reporting back in order to adjust that guy.
+
+00:07:58,00:08:03
+So let's say for example the load starts drawing
+more current.
+
+00:08:03,00:08:06
+What happens when you draw more current?
+
+00:08:06,00:08:08
+Well the voltage accross that guy goes up.
+
+00:08:08,00:08:09
+Ohms law man!
+
+00:08:09,00:08:13
+You start drawing more current, the voltage
+accross this guy is going to go up.
+
+00:08:13,00:08:15
+So this voltage is going to go down.
+
+00:08:15,00:08:17
+And consequently this voltage is going to go down.
+
+00:08:17,00:08:20
+And it goes "Hey man! no no no no no, turn on turn on!"
+
+00:08:20,00:08:23
+And so this resistance actually becomes smaller,
+
+
+00:08:23,00:08:27
+lets through more current and keeps the voltage
+at a regulated place.
+
+00:08:27,00:08:31
+There are a couple of different types
+of regulators that we use around sparkfun.
+
+00:08:31,00:08:32
+Umm
+
+00:08:32,00:08:34
+This would be considered a linear design.
+
+00:08:34,00:08:37
+Which is what we're working towards; the LM317.
+
+00:08:37,00:08:40
+There's a lot of different kinds of linear
+regulators.
+
+00:08:40,00:08:43
+The other kind we typically use is the switching
+regulator.
+
+00:08:43,00:08:45
+For a switching regulator, it does not
+
+00:08:45,00:08:46
+use
+
+00:08:46,00:08:50
+a resistor, it uses an inductor.
+
+00:08:50,00:08:00
+to keep a continuous current flow out.
+
+00:08:55,00:08:59
+If you remember an inductor stores energy
+by means of a magnetic field.
+
+00:08:59,00:09:03
+When you put current through the inductor
+the field expands and that's energy.
+
+00:09:03,00:09:08
+When current stops the field contracts and
+it pushes the juice back out.
+
+00:09:08,00:09:10
+So in that way it doesn't loose power.
+
+00:09:10,00:09:11
+It's a very efficient design.
+
+00:09:11,00:09:14
+This thing, not so good.
+That's a resistor okay?
+
+00:09:15,00:09:19
+So, you've got a voltage in
+
+00:09:19,00:09:20
+and a voltage out.
+
+00:09:20,00:09:23
+So how much power is this thing going to dissapate?
+
+00:09:23,00:09:28
+Well, it's gonna uh, 'V' in minus 'V' out,
+
+00:09:28,00:09:30
+times current.
+
+00:09:30,00:09:34
+Often times that is not negligable.
+
+00:09:34,00:09:36
+That's when we go to a switching regulator.
+
+00:09:36,00:09:40
+But a lot of times, most times, you can
+get away with a linear
+
+00:09:40,00:09:44
+They're quiet, they're cheap, they're simple to use.
+
+00:09:44,00:09:45
+So we use a lot of them.
+
+00:09:45,00:09:49
+Now I've drawn an LM317 circuit up here.
+Bare with me for a second.
+
+00:09:49,00:09:55
+There are probably a zillion different kinds of
+linear voltage regulators.
+
+00:09:55,00:09:59
+But there are two that you are likely to run into
+without trying to hard.
+
+00:09:59,00:10:02
+One is an adjustable, and one is a fixed.
+
+00:10:02,00:10:06
+So the LM7805 is a fixed regulator.
+
+00:10:06,00:10:08
+Now, what does that mean?
+
+00:10:08,00:10:12
+Instead of having to do this nonsense
+on the outside.
+
+00:10:12,00:10:14
+This nonesense is on the inside.
+
+00:10:14,00:10:21
+You just give it a 'V' in and a ground
+and an out and it makes 5 volts.
+
+00:10:21,00:10:22
+Out of such and such.
+
+00:10:23,00:10:27
+Here's an LM317 in its natural habitat.
+How do you set this guy up?
+
+00:10:27,00:10:31
+The equation for the 'V' out is given as:
+I'll go over it.
+
+00:10:31,00:10:37
+one point two five volt, times
+one plus 'R2' over 'R1'
+
+00:10:37,00:10:39
+That being 'R2', that being 'R1'
+
+00:10:39,00:10:44
+Plus 'I' adjust,
+which is the current coming out of the adjust pin
+
+00:10:44,00:10:48
+Times 'R2'. And 'V' ref is one point two five volts.
+
+00:10:48,00:10:56
+What it's going to try and do is maintain
+1.25V between the output pin and the adjust pin.
+
+00:10:56,00:10:58
+'A' 'D' 'J'
+
+00:10:58,00:11:01
+I know you can't read it but I said it,
+so you have to remember it now.
+
+00:11:02,00:11:05
+So what this thing is going to do is set
+up a bias current
+
+00:11:05,00:11:08
+That goes.. [immitating drawing]
+Like yay.
+
+00:11:08,00:11:12
+But also, there's this 'I' adjust
+
+00:11:12,00:11:15
+and this is just all coming from the equation
+but this is also general function.
+
+00:11:15,00:11:18
+So I want you to visualize how this happens.
+
+00:11:18,00:11:21
+There's also an 'I' adjust coming out
+of the adjust pin.
+
+00:11:21,00:11:28
+That is given in the datasheet to be
+around 50 micro-amps.
+
+00:11:28,00:11:32
+There's generally 50 micro-amps going
+through here.
+
+00:11:32,00:11:36
+Often times we just ignore that current because..
+
+00:11:36,00:11:42
+When you're setting up something that is
+a couple orders of magnitutde higher
+
+00:11:42,00:11:44
+There's not going to be a lot
+of difference.
+
+00:11:44,00:11:47
+In some applications you really need
+this thing to be precise
+
+00:11:47,00:11:49
+and you need to calculate it just like that.
+
+00:11:49,00:11:51
+How much does this current need to be?
+
+00:11:51,00:11:53
+Minimum load. This is also given in the
+datasheet.
+
+00:11:53,00:11:55
+This is also called quiescent current.
+
+00:11:55,00:11:59
+For this device to be stable and regulating
+properly
+
+00:11:59,00:12:03
+you have to be drawing anywhere
+from three point five to ten milliamps.
+
+00:12:03,00:12:08
+and it will depend on the exact part,
+what that minimum is.
+
+00:12:08,00:12:13
+So generally you will want to be drawing
+enough current to garuntee that this thing
+is always going to be stable
+
+00:12:13,00:12:17
+In the data sheet, they'll even go as
+far as to specify "two hundred and forty Ohms here"
+
+00:12:17,00:12:21
+and whatever else here to get your
+output voltage.
+
+00:12:21,00:12:24
+I never, 'cause I'm a bad engineer [laughing]
+
+00:12:24,00:12:27
+I never bother with this equation.
+
+00:12:27,00:12:30
+I always go "So the reference is 1.25V
+
+00:12:30,00:12:34
+and if I know my 'V' out.
+
+00:12:34,00:12:37
+and I know that this voltage is 1.25V
+less than that.
+
+00:12:37,00:12:39
+I know how much current is running through there."
+
+00:12:39,00:12:45
+and I know that this voltage is this minus 1.25,
+times that current that I already know.
+
+00:12:45,00:12:48
+So I can immediately calculate 'R2'.
+
+00:12:48,00:12:51
+"BALLAM"
+
+00:12:51,00:12:53
+That's probably the long way around
+
+00:12:53,00:12:56
+but that's the way I see the circuit in my
+head.
+
+00:12:56,00:12:58
+Something else you need to know.
+
+00:12:58,00:13:00
+'V' drop.
+
+00:13:00,00:13:03
+What that is is dropout voltage.
+
+00:13:03,00:13:05
+In order for this thing to run right,
+
+00:13:05,00:13:08
+There has to be at least..
+
+00:13:08,00:13:11
+some amount of voltage..
+
+00:13:11,00:13:014
+accross the device.
+
+00:13:14,00:13:16
+And it's specified in the datasheet.
+
+00:13:16,00:13:18
+And it's one point seven five volts.
+
+00:13:18,00:13:20
+Absolute minimum right?
+
+00:13:20,00:13:26
+So if I want five volts out,
+this guy has to be running at
+six point seven five volts at the least.
+
+00:13:26,00:13:31
+If it drops anymore than that,
+I'm expecting wiggyness on the output.
+
+00:13:31,00:13:34
+But for voltages higher, it's pretty good!
+
+00:13:34,00:13:39
+Good line regulation, and because
+it's a feedback network it's got pretty
+good load regulation.
+
+00:13:39,00:13:44
+A couple of design considerations that are
+off the top of my head while I'm looking at
+this circuit.
+
+00:13:44,00:13:49
+They very much like when you decouple the
+adjust pin.
+
+00:13:49,00:13:53
+And depending on the datasheet and the
+manufacturer you're looking at,
+
+00:13:53,00:13:58
+it will say you can decouple up to like
+ten microfarads and more than that is stupid.
+
+00:13:58,00:14:01
+Often times you'll see a point one (.1uF)
+and that's sufficient.
+
+00:14:01,00:14:06
+That's just to improve ripple rejection
+so you don't get more junk on the output.
+
+00:14:06,00:14:09
+They (mfr) also like to see protection diodes.
+
+00:14:09,00:14:14
+When this thing turns off, and let's say
+you've got a cap out here,
+
+00:14:14,00:14:19
+Your filter cap on the output,
+and this is the one on the input here.
+
+00:14:19,00:14:22
+When 'V' in goes zero [break] you 
+turn this thing off right?
+
+00:14:22,00:14:28
+This cap and this cap have to discharge in a way
+that will not destroy [laughing]
+
+00:14:28,00:14:33
+I laugh just saying it, "Really? Destroy?"
+Ya it's gonna wreck it.
+
+00:14:33,00:14:39
+They really do not want the current spike
+that comes out of that cap to go back that way.
+
+00:14:39,00:14:41
+That's bad, that'll break it.
+
+00:14:41,00:14:43
+But for values less than..
+
+00:14:43,00:14:46
+And I can't remember off the top of my head
+what's in the datasheet
+
+00:14:46,00:14:48
+but for smaller values of caps you don't really
+have to worry about it.
+
+00:14:48,00:14:52
+For smaller output voltages you have to worry less
+about it.
+
+00:14:52,00:14:56
+But often times you will see a diode..
+
+00:14:56,00:14:58
+like yay.
+
+00:14:58,00:15:00
+So under normal conditions this thing 
+is reverse biased
+
+00:15:00,00:15:04
+and when power shuts off, it's shunt the current
+up here.
+
+00:15:04,00:15:08
+And often times you'll see one like yay.
+
+00:15:08,00:15:12
+It's gotta go that way.. doing the same thing.
+
+00:15:12,00:15:14
+So basically this one discharges back here.
+
+00:15:14,00:15:17
+This one discharges through there.
+
+
+00:15:17,00:15:018
+'dada dada da'
+and you save your regulator.
+
+00:15:18,00:15:22
+Is that true? Yes it's true.
+I destroyed one doing that.
+
+00:15:22,00:15:26
+Another thing you want to think about
+when you're doing this is power dissipation.
+
+00:15:26,00:15:29
+Often times this part..
+
+00:15:29,00:15:31
+is like a 'T' 'O' two, twenty package. 
+
+00:15:31,00:15:35
+Which if you're not familiar with is
+maybe about the size of my finger give or take.
+
+00:15:35,00:15:37
+with three pins sticking out of it.
+
+00:15:37,00:15:45
+I don't know about you guys but I'm
+comfortable, without any heatsinking,
+dropping about half a watt.
+
+00:15:45,00:15:49
+If it's more than that, I'm probably going to
+put a heat sink on it.
+
+00:15:49,00:15:51
+I tend to be paranoid where heat is concerned.
+
+00:15:51,00:15:54
+How easy is it to get to half a watt?
+
+00:15:54,00:15:57
+Well if you've got, uhh..
+
+00:15:57,00:16:02
+You've got at least one and three quarter
+volts so as soon as you're drawing an amp
+
+00:16:02,00:16:07
+uh, less than that, with half an amp
+or a little more, you're going to be 
+dropping a watt on this thing.
+
+00:16:07,00:16:012
+So you need to think about power
+dissipation when you set one of these
+up.
+
+00:16:12,00:16:17
+Here is an LM317 circuit that I've had to deal with
+recently for a project.
+
+00:16:17,00:16:19
+It's a high voltage regulator.
+
+00:16:19,00:16:23
+I've got four hundred fifteen volts in.
+And this is 'DC'.
+
+00:16:23,00:16:26
+And I've got three hundred fifty volts out.
+
+00:16:26,00:16:28
+So I need to set this up.
+
+00:16:28,00:16:32
+How we do it? The same way we did it
+before. The same equation applies.
+
+00:16:32,00:16:35
+You know you've got 1.25V accross this guy.
+
+00:16:35,00:16:43
+and the datasheet will say.. they specify 
+'Use 240 ohms' cause it'll give you enough
+bias current to keep this thing stable.
+
+00:16:43,00:16:46
+So you pretty much..
+
+00:16:46,00:16:48
+You don't have to..
+
+00:16:48,00:16:50
+But I don't have a reason not to at the moment.
+
+00:16:50,00:16:52
+So you put that there.
+
+00:16:52,00:16:54
+And you know what the current is through
+there.
+
+00:16:54,00:16:59
+And you know what the voltage is here, that's 350
+and that's 348 point 75 (348.75)
+
+00:16:59,00:17:01
+I had to calculate it twice,
+believe it or not.
+
+00:17:01,00:17:04
+So 348.75 divided by,
+
+00:17:04,00:17:06
+5.21 which is going through this guy,
+
+00:17:06,00:17:08
+plus 50 microamps.
+
+00:17:08,00:17:12
+I calculated it both ways just to see what
+the difference is.
+
+00:17:12,00:17:18
+Doing it the whole way, with the 'I' adjust.
+
+00:17:18,00:17:21
+You get sixty-six, three 'O' two (66,302) Ohms.
+
+00:17:21,00:17:27
+Now I'm probably not going to find a resistor
+that is 66 point 302 'K'.
+
+00:17:27,00:17:31
+But that's the number I came up with,
+and I might have to tweak it.
+
+00:17:31,00:17:33
+A little note.
+
+00:17:33,00:17:35
+Don't use a pot,
+
+00:17:35,00:17:38
+in a circuit like this and the reason
+is because after a while..
+
+00:17:38,00:17:41
+sooner or later after a number of years,
+however long it takes,
+
+00:17:41,00:17:43
+the contacts in the pot will oxidize,
+
+00:17:44,00:17:47
+and that is effectively going to open up.
+
+00:17:47,00:17:51
+And when that opens up, this voltage will go up to this voltage.
+
+00:17:51,00:17:53
+So what's going to happen to your stuff out there?
+
+00:17:53,00:17:55
+Right, so watch that.
+
+00:17:55,00:17:59
+Don't use a pot here for a high voltage circuit.
+Just in case you want to do that.
+
+00:17:59,00:18:03
+You also need to think about the power.
+I've got 348 volts accross this guy,
+
+00:18:03,00:18:09
+at a not very trivial current. So you calculate it out,
+and it's one point eight three (1.83) watts.
+
+00:18:09,00:18:12
+So you could get a two watt, but that wouldn't
+be smart.
+
+00:18:12,00:18:17
+I tend to be really paranoid about power and heat.
+
+00:18:17,00:18:21
+I don't want the circuit to tank anytime soon.
+I want it to go forever.
+
+00:18:21,00:18:27
+So I"m going to double that number. I'm probably
+going to go for a four watt.. You may not find
+a four watt, but you'll find a five watt.
+
+00:18:27,00:18:31
+Then you might have to make something [sigh]
+
+00:18:31,00:18:35
+Like I said you can't use a pot so I might have
+to gang up a whole bunch of resistors.
+
+00:18:35,00:18:37
+and calculate power.. blah blah blah.
+
+00:18:37,00:18:39
+So let's talk about what's going on here.
+
+00:18:39,00:18:43
+At max current, this thing is going to be
+driving 220 milliamps.
+
+00:18:43,00:18:48
+And if I didn't have all this other
+schtik going on here.
+
+00:18:48,00:18:52
+That's sixty five volts
+
+00:18:52,00:18:56
+times 220 milliamps.
+
+00:18:56,00:19:00
+So that's 20-ish watts?
+Give or take..
+
+00:19:00,00:19:02
+It's a lot of power.
+
+00:19:02,00:19:08
+I think this thing will not allow that much.. voltage.
+
+00:19:08,00:19:12
+It'll have a max voltage... rating
+
+00:19:12,00:19:18
+you can not excede between input and ouput.
+I believe 65 volts is over the top.
+
+00:19:18,00:19:24
+And certainly the 20 watts is not good either.
+So you have to heat sink this thing.
+
+00:19:24,00:19:28
+Effectively, what this is saying is,
+you need to have some place else to drop that power.
+
+00:19:28,00:19:31
+That's where this guy comes in.
+
+00:19:31,00:19:34
+This is a big ol' NPN transistor.
+It's rated for a lot of power.
+
+00:19:34,00:19:38
+You see a 15 volt zener diode.
+
+00:19:38,00:19:43
+So between the outputs, and the base of this transistor,
+
+00:19:43,00:19:047
+is going to be 15 volts.. All the time.
+Okay?
+
+00:19:47,00:19:49
+What does that mean for the rest of the circuit
+here?
+
+00:19:49,00:19:53
+If this is, effectively 365 volts
+
+00:19:53,00:19:57
+This point is, point seven (0.7) volts less.
+
+00:19:57,00:20:04
+You need to bias this thing, so that it stays on
+and it's stable.
+
+00:20:04,00:20:09
+You know what the voltage is here, you know what the voltage
+is here and and you know you want..
+
+00:20:09,00:20:14
+about 5 milliamps, and it may differ between datasheets.
+
+00:20:14,00:20:20
+I just kinda picked 5 milliamps because I know that's
+going to keep that thing on.. Whatever part I end up
+using.
+
+00:20:20,00:20:22
+So I know I've got 5 milliamps going this way.
+
+00:20:22,00:20:26
+and you've got effectively fifty volts accross this.
+
+00:20:26,00:20:29
+Well you calculate that out, and that value comes out
+to be ten 'K'.
+
+00:20:29,00:20:36
+This branch is always going to be drawing 5
+milliamps as long as that's 350 volts and
+that's 415..
+
+00:20:36,00:20:39
+This is going to be drawing 5 milliamps all the time.
+
+00:20:39,00:20:43
+Now you also have to think about how much power
+this thing is going to dissipate.
+
+00:20:43,00:20:48
+You calculate it out, and it comes out to be
+a quarter watt.
+
+00:20:48,00:20:55
+Of course you want to double that because it's going
+to be a quarter watt dissipation all the time.
+
+00:20:55,00:20:57
+So you at least want double that.
+
+00:20:57,00:21:00
+If I want 220 milliamps going out yaar,
+
+00:21:00,00:21:03
+and I've got 5 going here.
+
+00:21:03,00:21:07
+I know I've gotta have at least..
+
+00:21:07,00:21:13
+And I haven't accounted for the bias current. This
+is 5 milliamps about too..
+
+00:21:13,00:21:16
+So this is probably going to be 225 total coming in here.
+
+00:21:16,00:21:19
+But for the sake of argument, 'cause that's what I
+calculated,
+
+00:21:19,00:21:25
+We're going to say that 250 milliamps is going that way.
+
+00:21:25,00:21:28
+The way this thing works..
+
+00:21:28,00:21:32
+You're going to have so much voltage accross LM317
+
+00:21:32,00:21:34
+That's the adjustable resistance.
+
+00:21:34,00:21:37
+And this guy, what this guy is in here for
+
+00:21:37,00:21:41
+is to shut it all down
+
+00:21:41,00:21:43
+just in case the load starts drawing too much current.
+
+00:21:43,00:21:45
+So what happens?
+
+00:21:45,00:21:49
+If that starts drawing too much current, or a lot of
+current,
+
+00:21:49,00:21:54
+the resistance in the LM317 is going to go down,
+to allow more current
+
+00:21:54,00:21:57
+But the voltage drop accross this resistor is going to go up.
+
+00:21:57,00:22:03
+When this voltage starts to increase, it starts to turn
+off that junction which turns off the transistor.
+
+00:22:03,00:22:09
+So this is a protection thing. So you want to 
+calculate the value of this resistor. 
+
+00:22:09,00:22:20
+I know I've got... 364.3 volts.. at this point.
+
+00:22:20,00:22:23
+Now this is where dropout voltage for the regulator
+comes.
+
+00:22:23,00:22:26
+The minimum dropout for this thing is 1.75 volts.
+
+00:22:26,00:22:28
+For it to be working
+
+00:22:28,00:22:30
+So you can take this voltage,
+
+00:22:30,00:22:34
+and subtract this voltage.. or actually this voltage right?
+
+00:22:34,00:22:37
+because this is going to be 1.75 higher than that.
+
+00:22:37,00:22:40
+So this is 364.3
+
+00:22:40,00:22:48
+minus 351.75.. I got it written down as
+12.55 volts.
+
+00:22:48,00:22:56
+That when this thing is full on and 250 milliamps
+is screaming through here and remember,
+I forgot to account for the bias current.
+
+00:22:56,00:22:58
+So some of these numbers are a bit wiggy.
+
+00:22:58,00:23:01
+But the process is sound. It comes out to be
+58 Ohms.
+
+00:23:01,00:23:07
+Now what that means is that when all the current
+goes through, this is going to drop 12.55 volts.
+
+00:23:07,00:23:11
+If any more current goes through, the voltage goes up,
+starts to shut off.
+
+00:23:11,00:23:16
+So I'm limiting right around 215 going through this branch.
+
+00:23:16,00:23:21
+You need to consider power here as well because
+that much current.. etc.
+
+00:23:21,00:23:30
+It works out to be, and I have a couple calculations,
+if you go 12.55 volts time 215 milliamps you get
+2.7 watts.
+
+00:23:30,00:23:32
+Again, double that for safety.
+
+00:23:32,00:23:36
+Let's talk about power dissipation of this guy.
+
+00:23:36,00:23:48
+This has got 415 and 364.7 so you calculate it out:
+415 minus 364.3 times 215 milliamps is 10.9 watts.
+
+00:23:48,00:23:55
+In it's normal state, I told you before it's going
+to drawn about 190-ish milliamps.
+
+00:23:55,00:24:02
+So it won't be dissipating 10.9 all the time,
+it'll be dissipating a little bit less.
+
+00:24:02,00:24:09
+however, when designing a heat sink, this isn't the
+number I'm going to design with.
+
+00:24:09,00:24:14
+Under normal circumstances, it's going to draw 10, 11
+watts. So this is definately going to require a heat sink.
+
+00:24:14,00:24:17
+A couple of other things to add in here.
+
+00:24:17,00:24:22
+Decoupling caps at the inputs. This can usually be
+something like a point 1 (0.1uF).
+
+00:24:22,00:24:30
+I know we're used to putting ginormous caps on.
+By the way manufacturers love tantalum caps.
+
+00:24:30,00:24:37
+But this can be a 0.1...
+0.1 is all you about really need.
+
+00:24:37,00:24:39
+Same thing for here
+
+00:24:39,00:24:55
+Protection diode.. Because 348.75.. There's a lot
+of juice in that thing. So you do not want it
+going back that way.
+
+00:24:55,00:24:58
+That will pop your regulator, so you gotta have
+this guy.
+
+00:24:58,00:25:05
+I confess, yes there's another diode here that will
+forward bias but I'm not totally clear here on the return
+path here.
+
+00:25:05,00:25:10
+When this shuts off you ideally want it to go
+right back to the output.
+
+00:25:10,00:25:14
+I don't really see that here, so this may be
+a bad design.
+
+00:25:14,00:25:06
+Lastly in this circuit is this filter.
+
+00:25:16,00:25:22
+We have a cap and the datasheet will always say:
+"You don't really need any more than about 10 micro farads"
+
+00:25:22,00:25:28
+Depending on if it's tantalum, they'll tell you
+you can get away with 1uF.
+
+00:25:28,00:25:31
+If it's electrolytic then you gotta jack it up to
+25.
+
+00:25:31,00:25:35
+In the designs that I've seen that I've worked with,
+they had this sort of action.
+
+00:25:35,00:25:41
+And it took me a while of digging to figure out what
+that was about.
+
+00:25:41,00:25:46
+Anybody who's more knowledgable about it than I am,
+then certainly chime in.
+
+00:25:46,00:25:55
+My understanding is that the regulator (LM317),
+becomes inductive at higher frequencies.
+
+00:25:55,00:26:01
+The result is that if you have a big cap sitting
+out here, with a low 'ESR',
+
+00:26:01,00:26:05
+the output will start ringing at a certain frequency.
+
+00:26:05,00:26:12
+Resonance between capacitance and inductance.
+I'm not sure that we've covered that.
+
+00:26:12,00:26:14
+You don't want it (ringing).
+
+00:26:14,00:26:21
+So this resistor is in there to increase
+the 'ESR' and suppress the ringing at ceratain
+higher frequencies.
+
+00:26:21,00:26:32
+It probably also serves as some amount of protection.
+Since there's no obvious return path..
+
+00:26:32,00:26:37
+For the protection diode, this might help to
+squash that a little bit.
+
+00:26:37,00:26:46
+I can also tell you that when this thing shuts off,
+the high voltage turns off but there's still a load
+out there.
+
+00:26:46,00:26:49
+So it'll probably discharge through the load.
+
+00:26:49,00:26:53
+What happens when something bad happens?
+
+00:26:53,00:26:57
+What if I'm hovering over my project and I
+drop a screwdriver.
+
+00:26:57,00:27:00
+This happens, believe me it happens.
+
+00:27:00,00:27:06
+And this shorts to ground. "BLAM"
+
+00:27:06,00:27:08
+Well no, not necessarily.
+
+00:27:08,00:27:13
+If you assume a wire doubt there, so this
+thing. This is going to go to zero volts.
+
+00:27:13,00:27:15
+This is still going to be 15 volts.
+
+00:27:15,00:27:22
+This spot is going to be at 15 volts and you're
+going to end up dropping 400 volts accross that resistor.
+
+00:27:22,00:27:24
+haha, okay.
+
+00:27:24,00:27:32
+So check this out. When I calculate the power
+for this thing, I don't use it's quiescent state.
+
+00:27:32,00:27:35
+I don't use the natural state, I use worst case scenario.
+
+00:27:35,00:27:42
+What's going to happen if I drop.. my forceps
+in the middle of this circuit and "zap"
+
+00:27:42,00:27:47
+So I'm going to calculate that power accordingly and this
+thing is going to dissipate 16 watts.
+
+00:27:47,00:27:55
+I'm probably not going to get a 32 watt resistor
+but I will get something over 16 watts
+
+00:27:55,00:27:59
+If I drop something in the circuit I'm going to
+notice it right away.
+
+00:27:59,00:28:04
+And I'm going to yank the power. Do not ever
+stick your hand in a high voltage circuit.
+
+00:28:04,00:28:09
+But I'm going to design so that this thing will
+not destroy itself if the worst happens.
+
+00:28:09,00:28:16
+Same thing for this guy. Because you've got zero out there.
+And you've got 15 here. You're effectively going to have the
+same voltage.
+
+00:28:16,00:28:20
+Or at least the same difference of voltage from here
+to this point.
+
+00:28:20,00:28:27
+So these things are going to be okay provided that
+the catastrophe didn't happen with the LM317 to
+begin with.
+
+00:28:27,00:28:30
+Worst case scenario, this thing is going to
+be dropping, uh..
+
+00:28:30,00:28:33
+Ya 400 volts at 215 milliamps.
+
+00:28:33,00:28:38
+So this things going to dissipate 86 watts.
+Not trivial
+
+00:28:38,00:28:40
+So this needs a heat sink.
+
+00:28:40,00:28:47
+Normally it's going to be this, and it's just fine.
+Ideally it'll never dissipate 86 watts for more than
+a couple of seconds.
+
+00:28:47,00:28:49
+So it's probably going to be okay.
+
+00:28:49,00:28:55
+But you can bet I'm going to beef up the heat sink
+just a bit to feel better.
+
+00:28:55,00:29:00
+Other parts of consideration, this guy, this current
+is going to go up to 40 milliamps.
+
+00:29:00,00:29:03
+So this is going to drop 600 milliwatts.
+
+00:29:03,00:29:11
+A one watt zener is a fairly simple thing
+to achieve so that's not a big deal, but you 
+want to plan for that.
+
+00:29:11,00:29:17
+Then there's this guy. The current is still
+roughly 215 milliamps.
+
+00:29:17,00:29:20
+Because this thing is still going to try to
+shut that off.
+
+00:29:20,00:29:22
+So it's still going to limit the current.
+
+00:29:22,00:29:24
+So the powering on that guy should be a big deal.
+
+00:29:24,00:29:29
+And of course since this voltage is zero,
+all that stuff sort of drops out of the equation.
+
+00:29:29,00:29:33
+But those are the things I think about when I
+deal with a circuit like this.
+
+00:29:33,00:29:36
+Now the other thing I will tell you is when I'm
+probing a circuit like this.
+
+00:29:36,00:29:43
+High voltage, I do not ever put my hands,
+I'm never holding a probe and touching a circuit
+that's live.
+
+00:29:43,00:29:50
+What I will do is I will set up a meter,
+and I will take the probs and I will attach
+them to the places with the circuit down.
+
+00:29:50,00:29:57
+Then I will slowly bring the circuit up and I
+will watch what happens without touching anything.
+
+00:29:57,00:30:00
+And that's basically it. Now I hope this didn't
+go too far over the line.
+
+00:30:00,00:30:03
+Or too specific, too esoteric for the audience.
+
+00:30:03,00:30:08
+But it kind of illustrates. This is a really versatile part.
+You can do a lot of things with it
+
+00:30:08,00:30:10
+This illustrates one thing.
+
+00:30:10,00:30:18
+The setup is still the same, but there's all this other
+extraneous stuff that you can throw in there to make it
+fit your application.
+
+00:30:18,00:30:26
+Hopefully I gave you a few notes about good design practice,
+or maybe bad design practice [laughing]
+
+00:30:26,00:30:34
+That's a linear voltage regulator, specifically
+the LM317 adjustable voltage regulator. Pretty
+good parts.
+
+00:30:34,00:30:43
+Check out the datasheets because you will find like
+a brazzilion different cicuits. Different ways to set
+these things up for a lot of applications.
+
+00:30:43,00:30:50
+Thanks for watching! Keep the questions and comments
+comming. Post them either in the comments section below
+
+00:30:50,00:30:52
+I do this because it's like I'm shooting the ground.
+
+00:30:52,00:31:00
+Or send feedback at sparkfun.com with according to pete
+
+00:31:00,00:31:03
+Until next month, thanks again and I'll see ya. Bye!
+
+00:31:03,00:31:05
+I've been told I'm not right in the head.
+
