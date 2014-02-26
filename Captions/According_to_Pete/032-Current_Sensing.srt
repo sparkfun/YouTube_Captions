@@ -1,0 +1,1256 @@
+1
+00:00:00,000 --> 00:00:10,030
+[intro music plays]
+
+2
+00:00:10,130 --> 00:00:13,500
+Hi, and welcome to the July
+edition of According to Pete.
+
+3
+00:00:13,600 --> 00:00:15,925
+Today, we're gonna talk about current sensing
+
+4
+00:00:16,025 --> 00:00:18,446
+why you wanna do it
+how you gonna do it
+
+5
+00:00:18,546 --> 00:00:21,828
+and at the end I'm gonna run you
+through calibration
+
+6
+00:00:21,928 --> 00:00:24,589
+of one of our current sensors that
+we have available.
+
+7
+00:00:24,691 --> 00:00:27,573
+So the reason why we do current
+sensing is because 
+
+8
+00:00:27,673 --> 00:00:30,039
+we, um, we we expect
+
+9
+00:00:30,039 --> 00:00:32,556
+a current to change in a certain
+part of a circuit
+
+10
+00:00:32,656 --> 00:00:35,180
+ or we need to make operational decisions
+
+11
+00:00:35,280 --> 00:00:38,125
+based on a what a circuit is doing
+
+12
+00:00:38,225 --> 00:00:41,862
+or we're afraid that something
+is going to burn
+
+13
+00:00:41,862 --> 00:00:42,720
+(this is usually my case).
+
+14
+00:00:42,820 --> 00:00:44,298
+I'm afraid something's going to burn
+
+15
+00:00:44,398 --> 00:00:46,600
+and I wanna know if the
+current is going up
+
+16
+00:00:46,600 --> 00:00:48,689
+in a certain section so
+I can shut it off.
+
+17
+00:00:48,689 --> 00:00:51,010
+so there's a couple of different
+ways to, uh,
+
+18
+00:00:51,110 --> 00:00:53,129
+to sense current in a circuit.
+
+19
+00:00:53,229 --> 00:00:54,859
+This, using Ohm's law
+
+20
+00:00:54,959 --> 00:00:56,346
+okay so suppose you got
+
+21
+00:00:56,709 --> 00:00:58,112
+something sitting out here
+
+22
+00:00:58,212 --> 00:01:00,619
+that is, uh,  going to have
+a varying in current you need to
+
+23
+00:01:00,719 --> 00:01:01,750
+know what it's going to do
+
+24
+00:01:01,750 --> 00:01:05,079
+right? Okay. So one method of
+
+25
+00:01:05,179 --> 00:01:07,074
+sensing current is to actually place
+
+26
+00:01:07,074 --> 00:01:10,114
+a resistance in series with your load
+
+27
+00:01:10,328 --> 00:01:13,819
+and ideally it's a very
+small resistance, right?
+
+28
+00:01:13,819 --> 00:01:16,120
+And I'll explain that in a sec.
+
+29
+00:01:16,220 --> 00:01:19,740
+So typically you something like a
+0.1 ohm resistor
+
+30
+00:01:19,840 --> 00:01:23,340
+and so as current changes in this thing
+
+31
+00:01:23,340 --> 00:01:28,159
+there is a really small little signal
+that generates over this resistor
+
+32
+00:01:28,159 --> 00:01:30,873
+Okay. Really small,
+kinda hard to read
+
+33
+00:01:30,973 --> 00:01:32,101
+so what you typically do
+
+34
+00:01:32,789 --> 00:01:36,675
+is you take this to an
+instrumentation amplifier
+
+35
+00:01:36,833 --> 00:01:40,000
+so I can op-amp and get a signal
+in here
+
+36
+00:01:40,000 --> 00:01:42,719
+and another one there
+nuh neh
+
+37
+00:01:42,719 --> 00:01:45,829
+and, um, and actually, I've
+just cut to the chase
+
+38
+00:01:45,829 --> 00:01:48,714
+there's a few parts that do exactly this
+
+39
+00:01:48,814 --> 00:01:50,580
+the INA169
+
+40
+00:01:50,680 --> 00:01:53,232
+and the reason it's a cool little part
+is because when you set up
+
+41
+00:01:53,332 --> 00:01:55,623
+an instrumentation amplifier like this
+
+42
+00:01:55,723 --> 00:01:58,429
+you have a couple
+resistances here, you needed
+
+43
+00:01:58,430 --> 00:02:00,520
+a little driver circuit
+
+44
+00:02:00,620 --> 00:02:04,300
+and goes to load and you
+measure something else
+
+45
+00:02:04,400 --> 00:02:06,702
+the cool thing about this is that
+
+46
+00:02:06,802 --> 00:02:08,552
+if you don't have a part 
+
+47
+00:02:08,552 --> 00:02:10,949
+that's got all these things
+on a single die
+
+48
+00:02:10,949 --> 00:02:13,470
+you end up with tolerances
+that are really wiggy
+
+49
+00:02:13,570 --> 00:02:15,397
+but the, the guy in a 169 
+
+50
+00:02:15,497 --> 00:02:16,659
+actually takes care
+of this for you
+
+51
+00:02:16,759 --> 00:02:17,490
+it's kind of a cool part.
+
+52
+00:02:17,590 --> 00:02:20,770
+the problem with this
+
+53
+00:02:20,770 --> 00:02:23,980
+is that if you're sensing
+a really large current
+
+54
+00:02:23,979 --> 00:02:27,149
+this resistor will create a much
+
+55
+00:02:27,150 --> 00:02:29,925
+larger voltage than
+you might wanna have
+
+56
+00:02:30,025 --> 00:02:31,629
+between your load and ground
+
+57
+00:02:31,729 --> 00:02:35,389
+like for example 0.1 Ohm
+resistor will generate
+
+58
+00:02:35,389 --> 00:02:38,320
+you know, at 10 Amps it'll
+generate a Volt of noise
+
+59
+00:02:38,420 --> 00:02:41,025
+A lotta times that's not acceptable
+
+60
+00:02:41,125 --> 00:02:44,969
+OK, now something also cool and
+I'll  write this down
+
+61
+00:02:44,969 --> 00:02:47,989
+INA169
+
+62
+00:02:47,989 --> 00:02:50,592
+another cool thing about this part is
+
+63
+00:02:50,692 --> 00:02:52,129
+it's a high side sensor
+
+64
+00:02:52,229 --> 00:02:53,250
+what that means is that
+
+65
+00:02:53,350 --> 00:02:55,300
+you don't haveto put
+the resistor down here
+
+66
+00:02:55,400 --> 00:02:57,239
+on the low side
+
+67
+00:02:57,339 --> 00:02:59,119
+you can put it up here
+
+68
+00:02:59,219 --> 00:03:00,969
+on the high side.
+
+69
+00:03:01,069 --> 00:03:03,588
+Now that's cool and all,
+problem is this is still a
+
+70
+00:03:03,688 --> 00:03:08,110
+series circuit, you're still going to
+introduce noise to your load
+
+71
+00:03:08,110 --> 00:03:12,140
+Okay. But, since its a high-side sensor
+
+72
+00:03:12,139 --> 00:03:13,666
+what you can do
+
+73
+00:03:14,149 --> 00:03:18,950
+is you can put it
+before your VREG
+
+74
+00:03:18,949 --> 00:03:22,014
+voltage regulator. Okay, voltage
+regulators designed
+
+75
+00:03:22,014 --> 00:03:23,189
+to take that noise out
+
+76
+00:03:23,189 --> 00:03:25,584
+so you can still sense what's
+going on in your circuit
+
+77
+00:03:25,826 --> 00:03:28,069
+without actually introducing
+a whole bunch of noise
+
+78
+00:03:28,069 --> 00:03:29,377
+pretty cool, huh?
+
+79
+00:03:29,477 --> 00:03:31,703
+The other method of
+doing this is, uh,
+
+80
+00:03:31,803 --> 00:03:32,661
+by Hall Effect.
+
+81
+00:03:32,761 --> 00:03:36,033
+Basically any conductor that has
+a current going through it 
+
+82
+00:03:36,145 --> 00:03:37,604
+makes a magnetic field, right?
+
+83
+00:03:37,704 --> 00:03:39,050
+ and so we've got a sensor
+
+84
+00:03:39,050 --> 00:03:43,590
+that can sense that and I'll tell you
+how much the magnetic fields doing
+
+85
+00:03:43,590 --> 00:03:44,623
+And blah blah blah blah.
+
+86
+00:03:44,723 --> 00:03:47,020
+We sell a part called the ACS712
+
+87
+00:03:47,120 --> 00:03:49,708
+and it is a Hall effect current sensor
+
+88
+00:03:49,808 --> 00:03:51,651
+The first cool thing
+
+89
+00:03:52,869 --> 00:03:53,869
+grab marker
+
+90
+00:03:53,969 --> 00:03:57,949
+where Ohm's Law related parts like
+the INA169 are concerned
+
+91
+00:03:57,949 --> 00:04:01,731
+they're using a resistance ...
+like ... .1 Ohm
+
+92
+00:04:01,831 --> 00:04:05,099
+which is a small resistance but
+like I was saying before
+
+93
+00:04:05,099 --> 00:04:07,716
+at 10 amps is generating
+a volt of noise
+
+94
+00:04:07,816 --> 00:04:08,849
+okay, and there's ways around it
+
+95
+00:04:08,949 --> 00:04:12,638
+this guy, comparatively, its in-line
+resistance
+
+96
+00:04:12,639 --> 00:04:16,670
+is on the order of 1.2 milli Ohms
+
+97
+00:04:16,670 --> 00:04:19,392
+so in like two orders of
+magnitude less
+
+98
+00:04:19,492 --> 00:04:21,233
+So the upshot of that
+
+99
+00:04:21,333 --> 00:04:24,580
+is you can use it on the low side
+and it's not gonna generate
+
+100
+00:04:24,680 --> 00:04:27,062
+that much noise to your load, okay?
+
+101
+00:04:27,162 --> 00:04:30,372
+Second thing, the current path
+through this device
+
+102
+00:04:30,511 --> 00:04:34,436
+is completely isolated
+from the sensing circuit
+
+103
+00:04:34,536 --> 00:04:36,759
+Right? So what that means
+
+104
+00:04:36,759 --> 00:04:40,209
+is you can also use it
+on the high side
+
+105
+00:04:40,209 --> 00:04:43,647
+the reason you can't do, or why
+high side sensing is difficult
+
+106
+00:04:43,747 --> 00:04:45,680
+is because you have this
+common mode voltage
+
+107
+00:04:45,680 --> 00:04:48,730
+that is so different from the
+supply voltage of the sensor
+
+108
+00:04:48,730 --> 00:04:51,447
+Right? and the INA169 allows
+you to do this.
+
+109
+00:04:51,547 --> 00:04:56,350
+It'll allow like sixty votes of higher
+voltage from its supply voltage
+
+110
+00:04:56,350 --> 00:04:58,122
+and won't go wonky. Okay.
+
+111
+00:04:58,222 --> 00:05:00,883
+This thing has an isolated
+current path, so
+
+112
+00:05:00,983 --> 00:05:03,702
+you can use it on the low side,
+you can use high side
+
+113
+00:05:03,802 --> 00:05:06,851
+it doesn't matter. You don't have
+to use it in front of a regulator.
+
+114
+00:05:06,951 --> 00:05:08,806
+You can put this thing
+pretty much anywhere.
+
+115
+00:05:08,906 --> 00:05:11,753
+The third thing about this
+that's cool 
+
+116
+00:05:11,853 --> 00:05:14,110
+at zero current through this
+
+117
+00:05:14,110 --> 00:05:18,639
+it will give you and output that is
+
+118
+00:05:18,639 --> 00:05:22,790
+VCC over two. Right?
+Half of your supply voltage.
+
+119
+00:05:22,790 --> 00:05:26,790
+Right? So externally you're
+powering this thing from 5 Volts
+
+120
+00:05:26,790 --> 00:05:30,069
+and it's got a ground, and then
+
+121
+00:05:30,069 --> 00:05:31,552
+a sense voltage over here
+
+122
+00:05:31,652 --> 00:05:33,830
+so if your power
+in this thing with 5 volts
+
+123
+00:05:33,930 --> 00:05:36,619
+it'll give you an output of
+two and a half Volts
+
+124
+00:05:36,719 --> 00:05:38,500
+when there's no current going through it
+
+125
+00:05:38,500 --> 00:05:40,719
+what does that mean?
+That means it'll do
+
+126
+00:05:40,719 --> 00:05:42,899
+negative current as well
+as positive current
+
+127
+00:05:42,899 --> 00:05:45,274
+so this part, the one,
+the version that we sell
+
+128
+00:05:45,274 --> 00:05:48,168
+is the five Amp version it comes
+in a few different versions
+
+129
+00:05:48,268 --> 00:05:51,439
+The 5 Amp version has,
+ and I got in my notes here
+
+130
+00:05:51,439 --> 00:05:58,131
+deflection of 185 milli Volts
+at the output per Amp
+
+131
+00:05:58,289 --> 00:06:00,870
+that goes through this thing.
+Now that's not
+
+132
+00:06:00,870 --> 00:06:03,477
+what I would call really great
+resolution.
+
+133
+00:06:03,577 --> 00:06:05,450
+A lot of currents that we deal with here
+
+134
+00:06:05,449 --> 00:06:06,703
+are small currents. Right?
+
+135
+00:06:06,803 --> 00:06:09,587
+We make a board
+that's got this part this part
+
+136
+00:06:09,687 --> 00:06:11,909
+plus a buffer amplifier with
+some gain.
+
+137
+00:06:12,009 --> 00:06:14,066
+you can set the gain, and you
+can set the reference voltage
+
+138
+00:06:14,166 --> 00:06:14,979
+and it works out pretty cool
+
+139
+00:06:15,079 --> 00:06:24,452
+that's SKU SEN08883
+
+140
+00:06:24,552 --> 00:06:25,780
+Point I wanna make
+
+141
+00:06:25,779 --> 00:06:30,381
+whether you using this thing
+or you're using in the INA169
+
+142
+00:06:30,481 --> 00:06:31,896
+or other derivative
+
+143
+00:06:31,996 --> 00:06:33,929
+you always want to
+calibrate these things, right?
+
+144
+00:06:34,029 --> 00:06:37,969
+because, um, there are tolerances
+there is some drift
+
+145
+00:06:38,069 --> 00:06:39,668
+you might have to deal with
+
+146
+00:06:39,768 --> 00:06:42,485
+there's probably some noise you
+have to deal with
+
+147
+00:06:42,585 --> 00:06:43,859
+and I'll talk about that in a sec
+
+148
+00:06:43,959 --> 00:06:47,031
+so always wanna go through some
+kinda calibration with these
+
+149
+00:06:47,131 --> 00:06:50,778
+you gotta know how much current
+you're getting per
+
+150
+00:06:50,878 --> 00:06:52,229
+ millivolt of deflection.
+
+151
+00:06:52,329 --> 00:06:53,381
+Here we are again
+
+152
+00:06:53,481 --> 00:06:55,960
+I've got this hooked up
+and this was my ADC example
+
+153
+00:06:56,060 --> 00:06:57,462
+from a couple months ago
+
+154
+00:06:57,562 --> 00:06:58,829
+ the code is, oh,
+
+155
+00:06:58,929 --> 00:07:01,394
+I altered the code a little bit to
+average out some of these readings.
+
+156
+00:07:01,494 --> 00:07:03,889
+This thing can be noisy
+so you are going to have to do a
+
+157
+00:07:03,889 --> 00:07:05,509
+little bit of averaging in code
+
+158
+00:07:05,509 --> 00:07:06,879
+makes it a lot easier to read something
+
+159
+00:07:06,979 --> 00:07:09,073
+and I've got this set up from
+a power supply
+
+160
+00:07:09,173 --> 00:07:12,243
+and I've got it limited over there to
+about 100 ish milliamps
+
+161
+00:07:12,343 --> 00:07:13,600
+and I got my meter here
+
+162
+00:07:13,600 --> 00:07:16,920
+I'm using this as my calibration
+standard
+
+163
+00:07:17,020 --> 00:07:17,591
+HAH! HAH! HAH!
+
+164
+00:07:17,691 --> 00:07:21,129
+I don't think this has ever been
+calibrated since it left the factory
+
+165
+00:07:21,129 --> 00:07:23,120
+I've got my five Volt supply,
+I've got ground
+
+166
+00:07:23,220 --> 00:07:26,059
+I got my sense line going to my ADC value
+
+167
+00:07:26,159 --> 00:07:27,159
+and it's spitting out here
+
+168
+00:07:27,160 --> 00:07:28,160
+this is the current
+
+169
+00:07:28,260 --> 00:07:30,349
+going through the meter coming
+from my power supply over there
+
+170
+00:07:30,449 --> 00:07:33,944
+first thing you do set your reference
+current to zero.
+
+171
+00:07:34,044 --> 00:07:37,479
+Once you know that it's
+zero current, 0 current
+
+172
+00:07:37,480 --> 00:07:40,710
+you set the reference on this guy
+
+173
+00:07:40,709 --> 00:07:43,939
+and I apologize this being upside
+down from where you're looking
+
+174
+00:07:43,939 --> 00:07:46,185
+There's 2 adjustments on this.
+There's two pots
+
+175
+00:07:46,285 --> 00:07:48,370
+one says V ref one says gain
+
+176
+00:07:48,470 --> 00:07:51,820
+first thing you wanna to do is you
+wanna set the V ref pot
+
+177
+00:07:51,819 --> 00:07:55,054
+and basically just set this assuming
+you've got a set up like this
+
+178
+00:07:55,154 --> 00:07:56,919
+or maybe you're reading it
+with a voltmeter
+
+179
+00:07:56,920 --> 00:07:59,340
+you just wanna set it to the point
+
+180
+00:07:59,440 --> 00:08:00,939
+where you wanna start reading from so if
+
+181
+00:08:01,039 --> 00:08:02,410
+So if you wanna do
+
+182
+00:08:02,510 --> 00:08:05,002
+positive and negative current possibly 
+
+183
+00:08:05,102 --> 00:08:08,404
+you'd set it for a halfway value
+of your ADC
+
+184
+00:08:08,504 --> 00:08:10,710
+in this case were
+running on a 10-bit ADC
+
+185
+00:08:10,810 --> 00:08:12,811
+on the breadboard
+
+186
+00:08:12,911 --> 00:08:16,260
+and so it's somewhere
+around 512 or thereabouts
+
+187
+00:08:16,360 --> 00:08:18,956
+okay? That we get positive
+and negative deflection
+
+188
+00:08:19,056 --> 00:08:21,139
+so you set that,
+and I sent this earlier
+
+189
+00:08:21,139 --> 00:08:24,479
+and it's right about 515, Eh
+
+190
+00:08:24,480 --> 00:08:26,226
+course enough,
+doesn't have to be exact
+
+191
+00:08:26,326 --> 00:08:28,859
+you also want to take note
+of the value, right
+
+192
+00:08:28,959 --> 00:08:32,190
+so mark mark this down
+and it's a little a little noisy
+
+193
+00:08:32,190 --> 00:08:36,675
+right? so you gotta kinda look at it
+and go hmm, 530 ish or so
+
+194
+00:08:36,849 --> 00:08:40,009
+right that value down
+then what you do you set
+
+195
+00:08:40,009 --> 00:08:43,750
+your current to the max value
+that you wanna read
+
+196
+00:08:43,750 --> 00:08:46,860
+so if for example
+
+197
+00:08:46,860 --> 00:08:50,709
+you expect a circuit to be drawing
+fifty milliamps
+
+198
+00:08:50,708 --> 00:08:55,879
+you might set your max current
+on your current reference to
+
+199
+00:08:55,879 --> 00:08:58,866
+a hundred milliamps. Okay?
+So you can see some
+
+200
+00:08:58,929 --> 00:08:59,929
+some deflection there.
+
+201
+00:09:00,029 --> 00:09:02,108
+Hook that guy up
+and my reference here
+
+202
+00:09:02,208 --> 00:09:04,053
+says I'm running about
+102 milliamps
+
+203
+00:09:04,153 --> 00:09:05,260
+so that's pretty close, right?
+
+204
+00:09:05,360 --> 00:09:08,480
+take note of that value then you set
+
+205
+00:09:08,480 --> 00:09:10,840
+the gain pot over here
+
+206
+00:09:10,940 --> 00:09:12,120
+this guy
+
+207
+00:09:12,220 --> 00:09:16,064
+to about as much deflection
+as you want to read
+
+208
+00:09:16,164 --> 00:09:17,719
+or max deflection, right.
+
+209
+00:09:17,868 --> 00:09:19,409
+So if you're going from
+
+210
+00:09:19,409 --> 00:09:22,969
+500 to whatever and
+I'll tell you something
+
+211
+00:09:22,970 --> 00:09:27,910
+the op-amp buffer out here on
+this board is an inverting opamp
+
+212
+00:09:27,909 --> 00:09:30,149
+so if you have positive going current
+
+213
+00:09:30,249 --> 00:09:32,996
+it's going to give you a
+negative going pulse
+
+214
+00:09:33,096 --> 00:09:36,900
+from your reference of
+hundred-and-some ADC value.
+
+215
+00:09:37,000 --> 00:09:39,440
+Okay? So you adjust the gain pot
+
+216
+00:09:39,440 --> 00:09:42,281
+until you get, you know, a fairly
+decent number that you can read
+
+217
+00:09:42,381 --> 00:09:44,860
+easily for your maximum
+current deflection
+
+218
+00:09:44,860 --> 00:09:47,784
+That make sense?
+So previously I adjusted this thing 
+
+219
+00:09:47,884 --> 00:09:52,563
+and I'm getting about
+three... fifty... three four
+
+220
+00:09:52,663 --> 00:09:56,019
+in there someplace. Okay? So you
+take note of that value
+
+221
+00:09:56,019 --> 00:10:00,250
+then what you do is you set your
+reference current to 0 again
+
+222
+00:10:00,250 --> 00:10:03,919
+so you disconnect it and you
+double check that your VREF
+
+223
+00:10:03,919 --> 00:10:08,469
+ADC value is still steady. If it's not,
+you gotta go back and do it again
+
+224
+00:10:08,470 --> 00:10:11,889
+um, and sometimes you know
+your power supply can drift
+
+225
+00:10:11,889 --> 00:10:13,129
+[hesitant moaning]
+
+226
+00:10:13,129 --> 00:10:14,893
+we're ballparking here, come on.
+
+227
+00:10:14,993 --> 00:10:17,808
+Um,  I'm so you gotta watch,
+that but this is just to verify
+
+228
+00:10:17,808 --> 00:10:21,289
+that you did it right, sort of sanity
+check OK everything's still the same
+
+229
+00:10:21,289 --> 00:10:22,396
+we can move on now.
+
+230
+00:10:22,496 --> 00:10:26,539
+Then you have your maximum and
+minimum current being zero
+
+231
+00:10:26,639 --> 00:10:30,568
+and a 102 milliamps and you have
+
+232
+00:10:30,568 --> 00:10:34,269
+uh, your ADC, Right. So I'm
+
+233
+00:10:34,269 --> 00:10:38,135
+what am i doing? I'm I'm defining
+a line and it's a linear relationship
+
+234
+00:10:38,235 --> 00:10:41,528
+so I have I have my points and I
+have my slope and I'm, yeah,
+
+235
+00:10:41,628 --> 00:10:43,778
+basically I'm just figure out
+the equation for a line
+
+236
+00:10:43,778 --> 00:10:47,429
+Right? And so a earlier I had set this up
+
+237
+00:10:47,429 --> 00:10:51,438
+and I came out with a resolution
+of about
+
+238
+00:10:51,438 --> 00:10:57,090
+0.56 milliamps per ADC division. Okay?
+
+239
+00:10:57,193 --> 00:11:00,149
+So , you know, roughly about 500 microamps
+
+240
+00:11:00,149 --> 00:11:02,436
+not too bad and then once you
+have that number
+
+241
+00:11:02,536 --> 00:11:04,872
+you just apply it in your code.
+It's that simple.
+
+242
+00:11:04,972 --> 00:11:07,370
+I will warn you that's
+
+243
+00:11:07,470 --> 00:11:10,105
+this, this is not, I mean we're we're
+talking about
+
+244
+00:11:10,205 --> 00:11:12,289
+ millivolts worth of deflection here.
+
+245
+00:11:12,289 --> 00:11:16,849
+Okay? That's in the noise. So you're
+gonna have to, like, for example
+
+246
+00:11:16,850 --> 00:11:19,123
+my, my code that I'm running on this thing
+
+247
+00:11:19,223 --> 00:11:20,838
+I'm averaging it quite heavily.
+
+248
+00:11:20,938 --> 00:11:25,028
+I mean I'm, I'm, averaging a
+thousand ADC reads
+
+249
+00:11:25,028 --> 00:11:29,563
+um, and I'm getting updates roughly
+about every hundred milliseconds
+
+250
+00:11:29,663 --> 00:11:30,800
+which is not too bad.
+
+251
+00:11:30,799 --> 00:11:34,028
+Will it do a higher frequency?
+Yes it'll do higher frequency
+
+252
+00:11:34,028 --> 00:11:37,948
+but you're gonna have to, you know,
+condition that in code
+
+253
+00:11:37,948 --> 00:11:39,678
+or maybe you wanna to put like
+
+254
+00:11:39,778 --> 00:11:41,989
+another cap on the output
+of the op amp but
+
+255
+00:11:42,089 --> 00:11:46,439
+off the top of my head I can't
+remember if the OPA344
+
+256
+00:11:46,539 --> 00:11:48,558
+which is the op amp in that, uh
+
+257
+00:11:48,558 --> 00:11:52,009
+how steady it is for how much value
+output capacitance.
+
+258
+00:11:52,009 --> 00:11:53,204
+You might wanna check that.
+
+259
+00:11:53,304 --> 00:11:55,328
+I don't tell you anything that's a lie.
+
+260
+00:11:55,428 --> 00:11:59,428
+Ohh, I've got current! That's
+low current sensor board.
+
+261
+00:11:59,428 --> 00:12:03,419
+I definitely don't want to steer you
+away from the ah, ah
+
+262
+00:12:03,419 --> 00:12:06,796
+the Ohm's Law ones that use the
+resistors we do sell a few those
+
+263
+00:12:06,896 --> 00:12:10,698
+you know they they are good parts,
+um, but you know
+
+264
+00:12:10,698 --> 00:12:12,997
+they have their application just like
+this one has application
+
+265
+00:12:13,097 --> 00:12:14,249
+and your mileage may vary.
+
+266
+00:12:14,249 --> 00:12:17,777
+Think about what you want and
+then make a selection that's cool.
+
+267
+00:12:17,877 --> 00:12:19,588
+Keep the questions and comments
+coming
+
+268
+00:12:19,688 --> 00:12:21,480
+and put them in the comments section
+
+269
+00:12:21,480 --> 00:12:26,298
+down yar or you can email them to
+feedback@sparkfun.com with
+
+270
+00:12:26,298 --> 00:12:29,126
+"According to Pete" in the subject
+line and we will check em out and
+
+271
+00:12:29,226 --> 00:12:30,379
+get them in the queue
+
+272
+00:12:30,379 --> 00:12:33,115
+Until next month, thanks for
+watching. See ya.
+
+273
+00:12:33,215 --> 00:12:34,578
+Make love to the camera.
+
+274
+00:12:34,678 --> 00:12:36,588
+[Pete] Are we going?
+[Person in background] Yah.
+
+275
+00:12:38,497 --> 00:12:48,770
+[music plays]
+
