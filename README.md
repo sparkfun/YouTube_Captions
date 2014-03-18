@@ -18,3 +18,5 @@ Contents
   * [#36: Transistor Biasing Configurations](https://www.youtube.com/watch?v=t0UOSIUve9E)
 
 * [Digital Compass Modules with Engineer Chris Taylor](https://www.youtube.com/watch?v=sBKHdt0OdPg&feature=youtu.be)
+* [SparkFun Elastolite Assembly Guide](https://www.youtube.com/watch?v=aa3HT1FPj3gd)
+
