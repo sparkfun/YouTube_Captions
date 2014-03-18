@@ -17,6 +17,7 @@ Contents
   * [#34: PCB Layout](http://www.youtube.com/watch?v=NJKZZArjdg8)
   * [#36: Transistor Biasing Configurations](https://www.youtube.com/watch?v=t0UOSIUve9E)
 
+* [SparkFun Core Skills Icons](https://www.youtube.com/watch?v=wj29Q2TbpTg)
 * [Digital Compass Modules with Engineer Chris Taylor](https://www.youtube.com/watch?v=sBKHdt0OdPg&feature=youtu.be)
 * [SparkFun Elastolite Assembly Guide](https://www.youtube.com/watch?v=aa3HT1FPj3gd)
 
