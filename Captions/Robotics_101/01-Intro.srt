@@ -1,0 +1,248 @@
+﻿1
+00:00:00,000 --> 00:00:06,803
+[Intro Music]
+
+2
+00:00:06,803 --> 00:00:10,170
+Hello everyone. This is Robert with SparkFun Electronics,
+
+3
+00:00:10,170 --> 00:00:12,840
+and welcome to our into to robotics video.
+
+4
+00:00:12,840 --> 00:00:15,766
+In the past, we've typically only carried electronics
+
+5
+00:00:15,766 --> 00:00:18,088
+prototyping boards and things of that nature.
+
+6
+00:00:18,088 --> 00:00:20,178
+We really haven't carried all the components
+
+7
+00:00:20,178 --> 00:00:22,267
+you need to build your robot. Well, we are looking
+
+8
+00:00:22,267 --> 00:00:24,589
+to change that. We are vary proud to introduce the
+
+9
+00:00:24,589 --> 00:00:27,283
+Actobotics product line where we will be carrying
+
+10
+00:00:27,283 --> 00:00:32,275
+500 additional robotic components, strictly for robotics.
+
+11
+00:00:32,275 --> 00:00:34,481
+So, now you can have the electronics and
+
+12
+00:00:34,481 --> 00:00:36,223
+the robotic components all in one place
+
+13
+00:00:36,223 --> 00:00:37,987
+and you don't have to go shopping around for everything.
+
+14
+00:00:37,987 --> 00:00:40,565
+This is the first of the 9 part video series where we
+
+15
+00:00:40,565 --> 00:00:42,353
+explain all the different components that go
+
+16
+00:00:42,399 --> 00:00:44,768
+into building a robot. We're going to talk about
+
+17
+00:00:44,768 --> 00:00:47,299
+belts, pulleys, gears, bearings, and all the other
+
+18
+00:00:47,299 --> 00:00:48,878
+things that you'll need to know to build your
+
+19
+00:00:48,878 --> 00:00:50,294
+very own robotic creation.
+
+20
+00:00:50,294 --> 00:00:51,966
+Before we get into that let's first
+
+21
+00:00:51,966 --> 00:00:53,684
+talk about what is robotics.
+
+22
+00:00:53,684 --> 00:00:57,306
+[Transition Music]
+
+23
+00:00:57,306 --> 00:00:59,559
+Robots are electromechanical systems designed
+
+24
+00:00:59,559 --> 00:01:02,786
+to typically to help people with tedious repetitive
+
+25
+00:01:02,786 --> 00:01:05,898
+and sometimes dangerous tasks. Robots are
+
+26
+00:01:05,898 --> 00:01:09,032
+comprised of actuators, being motors or
+
+27
+00:01:09,032 --> 00:01:12,469
+servos; and sensors being user inputs or
+
+28
+00:01:12,469 --> 00:01:15,186
+electronic sensors. Robots are all around us.
+
+29
+00:01:15,186 --> 00:01:17,206
+From the dishwasher in our kitchen,
+
+30
+00:01:17,206 --> 00:01:19,899
+to the robot vacuum cleaners cleaning our floors.
+
+31
+00:01:19,899 --> 00:01:22,686
+We even have robots on Mars. Robots are
+
+32
+00:01:22,686 --> 00:01:25,031
+essential to manufacturing. With the use of
+
+33
+00:01:25,031 --> 00:01:27,028
+automated welders to build our cars,
+
+34
+00:01:27,028 --> 00:01:30,813
+to CNC machines to build our circuit boards. While robots
+
+35
+00:01:30,813 --> 00:01:33,529
+maybe useful, they're sometimes difficult to
+
+36
+00:01:33,529 --> 00:01:35,642
+design and build. There's motors,
+
+37
+00:01:35,642 --> 00:01:37,547
+there's sensors, there's computers,
+
+38
+00:01:37,547 --> 00:01:40,147
+and interfacing all these together is quite
+
+39
+00:01:40,147 --> 00:01:42,539
+a challenge crossing many disciplines.
+
+40
+00:01:42,539 --> 00:01:44,721
+Through this video series we are going to
+
+41
+00:01:44,721 --> 00:01:46,695
+try to give you some shortcuts in understanding
+
+42
+00:01:46,695 --> 00:01:48,367
+some of these different disciplines.
+
+43
+00:01:48,367 --> 00:01:51,989
+[Transition Music]
+
+44
+00:01:51,989 --> 00:01:53,592
+So, when building a robot there's a lot
+
+45
+00:01:53,592 --> 00:01:55,124
+of different parts and pieces you're going to
+
+46
+00:01:55,124 --> 00:01:56,796
+need. You're going to need anything from shafts,
+
+47
+00:01:56,796 --> 00:01:59,350
+to wheels, to gears, to motors... The one thing
+
+48
+00:01:59,350 --> 00:02:01,788
+we really like about Actobotics is all the parts
+
+49
+00:02:01,788 --> 00:02:04,435
+work together. They have common hole spacing.
+
+50
+00:02:04,435 --> 00:02:08,940
+They've event got 0.77 inch or 1.5 inch that
+
+51
+00:02:08,940 --> 00:02:11,866
+all the parts use so they easily mate together
+
+52
+00:02:11,866 --> 00:02:13,421
+and you can use these in any different
+
+53
+00:02:13,421 --> 00:02:15,418
+configuration and you don't have to worry about
+
+54
+00:02:15,418 --> 00:02:18,739
+re-drilling or tapping a hole; it all just works
+
+55
+00:02:18,739 --> 00:02:20,875
+together nicely. So, be sure to join us next
+
+56
+00:02:20,875 --> 00:02:22,547
+week for the next installment of the robotic
+
+57
+00:02:22,547 --> 00:02:24,892
+video series which will be angular motion.
+
+58
+00:02:24,892 --> 00:02:26,355
+We're going to be talking about: wheels,
+
+59
+00:02:26,355 --> 00:02:28,538
+barrings, shafts, and also all the different
+
+60
+00:02:28,538 --> 00:02:29,977
+types of motors that you could be using.
+
+61
+00:02:29,977 --> 00:02:31,928
+So, see you then!
+
+62
+00:02:31,928 --> 00:02:42,400
+[Outro Music]
+
