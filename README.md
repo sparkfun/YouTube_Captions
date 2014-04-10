@@ -18,7 +18,8 @@ Contents
   * [#36: Transistor Biasing Configurations](https://www.youtube.com/watch?v=t0UOSIUve9E)
 
 * Robotics 101
-	* [Intro to Robotics](https://www.youtube.com/watch?v=d3MBTT10pxk)
+  * [#1 - Intro to Robotics](https://www.youtube.com/watch?v=d3MBTT10pxk)
+  * [#2 - Angular Motion](https://www.youtube.com/watch?v=Zp1WbEnPaNc)
 
 * [SparkFun Core Skills Icons](https://www.youtube.com/watch?v=wj29Q2TbpTg)
 * [Digital Compass Modules with Engineer Chris Taylor](https://www.youtube.com/watch?v=sBKHdt0OdPg&feature=youtu.be)

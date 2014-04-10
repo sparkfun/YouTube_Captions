@@ -1,0 +1,1004 @@
+﻿1
+00:00:00,000 --> 00:00:07,440
+[Intro Music]
+
+2
+00:00:07,662 --> 00:00:09,717
+Hello everyone! This is Robert with SparkFun Electronics,
+
+3
+00:00:09,984 --> 00:00:12,327
+and this is the second video of our robotic video series.
+
+4
+00:00:12,561 --> 00:00:13,731
+And today we are going to be talking about
+
+5
+00:00:13,931 --> 00:00:16,602
+angular motion. Angular motion can be as simple as
+
+6
+00:00:16,602 --> 00:00:20,154
+rotating a wheel to drive a robot, or rotating some
+
+7
+00:00:20,154 --> 00:00:22,732
+kind of leaver or arm, or even like spinning a
+
+8
+00:00:22,732 --> 00:00:24,613
+rotisserie chicken. There's a lot of different ways
+
+9
+00:00:24,613 --> 00:00:26,911
+that you can apply angular motion to your robotic
+
+10
+00:00:26,911 --> 00:00:28,096
+project.
+
+11
+00:00:28,096 --> 00:00:30,557
+[Transition Music]
+
+12
+00:00:30,557 --> 00:00:32,438
+Motors convert electricity into mechanical
+
+13
+00:00:32,438 --> 00:00:35,642
+power. They come in various shapes, sizes,
+
+14
+00:00:35,642 --> 00:00:38,196
+and configurations. Brush motors are the
+
+15
+00:00:38,196 --> 00:00:40,542
+workhorse of robotics in industry.
+
+16
+00:00:40,542 --> 00:00:43,073
+They have a very good torque response curve
+
+17
+00:00:43,073 --> 00:00:46,439
+with a wide RPM range. They're very simple
+
+18
+00:00:46,439 --> 00:00:49,713
+to control requiring only two leads to be connected
+
+19
+00:00:49,713 --> 00:00:52,848
+to a battery or power source. As the name would
+
+20
+00:00:52,848 --> 00:00:54,984
+suggest, they have brushes. These brushes
+
+21
+00:00:54,984 --> 00:00:58,026
+translate power to a ring called the commutator.
+
+22
+00:00:58,026 --> 00:01:00,302
+This commutator is essentially the controller
+
+23
+00:01:00,302 --> 00:01:02,554
+of a brush motor, supplying current to the
+
+24
+00:01:02,554 --> 00:01:04,365
+windings propelling the motor forward.
+
+25
+00:01:04,365 --> 00:01:07,175
+These brushes over time can wear out
+
+26
+00:01:07,175 --> 00:01:09,636
+and in some cases lead to inefficiencies
+
+27
+00:01:09,636 --> 00:01:11,540
+since they are made of carbon. This
+
+28
+00:01:11,540 --> 00:01:13,073
+is the same stuff resistors are made of.
+
+29
+00:01:13,073 --> 00:01:14,977
+Modern motors have solved this problem
+
+30
+00:01:14,977 --> 00:01:17,276
+by using precious metals or special
+
+31
+00:01:17,276 --> 00:01:19,644
+compounds. One thing to note is
+
+32
+00:01:19,644 --> 00:01:21,571
+servos are actually brush motors in disguise.
+
+33
+00:01:21,571 --> 00:01:24,474
+They have a little control loop inside that makes
+
+34
+00:01:24,474 --> 00:01:25,635
+them behave a little differently, but we'll get
+
+35
+00:01:25,635 --> 00:01:27,632
+into that later. Moving on to stepper motors,
+
+36
+00:01:27,632 --> 00:01:29,698
+these are typically found in CNC machines,
+
+37
+00:01:29,698 --> 00:01:31,997
+3D printers, and anything else that requires
+
+38
+00:01:31,997 --> 00:01:35,248
+high positioning accuracy. Stepper motors have
+
+39
+00:01:35,248 --> 00:01:38,197
+exceptional holding torque, at the expanse of
+
+40
+00:01:38,197 --> 00:01:41,076
+higher RPM. Stepper motors are not quite as
+
+41
+00:01:41,076 --> 00:01:44,304
+easy to control as compared to a DC brush motor.
+
+42
+00:01:44,304 --> 00:01:47,345
+They require an external driver which are inexpensive
+
+43
+00:01:47,345 --> 00:01:49,714
+and easy to come by. Now let's take a look
+
+44
+00:01:49,714 --> 00:01:51,827
+inside of a stepper motor. As you can see
+
+45
+00:01:51,827 --> 00:01:54,845
+the coils are stationary, and the magnet
+
+46
+00:01:54,845 --> 00:01:57,980
+assembly is actually what spins. This is different
+
+47
+00:01:57,980 --> 00:02:00,372
+from a brush motor, because it has no brushes.
+
+48
+00:02:00,372 --> 00:02:03,158
+What gives a stepper its name is these little
+
+49
+00:02:03,158 --> 00:02:05,085
+grooves here. These are little teeth that
+
+50
+00:02:05,085 --> 00:02:07,686
+redirect the magnetic fields to create a
+
+51
+00:02:07,686 --> 00:02:09,683
+much smaller, what's called, step distance.
+
+52
+00:02:09,683 --> 00:02:11,750
+And this is what gives the motor exceptional
+
+53
+00:02:11,750 --> 00:02:14,373
+holding torque. Moving on to brushless motors,
+
+54
+00:02:14,373 --> 00:02:16,277
+they're a little bit different then stepper
+
+55
+00:02:16,277 --> 00:02:18,646
+motors, but they share a lot of similarities.
+
+56
+00:02:18,646 --> 00:02:21,827
+Both are spinning magnets verses the coils
+
+57
+00:02:21,827 --> 00:02:24,335
+but brushless motors have a much larger,
+
+58
+00:02:24,335 --> 00:02:26,634
+what we would call, step distance. Where as
+
+59
+00:02:26,634 --> 00:02:29,234
+stepper motors usually have from 200 to 400
+
+60
+00:02:29,234 --> 00:02:31,626
+steps per revolution, brushless motors have
+
+61
+00:02:31,626 --> 00:02:35,202
+between 6 and 12. The advantages of this
+
+62
+00:02:35,202 --> 00:02:37,570
+are that they have a much higher operating
+
+63
+00:02:37,570 --> 00:02:40,055
+RPM, but the disadvantage is that they have
+
+64
+00:02:40,055 --> 00:02:42,679
+very low starting torque. They require very
+
+65
+00:02:42,679 --> 00:02:45,651
+specialized controllers to optimize for the
+
+66
+00:02:45,651 --> 00:02:48,483
+application of the user. With new controllers
+
+67
+00:02:48,483 --> 00:02:50,550
+coming out on the market, with the advent of
+
+68
+00:02:50,550 --> 00:02:53,127
+quad-copters and ground vehicles, brushless motors
+
+69
+00:02:53,127 --> 00:02:54,985
+are becoming more prevalent in robotics.
+
+70
+00:02:54,985 --> 00:02:57,098
+So, how do I choose the right motor for my
+
+71
+00:02:57,098 --> 00:02:59,606
+application? When I need things to be positioned
+
+72
+00:02:59,606 --> 00:03:02,206
+accurately, or have a high holding torque,
+
+73
+00:03:02,206 --> 00:03:04,737
+I look to the stepper motor. When I need things
+
+74
+00:03:04,737 --> 00:03:06,874
+to be very fast, I look to the brushless motor.
+
+75
+00:03:06,874 --> 00:03:09,289
+And for pretty much everything else, I look
+
+76
+00:03:09,289 --> 00:03:12,075
+to the DC brush motor. Now in future videos
+
+77
+00:03:12,075 --> 00:03:15,024
+we'll show how to take a brush motor
+
+78
+00:03:15,024 --> 00:03:17,741
+or a stepper motor and use it as a very precise
+
+79
+00:03:17,741 --> 00:03:19,273
+positioning system.
+
+80
+00:03:19,273 --> 00:03:21,990
+[Transition Music]
+
+81
+00:03:21,990 --> 00:03:23,871
+So let's talk about how to connect your
+
+82
+00:03:23,871 --> 00:03:26,448
+motors to the other various Actobotics components.
+
+83
+00:03:26,448 --> 00:03:28,793
+We've got four of the different motor mounts
+
+84
+00:03:28,793 --> 00:03:31,069
+here. These mounts can actually be found on the
+
+85
+00:03:31,069 --> 00:03:33,530
+website under robotics, mounts and hubs,
+
+86
+00:03:33,530 --> 00:03:35,666
+and motor mounts. There's a whole category
+
+87
+00:03:35,666 --> 00:03:39,033
+just for the motor mounts. First up we've got the
+
+88
+00:03:39,033 --> 00:03:41,866
+Motor Mount A which looks a little something
+
+89
+00:03:41,866 --> 00:03:43,120
+like that; we've got the Motor Mount D;
+
+90
+00:03:43,120 --> 00:03:45,047
+we've got the Clamp Mount; and we've got the
+
+91
+00:03:45,047 --> 00:03:48,437
+Clamping Swivel Mount. Let's start with the A.
+
+92
+00:03:48,437 --> 00:03:52,037
+The A is good for connecting to the outside of
+
+93
+00:03:52,037 --> 00:03:55,148
+channels like this. So first what we need to do
+
+94
+00:03:55,148 --> 00:03:58,863
+is line up holes with these two holes located
+
+95
+00:03:58,863 --> 00:04:00,674
+on the face of the motor. This should be the
+
+96
+00:04:00,674 --> 00:04:03,461
+same for standard or the precision motors.
+
+97
+00:04:03,461 --> 00:04:06,363
+I'm just going to use two screws. There you go.
+
+98
+00:04:06,363 --> 00:04:08,290
+Now you have a versatile mount that can mount
+
+99
+00:04:08,290 --> 00:04:10,914
+to the outside of the Actobotics channels.
+
+100
+00:04:10,914 --> 00:04:14,699
+So if we use a quarter inch screw, we can
+
+101
+00:04:14,699 --> 00:04:16,580
+easily thread that through and attach this.
+
+102
+00:04:16,580 --> 00:04:18,600
+So now we have a secure connection to the
+
+103
+00:04:18,600 --> 00:04:22,385
+motor. Well, what if we want to mount on the inside
+
+104
+00:04:22,385 --> 00:04:24,846
+open part of the channel? We will want to use the
+
+105
+00:04:24,846 --> 00:04:28,515
+motor mount D. This mounts very similar to this one, but
+
+106
+00:04:28,515 --> 00:04:30,280
+mounts inside the channel like this.
+
+107
+00:04:30,280 --> 00:04:32,602
+So it's always a good idea, before you put this
+
+108
+00:04:32,602 --> 00:04:35,551
+in the channel, to get the shaft coupler attached
+
+109
+00:04:35,551 --> 00:04:37,548
+to your output shaft, just so you don't have to
+
+110
+00:04:37,548 --> 00:04:39,266
+go reach inside and screw this later.
+
+111
+00:04:39,266 --> 00:04:41,031
+Shaft couplers are basically these little
+
+112
+00:04:41,031 --> 00:04:43,538
+metal tubes that have these set screws on
+
+113
+00:04:43,538 --> 00:04:45,257
+each side, and one shaft goes in on side,
+
+114
+00:04:45,257 --> 00:04:46,673
+one shaft goes in the other side,
+
+115
+00:04:46,673 --> 00:04:48,322
+and you clamp them down and you can transfer
+
+116
+00:04:48,322 --> 00:04:51,642
+the motion from the shaft of your motor to another
+
+117
+00:04:51,642 --> 00:04:54,127
+shaft, or you can even attach a wheel on the
+
+118
+00:04:54,127 --> 00:04:55,706
+other side. There's a lot of different types
+
+119
+00:04:55,706 --> 00:04:58,492
+of shaft couplers and they come in two bores.
+
+120
+00:04:58,492 --> 00:05:01,905
+The first bore is the size of the inner hole
+
+121
+00:05:01,905 --> 00:05:05,017
+size and the other bore is the size of the other
+
+122
+00:05:05,017 --> 00:05:07,274
+side. Now all we need to do is fit on our flange
+
+123
+00:05:07,455 --> 00:05:10,102
+bearing and the flange will keep it from going
+
+124
+00:05:10,311 --> 00:05:15,081
+inside the channel. There we go.
+
+125
+00:05:15,303 --> 00:05:17,229
+We're going to use a plastic
+
+126
+00:05:17,393 --> 00:05:19,072
+shaft spacer that will give a little bit of a
+
+127
+00:05:19,320 --> 00:05:22,564
+buffer between that and our hub clamp which
+
+128
+00:05:22,710 --> 00:05:26,023
+we will then attach like this. So now that we
+
+129
+00:05:26,170 --> 00:05:27,563
+have the hub on the end of here, we have a
+
+130
+00:05:27,563 --> 00:05:30,675
+0.77 inch hole pattern, that we can use to
+
+131
+00:05:30,675 --> 00:05:34,088
+attach any wheel that has a 0.77 inch hole
+
+132
+00:05:34,088 --> 00:05:37,664
+pattern, or with the use of an adapter we can
+
+133
+00:05:37,664 --> 00:05:41,263
+actually adapt it to a larger wheel, like this 1.5.
+
+134
+00:05:41,263 --> 00:05:44,468
+Two more motor mounting options we have are
+
+135
+00:05:44,468 --> 00:05:47,045
+this motor clamp and also this swivel clamp.
+
+136
+00:05:47,045 --> 00:05:49,715
+The motor mount is actually pretty simple,
+
+137
+00:05:49,715 --> 00:05:52,362
+and all we need to do is line it up with a
+
+138
+00:05:52,362 --> 00:05:57,471
+1.5 inch hole pattern, like so, slide the motor
+
+139
+00:05:57,471 --> 00:06:01,279
+in place, clamp down the set screw, and we've
+
+140
+00:06:01,279 --> 00:06:03,833
+got a really simple way to mount a motor.
+
+141
+00:06:03,833 --> 00:06:06,712
+The other benefit of this motor mount is that
+
+142
+00:06:06,712 --> 00:06:09,220
+since the motor can actually slide inside,
+
+143
+00:06:09,220 --> 00:06:12,842
+and the motor output shaft is offset, it acts
+
+144
+00:06:12,842 --> 00:06:15,188
+as an adjustment to adjust the motor
+
+145
+00:06:15,188 --> 00:06:17,695
+up and down, closer to what ever you are trying
+
+146
+00:06:17,695 --> 00:06:19,762
+to attach to. The swivel mount is very similar
+
+147
+00:06:19,762 --> 00:06:22,966
+to this one, except for it has a swiveling base.
+
+148
+00:06:22,966 --> 00:06:25,265
+This base connects to the channel in the same
+
+149
+00:06:25,265 --> 00:06:28,655
+way, but with the aid of this screw, it allows
+
+150
+00:06:28,655 --> 00:06:30,954
+you to adjust the orientation of the motor,
+
+151
+00:06:30,954 --> 00:06:34,414
+any which way you want. So these two together,
+
+152
+00:06:34,414 --> 00:06:38,942
+along with the rotation inside the channel,
+
+153
+00:06:38,942 --> 00:06:42,355
+gives you a very flexible motor mounting solution.
+
+154
+00:06:42,355 --> 00:06:44,979
+What if you have two shafts that are slightly
+
+155
+00:06:44,979 --> 00:06:47,695
+misaligned. This is an example of a helical
+
+156
+00:06:47,695 --> 00:06:50,389
+coupler. It just has these spiral cuts which
+
+157
+00:06:50,389 --> 00:06:53,152
+allows for angular misalignment. You might not
+
+158
+00:06:53,152 --> 00:06:55,497
+be able to line up the shafts like this,
+
+159
+00:06:55,497 --> 00:06:57,634
+but if you have any angular misalignment,
+
+160
+00:06:57,634 --> 00:07:00,002
+that's exactly why you would use a helical
+
+161
+00:07:00,002 --> 00:07:02,278
+coupler. A traditional shaft coupler is going
+
+162
+00:07:02,278 --> 00:07:04,994
+to be good for two shafts that are perfectly
+
+163
+00:07:04,994 --> 00:07:07,084
+aligned, a helical coupler is going to be
+
+164
+00:07:07,084 --> 00:07:08,895
+good for any shafts that have a little bit of angular
+
+165
+00:07:08,895 --> 00:07:11,194
+misalignment, but what if you have a parallel
+
+166
+00:07:11,194 --> 00:07:13,446
+offset? A parallel offset is where the two
+
+167
+00:07:13,446 --> 00:07:15,397
+shafts are like this, but there is a bit of
+
+168
+00:07:15,397 --> 00:07:17,417
+an offset between them. It's really difficult
+
+169
+00:07:17,417 --> 00:07:19,902
+to transfer the motion between these two shafts,
+
+170
+00:07:19,902 --> 00:07:21,991
+when they are offset like that. So the best way
+
+171
+00:07:21,991 --> 00:07:23,663
+to deal with it would be to use
+
+172
+00:07:23,663 --> 00:07:26,589
+some sort of gear, pulley or belt system
+
+173
+00:07:26,589 --> 00:07:28,864
+and we'll be talking about those in later videos.
+
+174
+00:07:28,864 --> 00:07:31,047
+Wheels are going to be the most common thing
+
+175
+00:07:31,047 --> 00:07:32,696
+people are going to attach to the end of
+
+176
+00:07:32,696 --> 00:07:34,135
+a motor, because it makes things drive,
+
+177
+00:07:34,135 --> 00:07:35,784
+it makes things move, and it's pretty cool.
+
+178
+00:07:35,784 --> 00:07:37,340
+I've got a few different types of wheels
+
+179
+00:07:37,340 --> 00:07:39,383
+here, and the first thing you'll notice is
+
+180
+00:07:39,383 --> 00:07:42,448
+the actual width of the tread, or the thing that
+
+181
+00:07:42,448 --> 00:07:44,700
+touches the ground. You've got a big wheel
+
+182
+00:07:44,700 --> 00:07:47,417
+here, this came off a wild thumper chassis, and
+
+183
+00:07:47,417 --> 00:07:49,414
+we've got one of these small wheels, which is
+
+184
+00:07:49,414 --> 00:07:51,202
+an Actobotics precision disk wheel.
+
+185
+00:07:51,202 --> 00:07:53,501
+Now, why would you use this one over
+
+186
+00:07:53,501 --> 00:07:55,312
+this one? The procession disk wheel is going
+
+187
+00:07:55,312 --> 00:07:58,354
+to have a much better time turning precisely
+
+188
+00:07:58,354 --> 00:08:00,467
+especially on a flat smooth surface,
+
+189
+00:08:00,467 --> 00:08:03,648
+where as something like this is going to take
+
+190
+00:08:03,648 --> 00:08:06,272
+a lot more force to turn on a flat surface.
+
+191
+00:08:06,272 --> 00:08:08,826
+This is not going to be turning handling type
+
+192
+00:08:08,826 --> 00:08:12,100
+wheel, where this is. That being said, the really
+
+193
+00:08:12,100 --> 00:08:14,468
+small profile of this wheel means that the
+
+194
+00:08:14,468 --> 00:08:17,557
+overall weight of the robot is being spread out
+
+195
+00:08:17,557 --> 00:08:20,459
+over a much smaller space, where as if you have
+
+196
+00:08:20,459 --> 00:08:23,687
+a very heavy robot sitting on this, the weight
+
+197
+00:08:23,687 --> 00:08:26,009
+is going to be spread out over a much larger
+
+198
+00:08:26,009 --> 00:08:28,145
+surface area, thus giving you little bit more
+
+199
+00:08:28,145 --> 00:08:30,537
+traction and also distribute the load a little
+
+200
+00:08:30,537 --> 00:08:32,510
+bit better. But why would you choose something
+
+201
+00:08:32,510 --> 00:08:35,105
+like a skate wheel, something like this,
+
+202
+00:08:35,320 --> 00:08:38,495
+or maybe a larger wheel like these heavy duty
+
+203
+00:08:38,687 --> 00:08:41,071
+wheels from Actobotics. These give you a little
+
+204
+00:08:41,287 --> 00:08:43,232
+bit of the best of both worlds. They have a
+
+205
+00:08:43,470 --> 00:08:45,345
+very narrow profile as you can see,
+
+206
+00:08:45,537 --> 00:08:47,739
+this one has a little bit more, but they are
+
+207
+00:08:47,905 --> 00:08:50,199
+also sturdy enough to handle a higher load.
+
+208
+00:08:50,343 --> 00:08:51,928
+Now something to take into consideration
+
+209
+00:08:52,131 --> 00:08:54,832
+with wheels is you have the RPM of the output
+
+210
+00:08:55,034 --> 00:08:58,023
+shaft but choosing two different sized wheels,
+
+211
+00:08:58,215 --> 00:09:01,300
+is going to change how fast the robot can go.
+
+212
+00:09:01,512 --> 00:09:03,562
+If we take the outer circumference of this
+
+213
+00:09:03,764 --> 00:09:06,940
+wheel, one revolution can go, let's say, this far,
+
+214
+00:09:07,201 --> 00:09:10,357
+but with this wheel however, it might be
+
+215
+00:09:10,545 --> 00:09:13,823
+like this far. So when designing a robot,
+
+216
+00:09:13,981 --> 00:09:16,062
+and designing the speed that you want it to go,
+
+217
+00:09:16,326 --> 00:09:19,074
+or even trying to decide the RPM of the motor,
+
+218
+00:09:19,252 --> 00:09:21,919
+you're going to have to consider the outer size
+
+219
+00:09:22,108 --> 00:09:23,801
+of the wheel or the overall circumference of
+
+220
+00:09:23,989 --> 00:09:26,234
+the wheel to determine how fast or how far
+
+221
+00:09:26,497 --> 00:09:28,838
+it can go per revolution. The basic concept
+
+222
+00:09:29,074 --> 00:09:31,187
+of angular motion is taking a motor and spinning
+
+223
+00:09:31,396 --> 00:09:33,156
+something else. Now in an ideal
+
+224
+00:09:33,370 --> 00:09:35,347
+world we have just a motor with some kind
+
+225
+00:09:35,506 --> 00:09:37,484
+of wheel spinning on the end of it. Now the problem
+
+226
+00:09:37,735 --> 00:09:39,074
+with that thinking is there's always going to be
+
+227
+00:09:39,361 --> 00:09:42,091
+some sort of load exerted on that wheel,
+
+228
+00:09:42,091 --> 00:09:44,227
+or on that thing that's attached so we're going
+
+229
+00:09:44,469 --> 00:09:46,435
+to need bearings. There are several different
+
+230
+00:09:46,605 --> 00:09:48,293
+types of barrings and they all serve a little bit
+
+231
+00:09:48,486 --> 00:09:50,135
+different purpose. But generally, a bearing
+
+232
+00:09:50,135 --> 00:09:51,897
+is there to make sure that the motor spins
+
+233
+00:09:52,132 --> 00:09:54,807
+smoothly and quietly. They take a lot of the load
+
+234
+00:09:55,011 --> 00:09:57,186
+that is exerted against the output shaft
+
+235
+00:09:57,426 --> 00:10:00,508
+of the motor. Some motors already have bearings
+
+236
+00:10:00,723 --> 00:10:03,216
+in them, for example the stepper motor has a
+
+237
+00:10:03,416 --> 00:10:04,853
+pretty big bearing on the output shaft
+
+238
+00:10:05,042 --> 00:10:07,606
+and it is good at taking loads against the side
+
+239
+00:10:07,828 --> 00:10:09,772
+so if you push against the side of the
+
+240
+00:10:09,941 --> 00:10:11,408
+shaft it can actually handle that pretty
+
+241
+00:10:11,660 --> 00:10:13,609
+well; however, most motors, do not have
+
+242
+00:10:13,773 --> 00:10:16,054
+a bearing on the output shaft, so you'll need
+
+243
+00:10:16,257 --> 00:10:18,352
+to provide one yourself. Join us next week
+
+244
+00:10:18,556 --> 00:10:20,612
+for the third video in the robotic series which
+
+245
+00:10:20,808 --> 00:10:23,578
+will be linear motion. Linear motion is a little
+
+246
+00:10:23,757 --> 00:10:25,602
+bit different from angular motion in that we
+
+247
+00:10:25,800 --> 00:10:27,476
+are interested in things moving in a linear
+
+248
+00:10:27,658 --> 00:10:29,247
+plane rather then a rotational plane.
+
+249
+00:10:29,469 --> 00:10:30,797
+So we'll see you again next week for
+
+250
+00:10:31,002 --> 00:10:31,842
+linear motion.
+
+251
+00:10:31,842 --> 00:10:43,586
+[Outro Music]
+
